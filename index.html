@@ -1,1 +1,234 @@
-helloworld
+<!doctype html>
+<html>
+
+<form  name="S" method="POST" action="https://duckduckgo.com/">
+ <input type="text" autocomplete="off" name="q" tabindex="1" placeholder="Search DuckDuckGo" value="">
+<input type="submit" tabindex="2" value="Search" />
+ <div class="search__hidden  js-search-hidden"></div>
+</form>
+
+<script type="text/javascript">
+var i;
+var l_list = [
+["https://mail.protonmail.com/login", " protonmail"],
+["https://connect.k-state.edu/", " ksu_portal"],
+["https://direct.smbc.co.jp/aib/aibgsjsw5001.jsp", " mitsui_bank"],
+["https://www.smbc-card.com/mem/index.jsp ", "mitsui_card_vpass"],
+["https://direct.smtb.jp/ap1/ib/login.do", " prestia_bank"],
+["https://www.chase.com/ chase_bank"],
+["https://www.politico.eu/ ", "politico"],
+["http://tanakanews.com/ ", "tanaka_news"],
+["https://zeitung.faz.net/fas/seite-eins/", "frankfurter_allgemeine"],
+["https://radiosputnik.ria.ru/", " radio_sputnik"],
+["https://www.math.ksu.edu/people/faculty.html", "kstate_faculty"],
+["https://arxiv.org/search/?query=&searchtype=author&source=header", "arxiv_(author)"],
+["https://people.ucsc.edu/~beren/", "berens_page"],
+["https://www.collinsdictionary.com/dictionary/german-english/", "german_dictionary"],
+["https://en.openrussian.org/", "russian_dictionary"],
+["https://cooljugator.com/", "cooljugator"],
+["https://en.wiktionary.org/", "wiktionary"],
+["https://kojisunami.github.io/", "kojisunami_website"],
+["https://italianfoodonlinestore.com/", "italian_grocery"]];
+
+
+
+for (i = 0; i<l_list.length; i++){
+	link_gen( l_list[i][0], l_list[i][1]);
+}
+
+function link_gen(url, name){
+	var a = document.createElement('a');
+	var linkText = document.createTextNode(name);
+	a.appendChild(linkText);
+	a.title = name;
+	a.href = url;
+	document.body.appendChild(a);
+	document.write("<br>");
+}
+</script>
+
+
+<canvas id="myCanvas" width="1600" height="800"
+style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
+
+<body ng-app="LunchCheck" >
+<br>
+
+
+<script type="text/javascript">
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+var i;
+var hour_length = 70;
+
+var cal_type = [
+["M","10:30","11:20","top2"],
+["M","12:30","13:20","AG2"],
+["M","17:00","18:00","Spanish"],
+["M","18:15","19:15","French"],
+["Tu","7:30","8:20","rec 220"],
+["Tu","8:20","9:20","Office Hour"],
+["Tu","12:00","13:00","rep sem"],
+["Tu","13:05","14:20","c-ana"],
+["Tu","15:30","16:20","help"],
+["W","10:30","11:20","top2"],
+["W","12:30","13:20","AG2"],
+["W","14:30","15:20","help"],
+["W","17:00","18:00","Spanish"],
+["W","18:15","19:15","French"],
+["Th","7:30","8:20","rec 220"],
+["Th","8:20","9:20","Office Hour"],
+["Th","12:00","13:00","art sem"],
+["Th","13:05","14:20","c-ana"],
+["Th","15:30","16:30","M sem"],
+["F","10:30","11:20","top2"],
+["F","12:30","13:20","AG2"],
+["F","13:30","14:20","help"],
+["F","14:30","15:20","help"] ];
+
+plot_all();
+
+function plot_all(){
+	make_table();
+	plot_timer();
+	plot_date();
+
+	for (i = 0; i<cal_type.length; i++){
+		calendar( cal_type[i][0], cal_type[i][1],cal_type[i][2], cal_type[i][3]);
+	}
+}
+
+function calendar(day,start_input, end_input, title){
+
+	var res = start_input.split(":");
+	var start = Math.round((parseInt(res[0]) + parseInt(res[1])/60)*100)/100;
+	res = end_input.split(":");
+	var end = Math.round((parseInt(res[0]) + parseInt(res[1])/60)*100)/100;
+	
+	var x = start*hour_length;
+	var y;
+
+	if(day == "M"){      var y = 100;
+	}else if(day=="Tu"){ var y = 200;
+	}else if(day=="W"){  var y = 300;
+	}else if(day=="Th"){ var y = 400;
+	}else if(day=="F"){  var y = 500;
+	}else if(day=="Sa"){ var y = 600;
+	}else if(day=="Su"){ var y = 700;
+	}else{ var y= 0;
+	}
+	var length = (end - start) * hour_length;
+	
+	ctx.fillStyle = "#f8f8f8";
+	ctx.fillRect( x, y, length, 60);
+	ctx.strokeStyle = "#8f2020";
+	ctx.strokeRect(x, y, length ,60);
+	
+	ctx.font = "14px Monospace";
+	ctx.fillStyle = "#000000";
+	ctx.textAlign = "center";
+	
+	ctx.fillText(title, x+length/2, y+60/2);
+	ctx.fillText(start_input, x+length/2, y+80/2);
+	ctx.fillText("- "+end_input, x+length/2, y+100/2);
+}
+
+function make_table(){
+	
+	ctx.font = "20px Monospace";
+	ctx.textAlign = "center";
+
+	ctx.fillStyle = "#000000";
+	ctx.strokeStyle = "#005f00";
+
+	var week = ["M","Tu","W","Th","F","Sa","Su"];
+	for (i = 1 ; i<=7; i++){
+		ctx.fillText( week[i-1], 30, i*100+60/2);
+
+		ctx.beginPath();
+		ctx.moveTo(   0, i*100+80);
+		ctx.lineTo(1600, i*100+80);
+		ctx.stroke();
+	}
+	for (i =1 ; i<= 24; i++){
+		ctx.fillText( i, i*hour_length, 60);
+
+		ctx.beginPath();
+		ctx.moveTo( i*hour_length, 50);
+		ctx.lineTo( i*hour_length, 1000);
+		ctx.stroke();
+	}
+}
+
+function plot_timer(){
+
+	var loc = -6; 
+	var src = '{{time}}';
+	src = src.replace (/&#39;/g, '');
+	var ss = src.split(",");
+
+	ss[0] = ss[0].replace (/\[/g, '');
+	ss[2] = ss[2].replace (/\]/g, '');
+
+	var h= parseInt(ss[0]) + loc;
+	if (h < 0){
+		h+=24;
+	}else if(h>24.0){
+		h-=24;
+	}
+	var m = parseInt(ss[1]);
+	var s = parseInt(ss[2]);
+
+	var disp = h + ":"+ m + ":" + s;
+	var timer = h + m/60;
+	var len = Math.round( (h+m/60) *hour_length);
+
+	ctx.fillText( "Now", len, 15);
+	ctx.fillText(  disp, len, 30);
+
+	ctx.strokeStyle = "#5f5f00";
+	ctx.lineWidth = 3;
+	ctx.beginPath();
+	ctx.moveTo(len, 35);
+	ctx.lineTo(len, 1000);
+	ctx.stroke();
+}
+
+function plot_date(){
+
+	var src= '{{date}}';
+	src = src.replace (/&#39;/g, '');
+	var ss = src.split(",");
+
+	ss[0] = ss[0].replace (/\[/g, '');
+
+	var d = 0
+	if (ss[0]  == "Mon"){     d = 1;
+	}else if(ss[0] == "Tue"){ d = 2;
+	}else if(ss[0] == "Wed"){ d = 3;
+	}else if(ss[0] == "Thu"){ d = 4;
+	}else if(ss[0] == "Fri"){ d = 5;
+	}else if(ss[0] == "Sat"){ d = 6;
+	}else if(ss[0] == "Sun"){ d = 7;
+	}else{ d = 8;}
+
+	ctx.fillStyle = "#000000";
+	ctx.font = "20px Monospace";
+	ctx.fillText(  "Today", 50, d*100+50/2);
+	ctx.strokeStyle = "#5f5f00";
+	ctx.beginPath();
+	ctx.moveTo(   0, d*100+80/2);
+	ctx.lineTo(1600, d*100+80/2);
+	ctx.stroke();
+}
+
+</script>
+</body>
+
+</html>
+
+
+
