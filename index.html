@@ -2,10 +2,23 @@
 <html>
 <head>
 <style>
+.head_frame {
+  width: 1100px;
+  border: 1px solid black;
+  padding: 10px;
+}
+.page_frame {
+  width: 1100px;
+}
 .frame {
   width: 1000px;
   padding: 50px;
   border: 1px solid black;
+}
+.title {
+	font-weight: bold;
+	font-size: 20px;
+	padding: 20px;
 }
 .scroller {
   width: 1820px;
@@ -14,19 +27,33 @@
   scrollbar-color: rebeccapurple green;
   scrollbar-width: thin;
 }
+h1, h2,h3,h4,h5,h6 {
+  display:inline;
+}
 </style>
 </head>
 
 <body>
+
+<div class="head_frame">
+<div style="display:inline;"><h2 style="font-size: 30px; font-family:'Comic Sans',cursive; text-align:center;">Koji Sunami</h2></div>
+<div style="text-align:right;padding:0px;">
+<a href="https://kojisunami.github.io/cv.pdf">CV</a>
+<a href="https://kojisunami.github.io/index.html">Top</a>
+<a href="https://kojisunami.github.io/life.html">Life</a>
+</div>
+</div>
+
+<div class="page_frame">
 <a href="#research">Research</a>
 <a href="#interest">Interest</a>
 <a href="#my_current_works">My Current Works</a>
 <a href="#my_works">My Works</a>
 <a href="#philosophy">Philosophy</a>
-<a href="#biography">Biography</a>
+<a href="#biography">Biography</a> 
+</div>
 
-<h2><b>Koji Sunami</b></h2>
-
+<br> <br>
 Hello, I am a third year graduate student (PhD candidate) in the math department of Kansas State University. 
 My major is mirror symmetry, and my minor is Lie algebra. <br>
 <br>
@@ -49,7 +76,7 @@ Mirror symmetry of a bounded derived categories of coherent sheaves of a cotange
 <div class="frame">
 <h2 id="interest"><b>Interest</b></h2>
 
-<b>Algebraic Geometry</b>
+<div class="title">Algebraic Geometry</div>
 <ul>
 	<li>I am interested in sheaf/category theory.
 For example, &eacutetale cohomology solved Weil conjecture and it defined &eacutetale homotopy group, that corresponds to Galois theory.
@@ -63,7 +90,7 @@ They also study Langlands program, K-theory and Picard sheaves etc.
 	</li>
 </ul>
 
-<b>Mirror Symmetry</b>
+<div class="title">Mirror Symmetry</div>
 <ul>
 	<li>Mirror symmetry is a correspondence of the Frobenius manifold of A-model and B-model by Barannikov morphism, where A-model studies 
 Gromov-Witten invariant, which is for quantum instaton, and B-model studies Period integral, which is for superconductivity.
@@ -71,7 +98,8 @@ We care Frobenius manifold because it is studied for quantum group and Stokes ma
 One of my current interests in mirror symmetry is geometric Langlands program representing Gauge theory N=4
 and its connection to SYZ conjecture and Higgs bundle through the language of derived algebraic geometry. </li>
 </ul>
-<b>Lie Algebra</b>
+
+<div class="title">Lie Algebra</div>
 <ul>
 	<li>I am interested in geometric Satake correspondence, which is the correspondence of 
 a category of D-module of Hecke categories and a category of representation of an algebraic group, which is partially proved 
@@ -81,7 +109,8 @@ and quantum Satake correspondecen e.g. representation of quadric and Spinor vari
 infinite-dimensional Lie algebra, and algebraic geometry(e.g. Calabi-Yau manifold), for A-model in mirror symmetry and crystal melting etc.
 	</li>
 </ul>
-<b>Geometry & Analysis & PDE & The Other</b>
+
+<div class="title">Geometry & Analysis & PDE & The Other</div>
 <ul>
 	<li>I am interested in Navier Stokes Equation with the relationships with statistical mechanics, 
 	(generalized)Calabi-Yau manifold, and infinite-dimensional Dynamical system.
@@ -95,23 +124,23 @@ tropical geometry(TCNN), image recognition, some of non-math hobbies(Link is Und
 <h2 id="my_current_works"><b>My Current Works</b></h2>
 
 <ul>
-<li><h3><b>Statistical Mechanics, Infinite-dimensional Lie algebra and Algebraic Geometry (Spring 2023)</b></h3>
+<li> <div class="title">Statistical Mechanics, Infinite-dimensional Lie algebra and Algebraic Geometry (Spring 2023)</div>
 Under Construction
 </li>
 
-<li><h3><b>Differential graded cateory and fields with one element (Spring 2023)</b></h3>
+<li> <div class="title">Differential graded cateory and fields with one element (Spring 2023)</div>
 Under Construction
 </li>
 
-<li><h3><b>Gauge Theory of Maxwell eq, Yang-Mill eq, Chern-Simon Theory (Spring 2023)</b></h3>
+<li><div class="title">Gauge Theory of Maxwell eq, Yang-Mill eq, Chern-Simon Theory (Spring 2023)</div>
 Under Construction
 </li>
 
-<li><h3><b>Vertex Operator Algebra and Moonshine (Spring 2023)</b></h3>
+<li><div class="title">Vertex Operator Algebra and Moonshine (Spring 2023)</div>
 Under Construction
 </li>
 
-<li><h3><b>Cluster algebra and Weyl group action and higher Teichm&uumlller Theory (Spring 2023)</b></h3>
+<li><div class="title">Cluster algebra and Weyl group action and higher Teichm&uumlller Theory (Spring 2023)</div>
 Under Construction
 </li>
 </ul>
@@ -121,7 +150,7 @@ Under Construction
 <h2 id="my_works"><b>My Works</b></h2>
 
 <ul>
-<li><h3><b>A-model, B-model, and mirror symmetry (Jan 19 2023)</b></h3>
+<li><div class="title">A-model, B-model, and mirror symmetry (Jan 19 2023)</div>
 I simply defined Frobenius manifold of A-model and B-model, and defined Barannikov morphism between them 
 to realize A/B-models are the dual notions.
 In A-model, we define Gromov-Witten invariant for the Kontsevich moduli space.
@@ -132,8 +161,7 @@ This script is for QE II major exam.  <br>
 <a href="https://kojisunami.github.io/qeii_major_koji_ver5.pdf">qe2 exam syllabus</a><br>
 </li>
 
-<li>
-<h3><b>Satake Isomorphism (Dec 3 2022)</b></h3>
+<li> <div class="title">Satake Isomorphism (Dec 3 2022)</div>
 Classical Satake isomorphism claims the spherical Hecke algebra (or double coset of algebraic group with p-adic number) 
 has a correspondece with a representation ring of the algebraic group, and it was first formulated to prove Kazhdan-Lustzig formula.
 Geometric Satake isomorphism is its generalization, where na&iumlvely we choose t-adic number in place of p-adic number to describe geometry,
@@ -147,13 +175,12 @@ This is for the talk in KU/KSU talk and Lie algebra(math814) final presentation.
 <a href="https://kojisunami.github.io/presentation-satake.pdf">presentation slide</a><br>
 </li>
 
-<li><h3><b>Toric variety and Mumford Degeneration (Oct 25 2022)</b></h3>
+<li><div class="title">Toric variety and Mumford Degeneration (Oct 25 2022)</div>
 This is for Junior M-seminar. <br>
 <a href="https://kojisunami.github.io/toric-ver5.pdf">my study note</a><br>
 </li>
 
-<li>
-<h3><b>Number theory with a view toward algebraic geometry (Oct 10 2022)</b></h3>
+<li><div class="title">Number theory with a view toward algebraic geometry (Oct 10 2022)</div>
 There is no solution of quitic polynomial by roots of unity, namely, finite nonabelian Galois extension is not solvable,
 but it's solvable by infinite abelian Galois extension. Consider that any polynomial of rational coefficient has a factorization
 over finite field, the polynomial can be further factorized to the p-adic field(Hensel's lemma). Note that p-adic field is 
@@ -164,14 +191,12 @@ and this helped to solve Weil conjecture by Deligne. This is for the talk for Gr
 <a href="https://kojisunami.github.io/etale-ver3.pdf">my study note</a><br>
 </li>
 
-<li>
-<h3><b>Brown Representability Theorem (Dec 2019)</b></h3>
+<li><div class="title">Brown Representability Theorem (Dec 2019)</div>
 Brown representability theorem is a representability of functor of triangulated category. This is for my senior thesis in UCSC. <br>
 <a href="https://kojisunami.github.io/brt.pdf">my study note</a><br>
 </li>
 
-<li>
-<h3><b>From Bernoulli Number, Prime Number Theorem to Riemann Hypothesis (May 2018)</b></h3>
+<li><div class="title">From Bernoulli Number, Prime Number Theorem to Riemann Hypothesis (May 2018)</div>
 I started from limited knowledge of college algebra and calculus 
 with some complex analysis to calculate analytic functions (e.g. Gamma function, Theta function, Riemann zeta function).
 Especially I realized analysis interesting because of relationship between atomic energy level, which is discrete, 
@@ -194,21 +219,21 @@ and I made this picture to predict our future math research in the 21st century.
 
 
 <div class="frame">
-<h2 id="biography"><b>Biography</b></h2>
-<b>Why did I start math?</b>
+<h2 id="biography"><div class="title">Biography</div></h2>
+<div class="title">Why did I start math?</div>
 <ul>
 <li>
 It's because math is freedom, and it is simple and it's a universal language of natural/social science, 
 and there is no scientific experiment in math which I am not good at.
 </li>
 </ul>
-<b>But how did I choose pure math instead of applied math?</b>
+<div class="title">But how did I choose pure math instead of applied math?</div>
 <ul>
 <li>
 For example, it's because my clam school teacher recommended EGA. The other things are Putnam competition and many other reasons. 
 </li>
 </ul>
-<b>What's your working ethics?</b>
+<div class="title">What's your working ethics?</div>
 <ul>
 <li>
 My main policy is lazy, concise, quick, and interesting. 
@@ -229,7 +254,7 @@ If we haven't published yet, we can always come back.
 Interstingness -- Saying "correct" or "smart" is a banal accolade, but saying "interesting" is the highest accolade. 
 </li>
 </ul>
-<b>What is your view toward proof?</b>
+<div class="title">What is your view toward proof?</div>
 <ul>
 <li>
 Proof is, no doubt, indispensable part of a theorem, but if somebody did give a proof already, we don't need to repeat again,
@@ -237,20 +262,20 @@ and we can treat as if each theorem is a blackbox acknowledging the result, whil
 (You don't need assembly programming, but you don't want to trust python programmar?)
 </li>
 </ul>
-<b>Are you confident for the future?</b>
+<div class="title">Are you confident for the future?</div>
 <ul>
 <li>
 I am quite optimistic about my life. I might be going to make several mistakes, but I eventually reach to whatever I want.
 I might be even confident of being a Fields medalist if the age restriction would be removed, and if I was immortal.
 </li>
 </ul>
-<b>What was the most difficult experience in math?</b>
+<div class="title">What was the most difficult experience in math?</div>
 <ul>
 <li>
 Hartshorne. I purchased Hartshorne when I was second year in undergraduate, and I took 5 or 6 years to finish.
 </li>
 </ul>
-<b>Is Hartshorne difficult?</b>
+<div class="title">Is Hartshorne difficult?</div>
 <ul>
 <li>
 Yes, but maybe it's because Hartshorne doesn't explain the background knowledge a lot.
@@ -262,7 +287,7 @@ Therefore, Hartshorne is equivalent to three of thick books, and it might requir
 If we don't like Hartshorne, Shafarevich works. Ravi Vakil is also great, but it has 1000 pages, so do you want to do that?
 </li>
 </ul>
-<b>Where to start algebraic geometry?</b>
+<div class="title">Where to start algebraic geometry?</div>
 <ul>
 <li>
 I personally recommend tropical geometry or toric variety,
@@ -270,7 +295,7 @@ since at its introductory level, it only requires classical algebraic variety bu
 For my case, in fact, I took algebraic geometry class in my grad school, and I didn't understand it until I studied something them.
 </li>
 </ul>
-<b>Anything outside of math?</b>
+<div class="title">Anything outside of math?</div>
 <ul>
 <li>
 I want to learn 3D printing and machine learning, and drawing comic with a pen-tablet, and any many other stuff, 
