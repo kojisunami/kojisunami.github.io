@@ -1,0 +1,57 @@
+#!/usr/bin/bash
+
+git add *
+#git add study_notes/physics_intro.pdf
+git status
+git commit -a -m "uploading"
+exit
+
+echo "hello"
+
+
+#sshpass -p 'ghostpigboke2378' 
+#scp cv-koji-2023.pdf life.html index.html ksunami@mathunix.math.ksu.edu:~/.html
+#scp life.html index.html ksunami@mathunix.math.ksu.edu:~/
+
+#scp index.html ksunami@publish.web.k-state.edu:~/dcm/www.math.ksu.edu/users/ksunami/public_html/
+#scp index.html ksunami@publish.web.k-state.edu:~/dcm/www.math.ksu.edu/users/ksunami/.html/
+
+FILE=index.html
+DIR=/public_html/
+DIR=/.html/
+
+#spawn scp study_notes/physics-intro.pdf ksunami@publish.web.k-state.edu:~/dcm/www.math.ksu.edu/users/ksunami/study_notes/
+
+
+
+if [ "$1" == "index.html" ] ; then
+expect -c "  
+spawn scp index.html ksunami@publish.web.k-state.edu:~/dcm/www.math.ksu.edu/users/ksunami/public_html/
+expect \"ksunami@publish.web.k-state.edu's password:\" 
+send \"dogcathorse2389\n\" 
+interact "
+
+expect -c "  
+spawn scp index.html ksunami@publish.web.k-state.edu:~/dcm/www.math.ksu.edu/users/ksunami/.html/
+expect \"ksunami@publish.web.k-state.edu's password:\" 
+send \"dogcathorse2389\n\" 
+interact "
+
+elif [[ "$1" == *.pdf ]] ; then
+expect -c "  
+spawn scp $1 ksunami@publish.web.k-state.edu:~/dcm/www.math.ksu.edu/users/ksunami/public_html/$1
+expect \"ksunami@publish.web.k-state.edu's password:\" 
+send \"dogcathorse2389\n\" 
+interact "
+
+else
+echo "nothing happens"
+fi
+
+#scp study_notes/* ksunami@publish.web.k-state.edu:~/dcm/www.math.ksu.edu/users/ksunami/public_html/study_notes/
+
+#ssh ksunami@publish.web.k-state.edu 
+#ssh ksunami@publish.web.k-state.edu "rm .html/index.html"
+#ssh ksunami@publish.web.k-state.edu "ls"
+
+
