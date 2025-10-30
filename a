@@ -4,6 +4,7 @@ git add *
 #git add study_notes/physics_intro.pdf
 git status
 git commit -a -m "uploading"
+git push origin master
 exit
 
 echo "hello"
