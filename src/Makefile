@@ -11,5 +11,5 @@ all: $(PROJECTS:%=%.pdf)
 
 
 clean :
-	rm *aux *bbl *bcf *blg *log *out *xml *pdf
+	rm *aux *bbl *bcf *blg *log *out *xml *pdf *fls *fdb_latexmk
 
