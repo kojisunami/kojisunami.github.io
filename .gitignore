@@ -1,0 +1,15 @@
+
+*.pdfsync
+*.swp
+
+# LaTeXの一時ファイル
+*.aux
+*.log
+*.toc
+*.out
+
+*.bbl
+*.bcf
+*.blg
+*.xml
+
