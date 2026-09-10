@@ -398,6 +398,11 @@ INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t2a.enc
 INPUT /home/k/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/larm1440.tfm
 INPUT /home/k/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
+INPUT /home/k/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/latt1000.tfm
+INPUT /home/k/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/lacc1000.tfm
 INPUT ainfty-geometry.aux
 INPUT ./ainfty-geometry.out
 INPUT ./ainfty-geometry.out
@@ -420,7 +425,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pf
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb
