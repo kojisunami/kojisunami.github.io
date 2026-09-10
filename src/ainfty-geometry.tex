@@ -1,22 +1,201 @@
 \documentclass{article}
 
+%
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{mathrsfs, mathtools, mathbbol}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+%
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{alphabeta}
 \usepackage{hyperref}
 
 \usepackage[backend=biber]{biblatex}
 \addbibresource{ainfty-geometry.bib}
 
 
-
-\title{$A_\infty$ Enhancement of Geometry}
 \author{Koji Sunami}
 
 \begin{document}
 
+
+\title{$A_\infty$ Enhancement of Geometry}
 \maketitle
+\newcommand*{\sheaf}{\mathscr}
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{example}[subsection]{Example}
+\newtheorem{note}[subsection]{Note}
+\newtheorem{remark}[subsection]{Remark}
+
+
+
+
+
 
 The proof of homological mirror symmetry conjecture is discussed from multi-dimensional perspective, 
 including counting Gromow-Witten invariant, or Balmer spectrum, while generalizing formal geometry 
 of non-unital $A_\infty$-algebra to $A_\infty$-category.
+
+
+
+
+
+
+
+
+\begin{definition} (Counital Coalgebra)\\
+Coalgebra $B$ is a graded vector space with morphism $\Delta:B\to B\otimes B$ s.t. 
+$(\Delta \otimes id)\circ \Delta = (id \otimes \Delta)\circ \Delta$ called coproduct,
+and counital coalgebra is coalgebra $B$ with unit $\epsilon:B\to 1$ where $1$ is the unit object of $\mathcal{C}$,
+satisfying $(\epsilon \otimes id)\circ \Delta = (id \otimes \epsilon)\circ \Delta$.
+Counital coalgebra $B$ is cofree counital coalgebra if it's given by $B=C(V)\cong T^c(V)$.
+\end{definition}
+
+
+\begin{definition} (A Non-Commutative Thin Scheme) \\
+A non-commutative thin scheme $X$ is a functor $X:Alg_{\mathcal{C}^f} \to Sets$, that is isomorphic to $X\cong Hom(-^*, B_X)$
+for some coalgebra $B_X$, where $\mathcal{C}^f$ is artinian category of finite dimensional objects in $\mathcal{C}$, 
+where $\mathcal{C}$ is $\mathbb{Z}$-graded vector spaces.
+In particular, $X$ is a non-commutative formal manifold, if the functor $X$ is isomorphic to some $Spc(T(V))$
+for a cofree counital tensor coalgebra $T(V)=\underset{\geqq 1}{\oplus}V^{\otimes n}$. The dimension of $X$ is defined as $dim_k V$.
+\end{definition}
+
+
+\begin{definition} (A Non-Commutative Thin DG-Scheme) \\
+A non-commutative thin dg-scheme is a pair $(X,d)$ where $X$ is a non-commutative thin scheme, and $d$ is a vector field on $X$
+of degree $+1$ satisfying bracket of dgla as $[d,d]=0$. This $d$ is called homological vector field.
+\end{definition}
+
+
+\begin{definition} (Non-Commutative Formal Pointed DG-Manifold) \\
+A non-commutative formal pointed dg-manifold is a pair $((X, x_0), d_X)$ such that $(X, x_0)$ 
+is a non-commutative formal pointed graded manifold, and $d_X$ is a homological vector field on $X$ such that $d_X|_{x_0} = 0$. 
+\end{definition}
+
+
+\begin{proposition} (Taylor Decomposition of Graded Vector Field) \\
+For the case of formal manifold $X$, let the corresponding cofree counital coalgebra be $B_X\cong T^c(V)$,
+and the homological vector field be coderivation $d_X:B_X\to B_X$, that can have restriction by cofreeness, thus by using projection,
+$\pi \circ d_X:B_X\to V[1]$. If in addition, $d_X$ can be decomposed degreewise for its linearity,
+as $d_X = \underset{n\geqq 1}{\Sigma} d_X^{(n)}$ for linear maps $d_X^{(n)}:V^{\otimes n}\to V[1]$.
+\end{proposition}
+
+
+\begin{definition} (Non-Unital $A_\infty$ Algebra) \\
+A non-unital $A_\infty$-algebra $A=(A,m_n)$ is a graded vector space $A$ and coherence condition $m_n: A^{\otimes n}\to A[2-n]$ 
+with Stasheff relation, whose geometric interpretation is the structure of a nc fp dg-manifold $((X, x_0), d_X)$ 
+together with a coalgebra isomorphism $B_X\cong T(T_{x_0}X)$ with $x_0:k\to B_X$.
+\end{definition}
+
+
+\begin{definition} (Structure of $A_\infty$ Algebra)\\
+The structure of $A_\infty$ Algebra on $V\in Ob(Vect_k^{\mathbb{Z}})$ is given by coderivation $d$ of degree $+1$ 
+of the non-counital cofree coalgebra $T_{+}(V[1]) = \underset{n\geqq 1}{\oplus}V^{\otimes n}$ s.t. $[d,d]=0$.
+\end{definition}
+
+
+\begin{proposition} (Stasheff Relation) \\
+The condition of nc fp dg-manifold $((X,x_0),d_X)$ derives Stasheff relation of the $A_\infty$ algebra,
+that is $m_n:= d_X^{(n)}$ for $m_n: A^{\otimes n}\to A$ s.t.
+$\underset{r+s+t=n}{\Sigma} (-1)^{r+st} m_{r+1+t} (id^{\otimes r} \otimes m_s \otimes id^{\otimes t})= 0$, whose degree is  $|m_n|=2-n$.
+The Taylor decomposition of homological vector field $\pi\circ d_X = \underset{n\geqq 1}{\Sigma} d_X^{(n)}$ is degreewise by linearity,
+as $d_X^{(n)}:B_X^{(n)} \to B_X^{(1)}$.
+\end{proposition}
+
+
+\begin{definition} (Non-Commutative Formal n-Pointed DG-Manifold) \\
+Nc formal $n$-pointed dg-manifold $(\mathcal{X}, d_{\mathcal{X}}, \{pt_i\})$ is nc formal graded dg-manifold $(\mathcal{X},d_{\mathcal{X}})$,
+and the points are $pt_i \in \mathcal{X} (k)$ for $1 \leqq i \leqq n$, and coderivation satisfies $d_{\mathcal{X}}|_{pt_i}=0$,
+$d_{\mathcal{X}}|_{TX_i}: TX_i \to  \underset{j,k}{\oplus} TX_j \oplus TX_k$ where $X_i$ is formal neighborhood of $X$ at $pt_i$.
+\end{definition}
+
+
+\begin{definition} ($A_\infty$-Category) \\
+$A_\infty$-category $\mathcal{A}$ is nc formal dg-manifold $(\mathcal{X}, d_{\mathcal{X}}, \{pt_i\})$
+with its coalgebra $B_{\mathcal{X}}\cong T^c (V[1])$. This $V$ has a decomposition $V= \underset{i,j}{\oplus} E_{ij}$,
+where $E_{ij}:= T(\widehat{X_i \times X_j}_{pt_i,pt_j})$.
+\end{definition} 
+
+
+\begin{remark} [] 
+This $V$ is a $k$-linear associative algebra generated from $k$-linear category $\mathcal{C}$: 
+let $Ob(\mathcal{C})=I$ to define an algebra $V= \oplus Hom(i,j)$ for $i,j\in I$ is a $k$-linear algebra
+with the unit $1_V = \underset{i\in I}{\Sigma} id_i$, where $\pi_i = id_i\in V$ is a commuting idempotent i.e. $\pi_i^2 = \pi_i$, 
+$\pi_i \pi_j = \pi_j \pi_i$. This makes homomorphism $k^I \to V$ of algebra with unit.
+\end{remark}
+
+
+\begin{proposition} (Stasheff Relation) \\
+From non-unital $A_\infty$ category $\mathcal{A}$, the coalgebra $d_{\mathcal{X}}: T^c (\oplus E_{ij}[1]) \to T^c (\oplus E_{ij}[1])$ 
+satisfies the Stasheff relation. Consider the tensor coalgebra can be given by the grading structure
+$T^c(\underset{1\leqq i,j\leqq n}{\oplus} E_{ij}[1]) = \underset{m\geqq 0}{\oplus} \underset{1\leqq i_0,i_1,i_2,\cdots i_m\leqq n}{\oplus}
+E_{i_0i_1} \otimes E_{i_1i_2} \otimes \cdots \otimes E_{i_{n-1}i_n} := \underset{m\geqq 0}{\oplus} B_{\mathcal{X}}^m$.
+From cofreeness of the coalgebra, the coderivation $d_{\mathcal{X}}$ canonically projected onto $\pi:B_{\mathcal{X}} \to B_{\mathcal{X}}^1$,
+and that can be decomposed linearwise, so $\pi \circ d_{\mathcal{X}} = \Sigma d_{\mathcal{X}}^n$ where
+$d_{\mathcal{X}}^n: B_{\mathcal{X}}^n \to B_{\mathcal{X}}^1$, and we have Stasheff relation from $[d_{\mathcal{X}}, d_{\mathcal{X}}]=0$,
+and $m_n := d_{\mathcal{X}}^n$.
+\end{proposition}
+
+
+\begin{remark} [ ]  
+$d_{\mathcal{X}}\circ \eta = 0$ implies $d_{\mathcal{X}}\circ \eta (1) = 0$ or $d_{\mathcal{X}} (1) = 0$. This means curvature is $m_0=0$.
+\end{remark}
+
+
+\begin{remark} [ ] 
+For the case of $I=\{i\}$ consists of one vertex, we write $d|_{pt} = d\circ \eta$.
+\end{remark}
+
+
+
+
+
+%\mathcal{}}$ with isomorphism $B_{\mathcal{X}}\cong T^c(Q[1])$ for a quiver
+%$Q=\underset{X,Y\in Ob(\mathcal{A})}{\oplus} Hom(X,Y)$ is a quiver, $T^c(Q[1])=\underset{n\geqq 0}{\oplus} Q[1]^{\otimes n}$
+%is cofree coassociative coalgebra, and source/target needs to be corresponding in this grading.
+%This $[1]:Q\to Q[1]=\underset{X,Y}{\oplus}Hom(X,Y)[1]$ is a morphism of shifting each direct summand $Hom(X,Y)$, which is a graded vector space.
+%The homological vector field $d_{\mathcal{X}}$ is a coderivation $d_{\mathcal{X}}: T^c(Q[1])\to T^c(Q[1])$ s.t. 
+%$[d_{\mathcal{X}}, d_{\mathcal{X}}] = 0$.
+%In particular if $\mathcal{A}$ consists one object $X$, $Q=Hom(X,X)$ is canonically non-unital $A_\infty$-algebra.
+%\end{definition}
+
+
+
+%\begin{definition} (The Structure of $U_f$) \\
+%To describe its structure of nc formal neighborhood $U_f = \hat{Map(X,Y)}_f$, this is nc formal pointed manifold pointed at $f\in Maps(X,Y)$,
+%whose corresponding $A_\infty$ algebra is $Center(f)=\underset{n\geqq 1}{\oplus} Hom(B_X^{\otimes n},B_Y)[n]$ as a graded vector space,
+%where $B_X$ and $B_Y$ are the corresponding $A_\infty$ algebra, 
+%and its Stasheff relation $(m_n)$ is derived from the homological vector field $d_Z$ where $Z=Hom(X,Y)$ s.t. $d_Z|_f = 0$,
+%and this gives rises to $d_Z = d_X \otimes 1_Y - 1_X \otimes d_Y$. To describe Stasheff relation $(m_n)$ from $d_Z$, 
+%$m_n(\phi_1,\cdots, \phi_n)(a_1,a_2,\cdots, a_N)=I+R$ for $\phi_1,\phi_2,\cdots, \phi_n\in Center(f)$ and $a_1,a_2,\cdots, a_N\in A$.
+%$I$ and $R$ are compositions of different tree diagrams to assign the partititon of $\phi_i$ and $a_j$ to define $m_n$,
+%and $I$ corresponds to the term $1_X\otimes d_Y$ in other words $d_Y\circ f$, and $R$ corresponds to the term $d_X\otimes 1_Y$.
+%Partitioning $1\leqq i_1 < i_2 < \cdots < i_n = N$, and $b_k = \phi_k(a_{i_{k-1}+1},\cdots, a_{i_k})\in B_Y$, 
+%whose composition is $m_n^B (b_1,\cdots, b_n)$, while the other partitioning $1\leqq j_1 < j_2 < \cdots < j_n = N$
+%defines $c_k =m_{j_k-j_{k-1}}^A(a_{j_{k-1}+1},\cdots, a_{j_k})\in B_X$, whose composition is $\phi_1(c_1,\cdots, c_n)\in B_Y$,
+%but $R$ appears only for $n=1$. Adding up the whole possibility of partitioning defines $I$ and $R$ respectively to define $m_n$.
+%\end{definition}
+%
+%
+%\begin{proposition} (Stasheff Relation) \\
+%$m_n$ satisfies Stasheff relation.
+%$[d_{\mathcal{X}}, d_{\mathcal{X}}] = 0$ makes $[\pi\circ d_{\mathcal{X}}, \pi\circ d_{\mathcal{X}}] = 0$,
+%equivalently $[\underset{n\geqq 1}{\Sigma} m_n, \underset{n\geqq 1}{\Sigma} m_n]=0$.
+%The proof is the same as $A_\infty$ algebra case.
+%\end{proposition}
+
+
+
+For the case of infinite objects $A_\infty$ category is its inductive limit of finite objects.
+
+
+
+
+
 
 
 
