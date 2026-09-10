@@ -12,6 +12,6 @@
 *.bcf
 *.blg
 *.xml
-*.fdb_latexml
-*.fls
+*.fdb_latexmk
+*.flsK
 
