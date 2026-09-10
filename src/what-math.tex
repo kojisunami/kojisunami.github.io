@@ -1,16 +1,18 @@
 \documentclass{article}
 
 \usepackage{hyperref}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{what-math.bib}
 
-\title{$A_\infty$ Enhancement of Geometry}
+\title{What is Math?}
 \author{Koji Sunami}
 
 \begin{document}
 
 \maketitle
 
-\bibliographystyle{plain}
-\bibliography{ainffty-enhancement-geometry-references}
+\nocite{*}
+\printbibliography
 
 \end{document}
 

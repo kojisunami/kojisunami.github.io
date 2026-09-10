@@ -3,10 +3,12 @@ PROJECTS = ainfty-geometry dgla-stack dt-moduli  what-math
 all: $(PROJECTS:%=%.pdf)
 
 %.pdf : %.tex 
-	pdflatex $*
-	@if [ -f $*.bib ]; then biber $*; fi
-	pdflatex $*
-	pdflatex $*
+	latexmk -pdf $<
+#	pdflatex $*
+#	@if [ -f $*.bib ]; then biber $*; fi
+#	pdflatex $*
+#	pdflatex $*
+
 
 clean :
 	rm *aux *bbl *bcf *blg *log *out *xml *pdf
