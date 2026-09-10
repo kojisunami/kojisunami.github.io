@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<!--Generated on Thu Sep 10 01:35:57 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document">
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold" style="font-size:144%;">Koji Sunami</span>
+   <a href="https://kojisunami.github.io/index.html" title="" class="ltx_ref ltx_href ltx_font_bold">Top</a>
+  <a href="https://kojisunami.github.io/random-thoughts.html" title="" class="ltx_ref ltx_href ltx_font_bold">Random Thoughts</a>
+  <a href="https://kojisunami.github.io/misc.html" title="" class="ltx_ref ltx_href ltx_font_bold">Misc</a>
+  <a href="https://kojisunami.github.io/cv-koji.pdf" title="" class="ltx_ref ltx_href ltx_font_bold">CV</a></p>
+</div>
+<div id="p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_rule" style="width:433.6pt;height:0.4pt;background:black;display:inline-block;"> </span></p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">In this page, we’ll introduce many other non-math general stuffs. Some of them are my essays.</p>
+</div>
+<div id="p4" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_rule" style="width:433.6pt;height:0.4pt;background:black;display:inline-block;"> </span></p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Web Development With Latex</span></p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">I use Latex and github to design this website, and I’ll talk about the construction howto of the environment.
+The Latex compiler I’m using is Latexmlc, that outputs .html files from .tex file,
+while its CLI automation of the uploading files is done by github. The whole automation procedure is programmed on its Makefile given below:</p>
+</div>
+<div id="p7" class="ltx_para">
+<pre class="ltx_verbatim ltx_font_typewriter">
+all: index.html random-thoughts.html cv-koji.pdf
+
+index.html : index.tex style.css
+    latexmlc index.tex --dest=index.html
+
+misc.html : misc.tex style.css
+    latexmlc misc.tex --dest=misc.html
+
+random-thoughts.html : random-thoughts.tex style.css
+    latexmlc random-thoughts.tex --dest=random-thoughts.html  --css=style.css
+
+cv-koji.pdf: cv-koji.tex
+    pdflatex cv-koji.tex
+
+run:
+    git add .
+    git status
+    git commit -a -m "uploading"
+    git push origin master
+</pre>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">For generating pdf files of research_notes or expositions, Makefile can automate the compilation works,
+so I’ll introduce this together with html compilation.
+The following code is automating all repeating process in each project:</p>
+</div>
+<div id="p9" class="ltx_para">
+<pre class="ltx_verbatim ltx_font_typewriter">
+PROJECTS = projectA projectB projectC
+
+all: $(PROJECTS:%=%.pdf)
+
+%.pdf: %.tex
+    pdflatex $*
+    biber $*
+    pdflatex $*
+    pdflatex $*
+
+run:
+    mv ./*pdf ../study_notes/
+</pre>
+</div>
+<div id="p10" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_rule" style="width:433.6pt;height:0.4pt;background:black;display:inline-block;"> </span></p>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Algorithm of Finding University That Fits You</span></p>
+</div>
+<div id="p12" class="ltx_para">
+<p class="ltx_p">Searching new environment that fits us isn’t easy, but making database of professors and their research interests
+will help our future career selection. There’s already mathjobs.org for postdoc jobs,
+but there seems to be no equivalent for the PhD admission, and I use python code with OpenAlex.
+OpenAlex is a web database of academic network, where we can search the name of professors and their profile,
+including their research papers and their coauthors, and we can use it from python library called pyalex from an automated way.</p>
+</div>
+<div id="p13" class="ltx_para">
+<p class="ltx_p">The procedure of finding the list of professors relevant to my interest is to find coauthor of my current advisor Yan Soibelman,
+so I’ll search the profile of my advisor by using pyalex library to extract all of his coauthors.
+In addition, once we find his coauthors, we’ll find coauthors of coauthors. This is Erdos number 2.</p>
+</div>
+<div id="p14" class="ltx_para">
+<pre class="ltx_verbatim ltx_font_typewriter">
+from pyalex import Authors, Works
+import csv
+import os
+
+#name = input(": ")
+name = "Yan Soibelman"
+
+def find_coauthor (name):
+    author = Authors().search(name).get()[0]
+
+     coauthors = set()
+
+    for work in Works().filter(
+        authorships={"author": {"id": author["id"]}}
+    ).get():
+        for a in work["authorships"]:
+            if a["author"]["id"] != author["id"]:
+                coauthors.add(a["author"]["display_name"])
+
+    print(f"\n{author[display_name]} Coauthor:")
+
+    #for name in sorted(coauthors):
+    #    print(name)
+    return sorted(coauthors)
+
+
+# find and make list of professors
+names = []
+for name in find_coauthor(name):
+    #print (find_coauthor(name))
+    names.extend(find_coauthor(name))
+
+
+# eliminate double counting from the list
+names = list (dict.fromkeys(names))
+
+
+# export data in csv
+filename = "coauthors.csv"
+i = 1
+while os.path.exists(filename):
+    filename = f"coauthors{i}.csv"
+    i += 1
+
+with open(filename, "w", newline="", encoding="utf-8") as f:
+    writer = csv.writer(f)
+    for name in names:
+        writer.writerow([name])
+</pre>
+</div>
+<div id="p15" class="ltx_para">
+<p class="ltx_p">Now once we have created the list of professors, we’ll type each of their names with pyalex and gain a profile
+about the name of the university they belong, research interests, and the title of top 3 most cited research papers respectively.
+Once we finish collecting the data, we’ll output in csv. Here is another python code beginning from the professors’s name list:</p>
+</div>
+<div id="p16" class="ltx_para">
+<pre class="ltx_verbatim ltx_font_typewriter">
+from pyalex import Authors, Works
+import csv
+import os
+## search the information of professors
+def info_professor(name) :
+    author = Authors().search(name).get()[0]
+    institutions = author["last_known_institutions"]
+    university = institutions[0]["display_name"] if institutions else "NONE"
+
+    topics = author["topics"][:3]
+    topic_names = [t["display_name"] for t in topics]
+
+    #
+    works = Works().filter( author={"id": author["id"]}).sort(cited_by_count="desc").get()
+    top_papers = works[:3]
+
+    paper_names = [
+        f"{w[title]} ({w[cited_by_count]} citations)"
+        for w in top_papers
+    ]
+
+    return [author, institutions, university, " ".join(topic_names), "\n".join(paper_names)]
+
+# Run functions
+list_profile = []
+for name in names:
+    list_profile.append(info_professors(name))
+
+
+# export data in csv
+filename = "coauthors_profile.csv"
+i = 1
+while os.path.exists(filename):
+    filename = f"coauthors_profile{i}.csv"
+    i += 1
+
+with open(filename, "w", newline="", encoding="utf-8") as f:
+    writer = csv.writer(f)
+    for profile in list_profile:
+        writer.writerow([profile])
+</pre>
+</div>
+<div id="p17" class="ltx_para">
+<p class="ltx_p">Note finally in my environment (Debian WSL on Windows 11), the following commands seemed to be needed to run the python code:</p>
+</div>
+<div id="p18" class="ltx_para">
+<pre class="ltx_verbatim ltx_font_typewriter">
+sudo apt install python3-venv
+pip install pyalex
+</pre>
+</div>
+<div id="p19" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_rule" style="width:433.6pt;height:0.4pt;background:black;display:inline-block;"> </span></p>
+</div>
+<div id="p20" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">How to Find Jobs</span></p>
+</div>
+<div id="p21" class="ltx_para">
+<p class="ltx_p">First of all, I realized the existence of GTA job in US institute as PhD,
+because my professor recommended reading ”A Mathematician’s Survial Guide”
+<a href="https://www.amazon.com/Mathematicians-Survival-Guide-Graduate-Development/dp/082183455X" title="" class="ltx_ref ltx_href">https://www.amazon.com/Mathematicians-Survival-Guide-Graduate-Development/dp/082183455X</a>
+during my undergraduate.
+This book tells us not only the academic system involving qualifying exams and thesis defense,
+but including PhD admission and postgraduation career path. I became interested in becoming PhD student partly because of this.
+There is also a free online link ”Postdoc Career Advice”
+<a href="https://math.ou.edu/%20kmartin/career-ad.html" title="" class="ltx_ref ltx_href">https://math.ou.edu/ kmartin/career-ad.html</a>.</p>
+</div>
+<div id="p22" class="ltx_para">
+<p class="ltx_p">On the other hand,
+in case we will drop out from PhD and in case we will not be able to find a job that is related to our specialization,
+there’s still tons of moderately paid good jobs like fisherman for hand-to-mouth.
+Data Annotation https://dataannotation.tech (there are many other good sites) introduces part-time employment on online platform,
+where its duty is typically judging and fixing the error of AI decision by human critical thinking.
+Data Annotation introduces many data science but in particular, it introduces job for math proof judging, or if you are bilingual,
+I’d recommend translation of technical terms on online platform as a part-time job.
+There’s tons of stuffs that AI cannot accurately translate, so pay is good.</p>
+</div>
+<div id="p23" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_rule" style="width:433.6pt;height:0.4pt;background:black;display:inline-block;"> </span></p>
+</div>
+<div id="p24" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Philosophy Of Research</span></p>
+</div>
+<div id="p25" class="ltx_para">
+<p class="ltx_p">The goal of my research is not only to prove something but to make it user friendly, so we can actively think about it.
+If we encounter to the theorem, the theorem should give us new inspiration to make something new like a new conjecture
+or cultivating curiosity to another, and it’s not only its easiness of interpretation.
+I’d like to avoid ”so what” argument all the cost for people of any background,
+and my project is typically goal oriented when doing pure math, and I don’t like titling ”introduction to something”,
+because what we gain is knowledge not the speculation.
+As Sophie’s World says ”The only way we can find meaning in life is through philosophizing.”</p>
+</div>
+<div id="p26" class="ltx_para">
+<p class="ltx_p">why category why algebraic geomettry what geometry why algebra?</p>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Thu Sep 10 01:35:57 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

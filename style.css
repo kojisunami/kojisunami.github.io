@@ -1,0 +1,16 @@
+body {
+    width: 100%;
+    max-width: 800px;
+}
+
+verbatim {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+  font-family: monospace;
+  line-height: 1.4;
+}
+
+
