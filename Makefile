@@ -1,18 +1,22 @@
+HTML_PROJECTS = index random-thoughts misc
+PDF_PROJECTS = cv-koji
 
+.PHONY: all src
 
-all: index.html random-thoughts.html misc.html cv-koji.pdf
+all: $(HTML_PROJECTS:%=%.html) $(PDF_PROJECTS:%=%.pdf) src
 
-index.html : index.tex 
-	latexmlc index.tex --dest=index.html --css=style.css
+%.html : %.tex 
+	latexmlc $< --dest=$@ --css=style.css
 
-misc.html : misc.tex 
-	latexmlc misc.tex --dest=misc.html --css=style.css
+%.pdf: %.tex
+	pdflatex $*
 
-random-thoughts.html : random-thoughts.tex
-	latexmlc random-thoughts.tex --dest=random-thoughts.html --css=style.css
+src:
+	make -C src
 
-cv-koji.pdf: cv-koji.tex
-	pdflatex cv-koji.tex
+clean:
+	rm *aux *log *out
+	make -C src clean
 
 debug:
 	git add .

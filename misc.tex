@@ -23,19 +23,25 @@ The Latex compiler I’m using is Latexmlc, that outputs .html files from .tex f
 while its CLI automation of the uploading files is done by github. The whole automation procedure is programmed on its Makefile given below:
 
 \begin{verbatim}
-all: index.html random-thoughts.html cv-koji.pdf
+HTML_PROJECTS = index random-thoughts misc
+PDF_PROJECTS = cv-koji
 
-index.html : index.tex style.css
-    latexmlc index.tex --dest=index.html
+.PHONY: all src
 
-misc.html : misc.tex style.css
-    latexmlc misc.tex --dest=misc.html
+all: $(HTML_PROJECTS:%=%.html) $(PDF_PROJECTS:%=%.pdf) src
 
-random-thoughts.html : random-thoughts.tex style.css
-    latexmlc random-thoughts.tex --dest=random-thoughts.html  --css=style.css
+%.html : %.tex
+    latexmlc $< --dest=$@ --css=style.css
 
-cv-koji.pdf: cv-koji.tex
-    pdflatex cv-koji.tex
+%.pdf: %.tex
+    pdflatex $*
+
+src:
+    make -C src
+
+clean:
+    rm *aux *log *out
+    make -C src clean
 
 run:
     git add .
@@ -44,23 +50,22 @@ run:
     git push origin master
 \end{verbatim}
  
-Continuing from html compilation with Makefile, Makefile can automate the compilation to generate pdf files of research_notes or expositions, 
-The following code compiles each project on "PROJECTS" respectively.
-The reason why I use pdflatex 3 times is bibtex and maketitle issue:
+Continuing from the main html web page, I separated some exposition pdf files on src/ directory where there is another Makefile linked
+as follows:
 
 \begin{verbatim}
-PROJECTS = projectA projectB projectC
-
+PROJECTS = ainfty-geometry dgla-stack dt-moduli  what-math
+.PHONY: all
 all: $(PROJECTS:%=%.pdf)
 
-%.pdf: %.tex
+%.pdf : %.tex
     pdflatex $*
     biber $*
     pdflatex $*
     pdflatex $*
 
-run:
-    mv ./*pdf ../study_notes/
+clean :
+    rm *aux *bbl *bcf *blg *log *out *xml
 \end{verbatim}
 
 

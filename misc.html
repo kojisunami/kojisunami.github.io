@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>Untitled Document</title>
-<!--Generated on Thu Sep 10 01:35:57 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Generated on Thu Sep 10 23:44:20 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-article.css" type="text/css">
@@ -16,7 +16,6 @@
 <div id="p1" class="ltx_para ltx_noindent">
 <p class="ltx_p"><span class="ltx_text ltx_font_bold" style="font-size:144%;">Koji Sunami</span>
    <a href="https://kojisunami.github.io/index.html" title="" class="ltx_ref ltx_href ltx_font_bold">Top</a>
-  <a href="https://kojisunami.github.io/random-thoughts.html" title="" class="ltx_ref ltx_href ltx_font_bold">Random Thoughts</a>
   <a href="https://kojisunami.github.io/misc.html" title="" class="ltx_ref ltx_href ltx_font_bold">Misc</a>
   <a href="https://kojisunami.github.io/cv-koji.pdf" title="" class="ltx_ref ltx_href ltx_font_bold">CV</a></p>
 </div>
@@ -39,19 +38,25 @@ while its CLI automation of the uploading files is done by github. The whole aut
 </div>
 <div id="p7" class="ltx_para">
 <pre class="ltx_verbatim ltx_font_typewriter">
-all: index.html random-thoughts.html cv-koji.pdf
+HTML_PROJECTS = index random-thoughts misc
+PDF_PROJECTS = cv-koji
 
-index.html : index.tex style.css
-    latexmlc index.tex --dest=index.html
+.PHONY: all src
 
-misc.html : misc.tex style.css
-    latexmlc misc.tex --dest=misc.html
+all: $(HTML_PROJECTS:%=%.html) $(PDF_PROJECTS:%=%.pdf) src
 
-random-thoughts.html : random-thoughts.tex style.css
-    latexmlc random-thoughts.tex --dest=random-thoughts.html  --css=style.css
+%.html : %.tex
+    latexmlc $&lt; --dest=$@ --css=style.css
 
-cv-koji.pdf: cv-koji.tex
-    pdflatex cv-koji.tex
+%.pdf: %.tex
+    pdflatex $*
+
+src:
+    make -C src
+
+clean:
+    rm *aux *log *out
+    make -C src clean
 
 run:
     git add .
@@ -61,24 +66,23 @@ run:
 </pre>
 </div>
 <div id="p8" class="ltx_para">
-<p class="ltx_p">For generating pdf files of research_notes or expositions, Makefile can automate the compilation works,
-so I’ll introduce this together with html compilation.
-The following code is automating all repeating process in each project:</p>
+<p class="ltx_p">Continuing from the main html web page, I separated some exposition pdf files on src/ directory where there is another Makefile linked
+as follows:</p>
 </div>
 <div id="p9" class="ltx_para">
 <pre class="ltx_verbatim ltx_font_typewriter">
-PROJECTS = projectA projectB projectC
-
+PROJECTS = ainfty-geometry dgla-stack dt-moduli  what-math
+.PHONY: all
 all: $(PROJECTS:%=%.pdf)
 
-%.pdf: %.tex
+%.pdf : %.tex
     pdflatex $*
     biber $*
     pdflatex $*
     pdflatex $*
 
-run:
-    mv ./*pdf ../study_notes/
+clean :
+    rm *aux *bbl *bcf *blg *log *out *xml
 </pre>
 </div>
 <div id="p10" class="ltx_para ltx_noindent">
@@ -206,6 +210,8 @@ with open(filename, "w", newline="", encoding="utf-8") as f:
 <div id="p18" class="ltx_para">
 <pre class="ltx_verbatim ltx_font_typewriter">
 sudo apt install python3-venv
+python3 -m venv .venv
+source .venv/bin/activate
 pip install pyalex
 </pre>
 </div>
@@ -256,7 +262,7 @@ As Sophie’s World says ”The only way we can find meaning in life is through 
 </article>
 </div>
 <footer class="ltx_page_footer">
-<div class="ltx_page_logo">Generated  on Thu Sep 10 01:35:57 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Thu Sep 10 23:44:20 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer>
 </div>
 </body>
