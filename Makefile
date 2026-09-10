@@ -9,13 +9,13 @@ all: $(HTML_PROJECTS:%=%.html) $(PDF_PROJECTS:%=%.pdf) src
 	latexmlc $< --dest=$@ --css=style.css
 
 %.pdf: %.tex
-	pdflatex $*
+	pdflatex $<
 
 src:
 	make -C src
 
 clean:
-	rm *aux *log *out
+	rm *aux *log *out *pdf
 	make -C src clean
 
 debug:

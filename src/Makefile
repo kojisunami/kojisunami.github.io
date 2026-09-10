@@ -4,10 +4,10 @@ all: $(PROJECTS:%=%.pdf)
 
 %.pdf : %.tex 
 	pdflatex $*
-	biber $*
+	@if [ -f $*.bib ]; then biber $*; fi
 	pdflatex $*
 	pdflatex $*
 
 clean :
-	rm *aux *bbl *bcf *blg *log *out *xml
+	rm *aux *bbl *bcf *blg *log *out *xml *pdf
 
