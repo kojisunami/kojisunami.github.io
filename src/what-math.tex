@@ -1,6 +1,10 @@
 \documentclass{article}
 
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
 \usepackage{hyperref}
+\usepackage{amsmath}
 \usepackage[backend=biber]{biblatex}
 \addbibresource{what-math.bib}
 
@@ -12,10 +16,153 @@
 \maketitle
 
 
+\section {Approximation}
+
+One says all math is meaningless because numerical approximation.
+But math is the same as science, it is an activity of extracting natural law.
+
+Line and Triangle \\
+There's probably many people, who are wondering what math really is.
+It's probably an activity of extracting new structure from the natural world.
+To understand the structure of the natural world,
+perhap we could start from triangle (point, line, triangle, and n-tetrahedron), probably the most well-known shape,
+and finding invariants to discuss the relationship with the real world. \\
+
+One thing is simplicial homology. A triangle consists of 3 vertex, 3 edges, and 1 face, 
+and any 2-dimensional polygon has a subdivision to the union of triangles, which is triangulation in other words.
+It calculates topological invariants, in parcticular, Euler characteristics and orientability. \\
+
+Adding cartesian product to simplicial homology makes still simplicial complex.
+Especially an cartesian product with a line becomes a cylinder (precisely it happens in singular homology), whose crashing one side is a cone.
+This operation makes triangulated category. \\
+
+Or if the line $[0,1]$ is replaced by an affine line $\mathbb{A}^1$, which corresponds to $k[x]$ algebraic geometrically,
+the cartesian product $\mathbb{A}^n$ is fiber product $\mathbb{A}^n \otimes_{\mathbb{A}^{n-1}} \mathbb{A}^n$,
+algebraically  $k[x]^n \otimes_{k[x]^{n-1}} k[x]^n$. This creates standard resolution.
+
+Any geometries seem to be approximated by some simplices.
+Does research stop here??
+
+Perhaps, imagining computer vision analysis, a collection of the finite distinct points on an Euclidean space 
+is a connected component of the image by topological data analysis.
+
+
+Does research stop here??
+
+
+Linear Algebra \\
+Any $n\times n$ matrices have a diagonalization by numerical approximation,
+by slightly deforming the coefficients so to have distinct roots of the characteristic polynomial.
+so for case of numerical approximation, Jordan form doesn't seem to be neccesary.
+
+
+Calculus \\
+One of the applications of calculus is numerical approximation using Newton's method to find the roots of polynomials 
+and more generally any differentiable functions. There is an easy generalization to the multi-variate case, 
+in particular any differetiable functions on complex planes.
+
+
+
+
+\section {Structure and Symmetry}
+
+Anyways, is the study of math simply the study of finding the more efficient algorithms for the sake of computations?
+I personally believe The pure math has a different direction, and it is a process of finding a structure,
+while what computation means already assuming what the structure is.   \\
+
+What is "structure"? When we learn structure, we are not making the world easier,
+or if we believe it's easier, it's simply done by our knowledge. It's just a transition of perspective
+(if there is any terrible experience, is this a knowledge that we can forget?
+Knowledge is a data that CPU can machinery interpret. Our experience isn't data, since our brain isn't CPU).
+By outcome of transition of perspective, solving problem and making new theorem perhaps becomes more difficult, 
+since apparantly modern math is more difficult than math in ancient Greek.
+If the goal of math is to solve it, what we have done is quite ridiculous. 
+In below, I'll try to explain some examples from my experience. \\
+
+Perhaps, the journey of pure math begins with linear algebra, initially solves a system of equations,
+representation theory $\rho: G\to GL_n$ maps any math objects to represent in linear algebra. 
+In particular, if an element can be mapped to the Jordan form, computing Jordan block is a combinatorial problem
+(module is called module because k[x]-module computes Jordan form, where Jordan block literally counts like Lego block?),
+while the question is to discuss the meaning of the operations. 
+In particular, if there's any redundancy counting as Maschke's theorem or in some geometric interpretation using GIT quotient of $GL_n$,
+or its algebraic geometry enhancement is Hilbert scheme? Nilpotency of Jordan form in abstract algebra?
+This kind of activity is called pure math. \\
+
+Let's consider another example. A Galois theory proved unsolvability of quintic equation by unsolvability 
+(non-existence of proper normal subgroup) of an alternate group A5, meaning of the non-existence of the solution by roots of unity.
+Adding few more interpretations that enables to solve it, However.
+One thing is that p-adic henselization by putting the quintic equation over the field of finite characteristic p for some prime p, 
+assuming all the coefficients are integers.
+Meanwhile, another solution of the quintic is done by stereographic projection of icosahedron and its rotation, 
+whose symmetry is $PSL_2(\mathbb{C})$, which generates J-invariants, 
+whose moduli space corresponds to the moduli space of coefficients of the quintic.
+In summary, these two solutions depends on an infinite order p-adic abelian group and a finite order nonabelian group,
+and perhaps these two notions might have some relationships. This is anabelian geometry or p-adic Hodge theory. \\
+
+
+Another problem is geometry, but the question is what really is.
+homology or cohomology might be the tools of computation but can merely calculate Euler characteristic and few invariants,
+and missing many data that the geometry originally has.
+The spontaneous question is if there's any inverse relationship?
+If we are doing analysis, the solution space of non-linear PDE generates another geometry, which in particular is Floer or Kuranishi structure,
+which is often more intricated than the original geometry, and its homology can evaluate something more than the homology of the original one.
+Or in algebraic geometry, moduli space of some algebraic variety contains more than itself,
+or the futher generalization is category theory: these are not necessarily making something big,
+the important problem is algebraic variety and manifold, and stack, orbifold, infty-groupoid or any other generalization is rather a substitute.
+
+
+
+\section {My Biography}
+
+This is my personal biography, but I started doing math from the millenium problems of Clay Math Institute in undergraduate.
+I set the level of difficulty of understanding the problem statements based on my intuition.
+
+\begin{itemize}
+\item P=NP Problem (difficulty: $\bigstar\bigstar\bigstar$) \\
+idk
+
+\item Yang-Mill Mass Gap (difficulty: $\bigstar\bigstar\bigstar$) \\
+Yang-Mill Mass Gap is originated from gauge theory in math physics.
+The mass gap means that the total mass of quarks is different from that of proton/neutron,
+and this energy appears in nuclear reaction, even though total amount of quarks doesn't change by the reaction!
+One points out there're some attempts by lattice gauge theory or OPE of CFT.
+
+\item Hodge Conjecture (difficulty: $\bigstar\bigstar$) \\
+An algebraic variety can be described by homology/cohomology with Hodge decomposition, which isn't difficult,
+but its inverse problem is difficult.
+
+\item Poincare Conjecture (difficulty: $\bigstar\bigstar$) \\
+This involves the notion of manifold, so the level of difficulty is higher than Navier-Stokes.
+This is an simple extension of Hamiltonian flow, but the notion of flow itself isn't very difficult.
+Consider that an manifold doesn't have a shape as a topological space, as long as the metric isn't defined.
+Now if the Riemannian metric changes time-dependent, the shape will change; this is the notion of flow.
+The questions is that the flow could make some singularity in the geometry, 
+and Perelman's technique is to resolve it differential geometrically.
+
+\item Navier Stokes Equation (difficulty: $\bigstar$) \\
+Navier Stokes Equation is simply a multi-variate calculus, so the difficulty is equivalent to Riemann Hyopthesis.
+Ladychenzkaya solved 2d NSE and 2.5d NSE using functional analysis, but 3d NSE hasn't been proved.
+If anticipating algebra instead of functinal analysis, consider CFT lower-bound derives relativistic NSE, which makes ordinary NSE.
+Perhaps NSE might be quantization or deformation problem.
+
+\item Riemann Hypothesis (difficulty: $\bigstar$) \\
+If Riemann Hypothesis might be an simple extension of prime number theorem,
+it is probably the easiest to access, if we can understand the basic calculus, assuming any 1-dimensional complex analysis is 
+equivalent to 1-dimensional lower-division calculus, where we can see the zeta function and gamma function.
+However, if we have already known algebraic geometry, Weil conjecture proves the analogue of Riemann Hypothesis.
+\end{itemize}
+
+
+
+
 
 
 \nocite{*}
 \printbibliography
 
 \end{document}
+
+
+
+
 
