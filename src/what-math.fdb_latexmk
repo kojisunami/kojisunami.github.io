@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber what-math"] 1789124881.5126 "what-math.bcf" "what-math.bbl" "what-math" 1789171923.48076 0
-  "what-math.bcf" 1789171923.41659 108556 bd073da540b78e90ab0f3ba47b1f21ea "pdflatex"
+["biber what-math"] 1789124881.5126 "what-math.bcf" "what-math.bbl" "what-math" 1789267083.04369 0
+  "what-math.bcf" 1789267082.98655 108556 bd073da540b78e90ab0f3ba47b1f21ea "pdflatex"
   "what-math.bib" 1789073422.17357 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
   "what-math.bbl"
   "what-math.blg"
   (rewritten before read)
-["pdflatex"] 1789171922.74208 "what-math.tex" "what-math.pdf" "what-math" 1789171923.48114 0
+["pdflatex"] 1789267082.39553 "what-math.tex" "what-math.pdf" "what-math" 1789267083.04405 0
   "/etc/texmf/web2c/texmf.cnf" 1769424892.38577 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -44,6 +44,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
@@ -112,11 +113,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1741904018 41538 c016915c1d51223b6dbbfe27341748a8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1769426689 5467255 9a64d1b40e0b893fc5588ecce9d8accf ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1769426896 3348445 41607985cb8127f67de1e4b742144da0 ""
-  "what-math.aux" 1789171923.41659 665 1b0a413da40732dcc1b7a2ff87c7ff18 "pdflatex"
+  "what-math.aux" 1789267082.98255 665 1713169dbeebb8589ba3078d596291ec "pdflatex"
   "what-math.bbl" 1789124883.20832 466 76d65a242ec496c9b4361af646ff12cb "biber what-math"
-  "what-math.out" 1789171923.41659 408 ebcc8d236726ec2ce9f893ad0ffea50c "pdflatex"
-  "what-math.run.xml" 1789171923.42059 2339 39eb9f1cd602f96ebde628c496ab36f1 "pdflatex"
-  "what-math.tex" 1789171919.09659 9574 8b5b700b513d5754fa14e661362e1419 ""
+  "what-math.out" 1789267082.98255 408 ebcc8d236726ec2ce9f893ad0ffea50c "pdflatex"
+  "what-math.run.xml" 1789267082.98655 2339 39eb9f1cd602f96ebde628c496ab36f1 "pdflatex"
+  "what-math.tex" 1789267080.99455 10482 9cbc6446189346b6163d67f96a56b2e1 ""
   (generated)
   "what-math.aux"
   "what-math.bcf"

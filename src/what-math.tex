@@ -16,59 +16,61 @@
 \maketitle
 
 
-In this pdf, I'll discuss numerical approximation view point of math, and symmetric structural view point of math,
-and finally I'll introduce where is a reasonable place to start math.
-The goal of paper is recall for everybody including experts and beginners why math is needed, especially those who have burned out
-from Alice's wonderland syndrome.
-
+In this pdf, to discuss what math really is for expert/non-expert audiences, I'll set a grand framework of math research
+beginning from the elementary math to the research level.
+To do this, I'll introduce my point of view of numerical approximation, and symmetric structural view point,
+and finally where is a reasonable place to start math.
+The goal of this paper is recall for everybody including experts and beginners why math is needed, especially 
+Perhaps, the purposeo of this exposition is my ego, or it works for the moderate beginners trying to decide their major in college,
+or those who have burned out from Alice's wonderland syndrome.
 
 
 \section {Approximation}
 
-One says all math is meaningless because numerical approximation.
-But math is the same as science, it is an activity of extracting natural law.
+One says all math is meaningless beyond of counting or lower division math, 
+because it's already sufficient to study statistics or computational algorithm,
+and some even claim AI will automate calculation and conducting new theorem without human being.
+But math is science, that is an activity of extracting law of nature, that's happening by necessity including quantum state.
 
-Line and Triangle \\
-There's probably many people, who are wondering what math really is.
-It's probably an activity of extracting new structure from the natural world.
+\begin{itemize}
+\item Line and Triangle \\
+Line and Triangle might be necessary ingredient of understanding math no doubt by including people who are not really interested in pure math.
 To understand the structure of the natural world,
 perhap we could start from triangle (point, line, triangle, and n-tetrahedron), probably the most well-known shape,
 and finding invariants to discuss the relationship with the real world. \\
 
-One thing is simplicial homology. A triangle consists of 3 vertex, 3 edges, and 1 face, 
+
+\item It reminds me simplicial homology. A triangle consists of 3 vertex, 3 edges, and 1 face, 
 and any 2-dimensional polygon has a subdivision to the union of triangles, which is triangulation in other words.
 It calculates topological invariants, in parcticular, Euler characteristics and orientability. \\
 
-Adding cartesian product to simplicial homology makes still simplicial complex.
+\item Adding cartesian product to simplicial homology makes still simplicial complex.
 Especially an cartesian product with a line becomes a cylinder (precisely it happens in singular homology), whose crashing one side is a cone.
 This operation makes triangulated category. \\
 
-Or if the line $[0,1]$ is replaced by an affine line $\mathbb{A}^1$, which corresponds to $k[x]$ algebraic geometrically,
+\item Or if the line $[0,1]$ is replaced by an affine line $\mathbb{A}^1$, which corresponds to $k[x]$ algebraic geometrically,
 the cartesian product $\mathbb{A}^n$ is fiber product $\mathbb{A}^n \otimes_{\mathbb{A}^{n-1}} \mathbb{A}^n$,
-algebraically  $k[x]^n \otimes_{k[x]^{n-1}} k[x]^n$. This creates standard resolution.
+algebraically  $k[x_1,\cdots,x_n] \otimes_{k[z_1,\cdots, z_{n-1}]} k[y_1,\cdots,y_n]$. This creates standard resolution.
+\end{itemize}
 
-Any geometries seem to be approximated by some simplices.
+Accordingly, any geometries seem to be approximated by some simplices.
 Does research stop here??
 
-Perhaps, imagining computer vision analysis, a collection of the finite distinct points on an Euclidean space 
-is a connected component of the image by topological data analysis.
-
-
-Does research stop here??
-
-
-Linear Algebra \\
+\begin{itemize}
+\item Linear Algebra \\
 Any $n\times n$ matrices have a diagonalization by numerical approximation,
 by slightly deforming the coefficients so to have distinct roots of the characteristic polynomial.
 so for case of numerical approximation, Jordan form doesn't seem to be neccesary.
 
-
-Calculus \\
+\item Calculus \\
 One of the applications of calculus is numerical approximation using Newton's method to find the roots of polynomials 
 and more generally any differentiable functions. There is an easy generalization to the multi-variate case, 
 in particular any differetiable functions on complex planes.
+\end{itemize}
 
-
+Perhaps, imagining computer vision analysis, a collection of the finite distinct points on an Euclidean space 
+is a connected component of the image by topological data analysis. There's many metric analysis.
+Does research stop here??
 
 
 \section {Structure and Symmetry}
@@ -86,7 +88,8 @@ since apparantly modern math is more difficult than math in ancient Greek.
 If the goal of math is to solve it, what we have done is quite ridiculous. 
 In below, I'll try to explain some examples from my experience. \\
 
-Perhaps, the journey of pure math begins with linear algebra, initially solves a system of equations,
+\begin{itemize}
+\item Perhaps, the journey of pure math begins with linear algebra, initially solves a system of equations,
 representation theory $\rho: G\to GL_n$ maps any math objects to represent in linear algebra. 
 In particular, if an element can be mapped to the Jordan form, computing Jordan block is a combinatorial problem
 (module is called module because k[x]-module computes Jordan form, where Jordan block literally counts like Lego block?),
@@ -95,7 +98,7 @@ In particular, if there's any redundancy counting as Maschke's theorem or in som
 or its algebraic geometry enhancement is Hilbert scheme? Nilpotency of Jordan form in abstract algebra?
 This kind of activity is called pure math. \\
 
-Let's consider another example. A Galois theory proved unsolvability of quintic equation by unsolvability 
+\item Let's consider another example. A Galois theory proved unsolvability of quintic equation by unsolvability 
 (non-existence of proper normal subgroup) of an alternate group A5, meaning of the non-existence of the solution by roots of unity.
 Adding few more interpretations that enables to solve it, However.
 One thing is that p-adic henselization by putting the quintic equation over the field of finite characteristic p for some prime p, 
@@ -106,8 +109,7 @@ whose moduli space corresponds to the moduli space of coefficients of the quinti
 In summary, these two solutions depends on an infinite order p-adic abelian group and a finite order nonabelian group,
 and perhaps these two notions might have some relationships. This is anabelian geometry or p-adic Hodge theory. \\
 
-
-Another problem is geometry, but the question is what really is.
+\item Another problem is geometry, but the question is what really is.
 homology or cohomology might be the tools of computation but can merely calculate Euler characteristic and few invariants,
 and missing many data that the geometry originally has.
 The spontaneous question is if there's any inverse relationship?
@@ -117,14 +119,16 @@ Or in algebraic geometry, moduli space of some algebraic variety contains more t
 or the futher generalization is category theory: these are not necessarily making something big,
 the important problem is algebraic variety and manifold, and stack, orbifold, infty-groupoid or any other generalization is rather a substitute.
 Meanwhile, Toda's $\chi$-independence conjecture claims Gopakumar-Vafa invariant is determined independently from the Euler characteristic.
+\end{itemize}
 
 
 \section {Millennium Problems}
 
-I started doing math from the millenium problems of Clay Math Institute in undergraduate.
-By seeing its problem statement by downloading the pdf, I realized understanding the problem itself isn't super hard,
-though its proof might be unknown to anybody.
-I set the level of difficulty of understanding the problem statements based on my intuition.
+The moment I started doing research math is seeing the millenium problems of Clay Math Institute.
+By seeing its problem statement by downloading the pdf, I realized understanding the problem itself isn't super hard for me in undergraduate,
+even though its proof might be unknown to anybody other than Poincare conjecture.
+I'm explaining when I started math, in the same why I study math.
+Here I'll leave some comments on the seven problems with the level of difficulty of understanding the problem statements.
 
 \begin{itemize}
 \item P=NP Problem (difficulty: $\bigstar\bigstar\bigstar$) \\
@@ -150,7 +154,7 @@ and Perelman's technique is to resolve it differential geometrically.
 
 \item Navier Stokes Equation (difficulty: $\bigstar$) \\
 Navier Stokes Equation is simply a multi-variate calculus, so the difficulty is equivalent to Riemann Hyopthesis.
-Ladychenzkaya solved 2d NSE and 2.5d NSE using functional analysis, but 3d NSE hasn't been proved.
+Ladyzhenskaya solved 2d NSE and 2.5d NSE using functional analysis, but 3d NSE hasn't been proved.
 If anticipating algebra instead of functinal analysis, consider CFT lower-bound derives relativistic NSE, which makes ordinary NSE.
 Perhaps NSE might be quantization or deformation problem.
 
