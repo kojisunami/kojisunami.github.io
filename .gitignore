@@ -9,7 +9,9 @@
 *.out
 
 *.bbl
+*.bbl-SAVE-ERROR
 *.bcf
+*.bcf-SAVE-ERROR
 *.blg
 *.xml
 *.fdb_latexmk
