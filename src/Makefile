@@ -1,4 +1,4 @@
-PROJECTS = ainfty-geometry dgla-stack dt-moduli  what-math
+PROJECTS = ainfty-geometry dgla-stack what-math
 .PHONY: all
 all: $(PROJECTS:%=%.pdf)
 
