@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>Misc</title>
-<!--Generated on Tue Sep 15 10:59:47 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Generated on Tue Sep 15 11:04:51 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-article.css" type="text/css">
@@ -24,21 +24,18 @@
 <div id="p2" class="ltx_para ltx_noindent">
 <p class="ltx_p"><span class="ltx_rule" style="width:433.6pt;height:0.4pt;background:black;display:inline-block;"> </span></p>
 </div>
-<div id="p3" class="ltx_para">
-<p class="ltx_p">In this page, we’ll introduce many other non-math general stuffs. Some of them are my essays.</p>
-</div>
-<div id="p4" class="ltx_para ltx_noindent">
+<div id="p3" class="ltx_para ltx_noindent">
 <p class="ltx_p"><span class="ltx_rule" style="width:433.6pt;height:0.4pt;background:black;display:inline-block;"> </span></p>
 </div>
-<div id="p5" class="ltx_para">
+<div id="p4" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Web Development With Latex</span></p>
 </div>
-<div id="p6" class="ltx_para">
+<div id="p5" class="ltx_para">
 <p class="ltx_p">I use Latex and github to design this website, and I’ll talk about the construction howto of the environment.
 The Latex compiler I’m using is Latexmlc, that outputs .html files from .tex file,
 while its CLI automation of the uploading files is done by github. The whole automation procedure is programmed on its Makefile given below:</p>
 </div>
-<div id="p7" class="ltx_para">
+<div id="p6" class="ltx_para">
 <pre class="ltx_verbatim ltx_font_typewriter">
 HTML_PROJECTS = index random-thoughts misc
 PDF_PROJECTS = cv-koji
@@ -67,11 +64,11 @@ run:
     git push origin master
 </pre>
 </div>
-<div id="p8" class="ltx_para">
+<div id="p7" class="ltx_para">
 <p class="ltx_p">Continuing from the main html web page, I separated some exposition pdf files on src/ directory where there is another Makefile linked
 as follows:</p>
 </div>
-<div id="p9" class="ltx_para">
+<div id="p8" class="ltx_para">
 <pre class="ltx_verbatim ltx_font_typewriter">
 PROJECTS = ainfty-geometry dgla-stack dt-moduli  what-math
 .PHONY: all
@@ -87,25 +84,25 @@ clean :
     rm *aux *bbl *bcf *blg *log *out *xml
 </pre>
 </div>
-<div id="p10" class="ltx_para ltx_noindent">
+<div id="p9" class="ltx_para ltx_noindent">
 <p class="ltx_p"><span class="ltx_rule" style="width:433.6pt;height:0.4pt;background:black;display:inline-block;"> </span></p>
 </div>
-<div id="p11" class="ltx_para">
+<div id="p10" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Algorithm of Finding University That Fits You</span></p>
 </div>
-<div id="p12" class="ltx_para">
+<div id="p11" class="ltx_para">
 <p class="ltx_p">Searching new environment that fits us isn’t easy, but making database of professors and their research interests
 will help our future career selection. There’s already mathjobs.org for postdoc jobs,
 but there seems to be no equivalent for the PhD admission, and I use python code with OpenAlex.
 OpenAlex is a web database of academic network, where we can search the name of professors and their profile,
 including their research papers and their coauthors, and we can use it from python library called pyalex from an automated way.</p>
 </div>
-<div id="p13" class="ltx_para">
+<div id="p12" class="ltx_para">
 <p class="ltx_p">The procedure of finding the list of professors relevant to my interest is to find coauthor of my current advisor Yan Soibelman,
 so I’ll search the profile of my advisor by using pyalex library to extract all of his coauthors.
 In addition, once we find his coauthors, we’ll find coauthors of coauthors. This is Erdos number 2.</p>
 </div>
-<div id="p14" class="ltx_para">
+<div id="p13" class="ltx_para">
 <pre class="ltx_verbatim ltx_font_typewriter">
 from pyalex import Authors, Works
 import csv
@@ -157,12 +154,12 @@ with open(filename, "w", newline="", encoding="utf-8") as f:
         writer.writerow([name])
 </pre>
 </div>
-<div id="p15" class="ltx_para">
+<div id="p14" class="ltx_para">
 <p class="ltx_p">Now once we have created the list of professors, we’ll type each of their names with pyalex and gain a profile
 about the name of the university they belong, research interests, and the title of top 3 most cited research papers respectively.
 Once we finish collecting the data, we’ll output in csv. Here is another python code beginning from the professors’s name list:</p>
 </div>
-<div id="p16" class="ltx_para">
+<div id="p15" class="ltx_para">
 <pre class="ltx_verbatim ltx_font_typewriter">
 from pyalex import Authors, Works
 import csv
@@ -210,24 +207,21 @@ with open(filename, "w", newline="", encoding="utf-8") as f:
         writer.writerow(profile)
 </pre>
 </div>
-<div id="p17" class="ltx_para">
+<div id="p16" class="ltx_para">
 <p class="ltx_p">Finally, I’ll leave here the result of the search. In the CSV file, there’s the list of professors’ name, institution, country,
 topic, and top 3 research abstract. We can filter professors of the list by country (probably US only), or research interests
 (some of them might be physics or analysis).</p>
 </div>
-<div id="p18" class="ltx_para">
+<div id="p17" class="ltx_para">
 <p class="ltx_p"><a href="https://kojisunami.github.io/coauthors_profile.csv" title="" class="ltx_ref ltx_href">coauthors_profile.csv</a></p>
 </div>
-<div id="p19" class="ltx_para ltx_noindent">
+<div id="p18" class="ltx_para ltx_noindent">
 <p class="ltx_p"><span class="ltx_rule" style="width:433.6pt;height:0.4pt;background:black;display:inline-block;"> </span></p>
 </div>
-<div id="p20" class="ltx_para">
+<div id="p19" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Career As Mathematician</span></p>
 </div>
-<div id="p21" class="ltx_para">
-<p class="ltx_p">Perhaps, it might be partially my biographical description. Hope it works.</p>
-</div>
-<div id="p22" class="ltx_para">
+<div id="p20" class="ltx_para">
 <ul id="S0.I1" class="ltx_itemize">
 <li id="S0.I1.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
@@ -272,16 +266,16 @@ There’s tons of stuffs that AI cannot accurately translate, so pay is good.</p
 </li>
 </ul>
 </div>
-<div id="p23" class="ltx_para ltx_noindent">
+<div id="p21" class="ltx_para ltx_noindent">
 <p class="ltx_p"><span class="ltx_rule" style="width:433.6pt;height:0.4pt;background:black;display:inline-block;"> </span></p>
 </div>
-<div id="p24" class="ltx_para ltx_noindent">
+<div id="p22" class="ltx_para ltx_noindent">
 <p class="ltx_p"><span class="ltx_rule" style="width:433.6pt;height:0.4pt;background:black;display:inline-block;"> </span></p>
 </div>
 </article>
 </div>
 <footer class="ltx_page_footer">
-<div class="ltx_page_logo">Generated  on Tue Sep 15 10:59:47 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Tue Sep 15 11:04:51 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer>
 </div>
 </body>
