@@ -166,7 +166,11 @@ def info_professor(name) :
         for w in top_papers
     ]
 
-    return [author, institutions, university, " ".join(topic_names), "\n".join(paper_names)]
+    institution_name = institutions[-1]["display_name"] if institutions else ""
+    country_code = institutions[-1]["country_code"] if institutions else ""
+
+    return [author["display_name"], institution_name, country_code, "\n".join(topic_names), "\n".join(paper_names)]
+
 
 # Run functions
 list_profile = []
@@ -184,14 +188,15 @@ while os.path.exists(filename):
 with open(filename, "w", newline="", encoding="utf-8") as f:
     writer = csv.writer(f)
     for profile in list_profile:
-        writer.writerow([profile])
+        writer.writerow(profile)
 \end{verbatim}
 
 
 Finally, I'll leave here the result of the search. In the CSV file, there's the list of professors' name, institution, country,
-topic, and top 3 research abstract.
+topic, and top 3 research abstract. We can filter professors of the list by country (probably US only), or research interests
+(some of them might be physics or analysis).
 
-\href{https://kojisunami.github.io/coauthors_profile.csv}{coauthors_profile.csv}
+\href{https://kojisunami.github.io/coauthors\_profile.csv}{coauthors\_profile.csv}
 
 
 \noindent\rule{\textwidth}{0.4pt}
