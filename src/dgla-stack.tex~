@@ -1,0 +1,72 @@
+\documentclass{article}
+%
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{mathrsfs, mathtools, mathbbol}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+%
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{alphabeta}
+\usepackage{hyperref}
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{ainfty-geometry.bib}
+
+
+\title{DG Lie Algebroid and Quotient Stack}
+\author{Koji Sunami}
+
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{dgla-stack.bib}
+
+\begin{document}
+
+\maketitle
+
+\newcommand*{\sheaf}{\mathscr}
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{example}[subsection]{Example}
+\newtheorem{note}[subsection]{Note}
+\newtheorem{remark}[subsection]{Remark}
+
+
+
+In this paper, I'll discuss foliation from point of view of derived algebraic geometry.
+
+Foliation derives.
+
+
+Derived algebraic geometry proves the 
+$\infty$-equivalence of dg Lie algebroid and foliation. Now the quotient is defined by quotient of dg 
+$L_\infty$ groupoid generated from dg Lie albebroid, and it’s calculated by dg $L_\infty$ version of Chevalley-Eilenberg complex. 
+I’m also wondering evaluation of the foliation using language of DT/GW invariants
+
+
+\begin{definition} [Foliation]
+Foliation is a partition of a smooth manifold $M$ into its submanifolds.
+One idea of generating foliation is to retrieve from distribution $D_x\subset TM$ for some $x\in M$,
+and this distribution classfies the points $x\in M$ to define foliaton.
+Distribution $D_x$ is defined by its vector field $X,Y\in \Gamma(D_x)$ satisfying $[X,Y]\in \Gamma(D_x)$,
+and in this case $D_x$ is called integrable. This $D_x$ corresponds to a submanifold $L$,
+since there's its restriction $D_x|_L = T_x L$ by the unique maximal submanifold $L\subset M$ s.t. $x\in L$.
+Note in fact $D_x|_{L_y} = T_y L$ for all $y\in L$.
+Accordingly, the resulting set $\{L_y\}$ for $y\in M$ is the set of submanifolds $L_y\subset M$ and disjoint union $\coprod L_y = M$.
+\end{definition}
+
+
+
+
+
+\begin{definition} [a]
+\end{definition}
+
+\nocite{*}
+\printbibliography
+
+\end{document}
+

@@ -1,20 +1,7 @@
 \documentclass{article}
 
-%
-\usepackage{amsfonts, amsmath, amssymb}
-\usepackage{mathrsfs, mathtools, mathbbol}
-\usepackage{tikz}
-\usepackage{tikz-cd}
-%
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage{alphabeta}
-\usepackage{hyperref}
-
-\usepackage[backend=biber]{biblatex}
+\input{math_header.tex}
 \addbibresource{ainfty-geometry.bib}
-
 
 \author{Koji Sunami}
 
@@ -23,16 +10,6 @@
 
 \title{$A_\infty$ Enhancement of Geometry}
 \maketitle
-\newcommand*{\sheaf}{\mathscr}
-
-\newtheorem{definition}{Definition}[subsection]
-\newtheorem{proposition}[subsection]{Proposition}
-\newtheorem{example}[subsection]{Example}
-\newtheorem{note}[subsection]{Note}
-\newtheorem{remark}[subsection]{Remark}
-
-
-
 
 
 
@@ -44,10 +21,7 @@ of non-unital $A_\infty$-algebra to $A_\infty$-category.
 
 
 
-
-
-
-\begin{definition} (Counital Coalgebra)\\
+\begin{definition}{Counital Coalgebra}{counital coalgebra}
 Coalgebra $B$ is a graded vector space with morphism $\Delta:B\to B\otimes B$ s.t. 
 $(\Delta \otimes id)\circ \Delta = (id \otimes \Delta)\circ \Delta$ called coproduct,
 and counital coalgebra is coalgebra $B$ with unit $\epsilon:B\to 1$ where $1$ is the unit object of $\mathcal{C}$,
@@ -56,7 +30,7 @@ Counital coalgebra $B$ is cofree counital coalgebra if it's given by $B=C(V)\con
 \end{definition}
 
 
-\begin{definition} (A Non-Commutative Thin Scheme) \\
+\begin{definition}{A Non-Commutative Thin Scheme}{a noncommutative thin scheme}
 A non-commutative thin scheme $X$ is a functor $X:Alg_{\mathcal{C}^f} \to Sets$, that is isomorphic to $X\cong Hom(-^*, B_X)$
 for some coalgebra $B_X$, where $\mathcal{C}^f$ is artinian category of finite dimensional objects in $\mathcal{C}$, 
 where $\mathcal{C}$ is $\mathbb{Z}$-graded vector spaces.
@@ -65,19 +39,19 @@ for a cofree counital tensor coalgebra $T(V)=\underset{\geqq 1}{\oplus}V^{\otime
 \end{definition}
 
 
-\begin{definition} (A Non-Commutative Thin DG-Scheme) \\
+\begin{definition}{A Non-Commutative Thin DG-Scheme}{} 
 A non-commutative thin dg-scheme is a pair $(X,d)$ where $X$ is a non-commutative thin scheme, and $d$ is a vector field on $X$
 of degree $+1$ satisfying bracket of dgla as $[d,d]=0$. This $d$ is called homological vector field.
 \end{definition}
 
 
-\begin{definition} (Non-Commutative Formal Pointed DG-Manifold) \\
+\begin{definition}{Non-Commutative Formal Pointed DG-Manifold}{}
 A non-commutative formal pointed dg-manifold is a pair $((X, x_0), d_X)$ such that $(X, x_0)$ 
 is a non-commutative formal pointed graded manifold, and $d_X$ is a homological vector field on $X$ such that $d_X|_{x_0} = 0$. 
 \end{definition}
 
 
-\begin{proposition} (Taylor Decomposition of Graded Vector Field) \\
+\begin{proposition}{Taylor Decomposition of Graded Vector Field}{}
 For the case of formal manifold $X$, let the corresponding cofree counital coalgebra be $B_X\cong T^c(V)$,
 and the homological vector field be coderivation $d_X:B_X\to B_X$, that can have restriction by cofreeness, thus by using projection,
 $\pi \circ d_X:B_X\to V[1]$. If in addition, $d_X$ can be decomposed degreewise for its linearity,
@@ -85,20 +59,20 @@ as $d_X = \underset{n\geqq 1}{\Sigma} d_X^{(n)}$ for linear maps $d_X^{(n)}:V^{\
 \end{proposition}
 
 
-\begin{definition} (Non-Unital $A_\infty$ Algebra) \\
+\begin{definition}{Non-Unital $A_\infty$ Algebra}{}
 A non-unital $A_\infty$-algebra $A=(A,m_n)$ is a graded vector space $A$ and coherence condition $m_n: A^{\otimes n}\to A[2-n]$ 
 with Stasheff relation, whose geometric interpretation is the structure of a nc fp dg-manifold $((X, x_0), d_X)$ 
 together with a coalgebra isomorphism $B_X\cong T(T_{x_0}X)$ with $x_0:k\to B_X$.
 \end{definition}
 
 
-\begin{definition} (Structure of $A_\infty$ Algebra)\\
+\begin{definition}{Structure of $A_\infty$ Algebra}{}
 The structure of $A_\infty$ Algebra on $V\in Ob(Vect_k^{\mathbb{Z}})$ is given by coderivation $d$ of degree $+1$ 
 of the non-counital cofree coalgebra $T_{+}(V[1]) = \underset{n\geqq 1}{\oplus}V^{\otimes n}$ s.t. $[d,d]=0$.
 \end{definition}
 
 
-\begin{proposition} (Stasheff Relation) \\
+\begin{proposition}{Stasheff Relation}{}
 The condition of nc fp dg-manifold $((X,x_0),d_X)$ derives Stasheff relation of the $A_\infty$ algebra,
 that is $m_n:= d_X^{(n)}$ for $m_n: A^{\otimes n}\to A$ s.t.
 $\underset{r+s+t=n}{\Sigma} (-1)^{r+st} m_{r+1+t} (id^{\otimes r} \otimes m_s \otimes id^{\otimes t})= 0$, whose degree is  $|m_n|=2-n$.
@@ -107,14 +81,14 @@ as $d_X^{(n)}:B_X^{(n)} \to B_X^{(1)}$.
 \end{proposition}
 
 
-\begin{definition} (Non-Commutative Formal n-Pointed DG-Manifold) \\
+\begin{definition}{Non-Commutative Formal n-Pointed DG-Manifold}{}
 Nc formal $n$-pointed dg-manifold $(\mathcal{X}, d_{\mathcal{X}}, \{pt_i\})$ is nc formal graded dg-manifold $(\mathcal{X},d_{\mathcal{X}})$,
 and the points are $pt_i \in \mathcal{X} (k)$ for $1 \leqq i \leqq n$, and coderivation satisfies $d_{\mathcal{X}}|_{pt_i}=0$,
 $d_{\mathcal{X}}|_{TX_i}: TX_i \to  \underset{j,k}{\oplus} TX_j \oplus TX_k$ where $X_i$ is formal neighborhood of $X$ at $pt_i$.
 \end{definition}
 
 
-\begin{definition} ($A_\infty$-Category) \\
+\begin{definition}{$A_\infty$-Category}{}
 $A_\infty$-category $\mathcal{A}$ is nc formal dg-manifold $(\mathcal{X}, d_{\mathcal{X}}, \{pt_i\})$
 with its coalgebra $B_{\mathcal{X}}\cong T^c (V[1])$. This $V$ has a decomposition $V= \underset{i,j}{\oplus} E_{ij}$,
 where $E_{ij}:= T(\widehat{X_i \times X_j}_{pt_i,pt_j})$.
@@ -129,7 +103,7 @@ $\pi_i \pi_j = \pi_j \pi_i$. This makes homomorphism $k^I \to V$ of algebra with
 \end{remark}
 
 
-\begin{proposition} (Stasheff Relation) \\
+\begin{proposition}{Stasheff Relation}{}
 From non-unital $A_\infty$ category $\mathcal{A}$, the coalgebra $d_{\mathcal{X}}: T^c (\oplus E_{ij}[1]) \to T^c (\oplus E_{ij}[1])$ 
 satisfies the Stasheff relation. Consider the tensor coalgebra can be given by the grading structure
 $T^c(\underset{1\leqq i,j\leqq n}{\oplus} E_{ij}[1]) = \underset{m\geqq 0}{\oplus} \underset{1\leqq i_0,i_1,i_2,\cdots i_m\leqq n}{\oplus}
@@ -141,12 +115,12 @@ and $m_n := d_{\mathcal{X}}^n$.
 \end{proposition}
 
 
-\begin{remark} [ ]  
+\begin{remark} {}{}
 $d_{\mathcal{X}}\circ \eta = 0$ implies $d_{\mathcal{X}}\circ \eta (1) = 0$ or $d_{\mathcal{X}} (1) = 0$. This means curvature is $m_0=0$.
 \end{remark}
 
 
-\begin{remark} [ ] 
+\begin{remark}{}{}
 For the case of $I=\{i\}$ consists of one vertex, we write $d|_{pt} = d\circ \eta$.
 \end{remark}
 
@@ -191,9 +165,6 @@ For the case of $I=\{i\}$ consists of one vertex, we write $d|_{pt} = d\circ \et
 
 
 For the case of infinite objects $A_\infty$ category is its inductive limit of finite objects.
-
-
-
 
 
 

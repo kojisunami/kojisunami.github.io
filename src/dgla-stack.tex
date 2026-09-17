@@ -1,16 +1,105 @@
 \documentclass{article}
 
-\usepackage{hyperref}
-\usepackage[backend=biber]{biblatex}
+\input {math_header.tex}
 \addbibresource{dgla-stack.bib}
+
+\title{DG Lie Algebroid and Quotient Stack}
+\author{Koji Sunami}
+
 
 \begin{document}
 
+\maketitle
 
 
+
+In this paper, I'll discuss foliation from point of view of derived algebraic geometry.
+Derived algebraic geometry proves the $\infty$-equivalence of dg Lie algebroid and foliation. 
+Now the quotient is defined by quotient of dg $L_\infty$ groupoid generated from dg Lie albebroid, 
+and it’s calculated by dg $L_\infty$ version of Chevalley-Eilenberg complex. 
+I’m also wondering evaluation of the foliation using language of DT/GW invariants. 
+First of all, the idea of foliation is classically defined differential geometrically on a smooth manifold: \\
+
+
+\begin{definition}{Foliation}{foliation}
+Foliation is a partition of a smooth manifold $M$ into its submanifolds.
+One idea of generating foliation is to retrieve from distribution $D_x\subset TM$ for some $x\in M$,
+and this distribution classfies the points $x\in M$ to define foliaton.
+Distribution $D_x$ is defined by its vector field $X,Y\in \Gamma(D_x)$ satisfying $[X,Y]\in \Gamma(D_x)$,
+and in this case $D_x$ is called integrable. This $D_x$ corresponds to a submanifold $L$,
+since there's its restriction $D_x|_L = T_x L$ by the unique maximal submanifold $L\subset M$ s.t. $x\in L$.
+Note in fact $D_x|_{L_y} = T_y L$ for all $y\in L$.
+Accordingly, the resulting set $\{L_y\}$ for $y\in M$ is the set of submanifolds $L_y\subset M$ and disjoint union $\coprod L_y = M$.
+\end{definition}
+
+
+To verbalize the notion of foliation is an equivalent notion with integrability by Frobenius theorem,
+where integrability is done by Lie algebra. If Lie algebra describes the global property (there's no "if" in math Toynbee says),
+the corresponding Lie group quotient of manifold $[M/G]$ is a stack. It doesn't work, however. 
+I'll use Lie algebroid to describe every point of the submanifold $L\subset M$,
+whose Lie groupoid $\mathcal{G}$ quotient is a quotient stack, which describes foliation $[M/\mathcal{G}]$. 
+I'll first of all terminology to define foliation derived algebraic geometrically.
+
+
+\begin{definition}{Groupoid}{groupoid}
+A groupoid is a category in which every morphisms are invertible. 
+Denote the objects are $Ob(\mathcal{C}) = G_0$, and the morphisms are $Mor(\mathcal{C})=G_1$, the double arrow
+$G_1 \rightrightarrows G_0$. For an arrow $g:x\to y$, there are source and target maps $s,t,:G_1\to G_0$, 
+together with composition $G_1 \times_{G_0} G_1\to G_1$, identity arrow and inverses.
+A group becomes a Lie groupoid if $G_0$ and $G_1$ are smoooth manifolds, and all the maps are smooth.
+\end{definition}
+
+There are many important examples of Lie groupoid. The trivials things 
+(logically equivalent to Lie group but somehow interesting generalization) are Lie group,
+which is a Lie groupoid with one object so $G\rightrightarrows *$.
+Another example which is more geometric is that Lie group action $G\times X\rightrightarrows X$ can be modeled by $G_1=G\times X$ and $G_0 = X$.
+By the context of foliation, Lie groupoid $Hol(\mathcal{F})$ of the foliation $\mathcal{F}$ is holonomy groupoid. 
+All the above examples are important. Now we consider quotient stack by Lie groupoid, in particular by Lie group:
+
+
+\begin{definition}{Quotient Stack}{quotient stack}
+For an algebraic variety $X$, quotient stack by Lie group $G$ is $[X/G]$ is a functor $[X/G]:(Spaces)^{op}\to Grouoids$.
+\[
+[X/G](S) = \{ (P\to S, f:P\to X) |  P\to S \text{ is a principal G-bundle,} f is G-equivariant \}
+\]
+In particular if $X=pt$, the quotient stack is $[pt/G] = BG$, 
+and $BG(pt)$ is one-object groupoid whose automorphism group is $G = Hom(*,*)$. \\
+
+Meanwhile, quotient stack by groupoid $[U/R]$ for a groupoid $R$ is a stackification $[U/R] = St([U/_p R])$ of 
+category fibered in groupoids $p: U \to R$. This works for all $c\in R$, there exists $x\in U$ s.t. $p(x)=c$,
+and for all $f:x\to y$, $p(f) = id_c$.
+\end{definition}
+
+where I abbreviate what the stackification means in this introductory chapter for the moment.
+In any case, the important quotient stack is holonomy groupoid quotient $[M/Hol(F)]$, which is a foliation.
+But how does Lie groupoid appears, where Lie algebra solves integrability condition in manifold?
+Lie algebra can be generalied to Lie algebroid by its globalization, where Lie groupoid comes.
+The definition of Lie algebroid is:
+
+
+\begin{definition}{Lie Algebroid}{lie algebroid}
+For a smooth manifold $M$, a Lie algebroid over $M$ consists of $(A\to M,[\cdot,\cdot]_A, \rho)$
+where $A\to M$ is a vector bundle, $[\cdot, \cdot]_A : \Gamma(A) \times \Gamma(A)\to \Gamma(A)$ is a Lie bracket of sections,
+$\rho:A \to TM$ is an anchor map. These satisfy product rule $[X,fY]_A = f[X,Y]_A + \rho(X)(f) Y$,
+and the anchor preserves bracket $\rho([X,Y]_A) = [\rho(X), \rho (Y)]$.
+\end{definition}
+
+The important remark is Lie algebroid doesn't always correspond to Lie groupoid unlike the Lie algebra/group correspondence,
+since Lie groupoid always make Lie algebroid by infinitesimalization but not the other way around.
+
+
+\begin{conjecture}{}{}
+
+\end{conjecture}
+
+%\begin{definition}{}{}
+%\end{definition}
 
 \nocite{*}
 \printbibliography
 
+
 \end{document}
+
+
 
