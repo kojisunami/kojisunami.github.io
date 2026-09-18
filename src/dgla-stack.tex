@@ -1,5 +1,6 @@
 \documentclass{article}
 
+
 \input {math_header.tex}
 \addbibresource{dgla-stack.bib}
 
@@ -38,7 +39,7 @@ where integrability is done by Lie algebra. If Lie algebra describes the global 
 the corresponding Lie group quotient of manifold $[M/G]$ is a stack. It doesn't work, however. 
 I'll use Lie algebroid to describe every point of the submanifold $L\subset M$,
 whose Lie groupoid $\mathcal{G}$ quotient is a quotient stack, which describes foliation $[M/\mathcal{G}]$. 
-I'll first of all terminology to define foliation derived algebraic geometrically.
+The first step of foliation my plan is to modernize the definition of foliation by using quotient stack with Lie algebroid/groupoid.
 
 
 \begin{definition}{Groupoid}{groupoid}
@@ -54,7 +55,9 @@ There are many important examples of Lie groupoid. The trivials things
 which is a Lie groupoid with one object so $G\rightrightarrows *$.
 Another example which is more geometric is that Lie group action $G\times X\rightrightarrows X$ can be modeled by $G_1=G\times X$ and $G_0 = X$.
 By the context of foliation, Lie groupoid $Hol(\mathcal{F})$ of the foliation $\mathcal{F}$ is holonomy groupoid. 
-All the above examples are important. Now we consider quotient stack by Lie groupoid, in particular by Lie group:
+All the above examples are important. Now we consider quotient stack by Lie groupoid, in particular by Lie group.
+The definition of quotient stack below is a moduli stack while keeping the group symmety structure for group $G$,
+but groupoid quotient $\mathcal{G}$ is somewhat more complicated:
 
 
 \begin{definition}{Quotient Stack}{quotient stack}
@@ -84,25 +87,70 @@ $\rho:A \to TM$ is an anchor map. These satisfy product rule $[X,fY]_A = f[X,Y]_
 and the anchor preserves bracket $\rho([X,Y]_A) = [\rho(X), \rho (Y)]$.
 \end{definition}
 
-The important remark is Lie algebroid doesn't always correspond to Lie groupoid unlike the Lie algebra/group correspondence,
-since Lie groupoid always make Lie algebroid by infinitesimalization but not the other way around,
-since the integration of Lie algebroid contains obstruction. 
-Here I'll list several na\"{\i}ve questions below:
+This Lie algebroid is a generalization of Lie algebra. In fact, the fiber $A_x$ $x\in M$ of vector bundle $A\to M$ is Lie algebra,
+so containing the data of local symmetry.
+
+\begin{remark}{}{}
+As a comparison, quotient stack $[M/G]$ of gauge theory is a Lie group quotient, not Lie groupoid,
+where the local symmetry of particle action is everywhere the same, but the construction is nothing to do with the foliation problem.
+In other words, not all quotient stack is foliation.
+
+The computation of quotient stack $[M/G]$ is done by Chevalley-Eilenberg complex. 
+There's generalization of Chevalley-Eilenberg for the case of quotient stack by Lie groupoid.
+\end{remark}
+
+
+In summary, the above argument can be depicted in the following flow chart,
+and now that the foliation is modernized geometrically, studying foliation is somewhat equivalent to studying quotient stack:
+
+\vspace{1cm}
+\tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=6em]
+\begin{tikzpicture}[auto]
+    \node [block] (a) {Lie Algebra};
+    \node [block, right of=a, node distance=4cm] (b) {Lie Algebroid};
+    \node [block, right of=b, node distance=4cm] (c) {Lie Gropoid};
+    \node [block, right of=c, node distance=4cm] (d) {Quotient Stack};
+    \draw [->] (a) -- node[name=u, above=5mm] {$Globalization$} (b);
+    \draw [->] (b) -- node[name=v, above=5mm] {$Integration$} (c);
+    \draw [->] (c) -- node[name=w, above=5mm] {$Quotient$} (d);
+    \node[ block, fit=(a) (b) (c) (d) (u) (v) (w), inner sep=10pt ] {};
+\end{tikzpicture}
+\vspace{1cm}
+
+
+Several questions appear from this informal writing of foliation.
+First of all, to make the argument more precisely, can Lie algebroid be always integrated to the Lie groupoid? 
+Now true in general, but Crainic-Fernandes integrability criterion claims Lie algebroid used in foliation can be always integrated.
+
+
+\begin{proposition}{Crainic-Fernandes Criterion}{craininc-fernandes criterion}
+TBD
+\end{proposition}
+
+
+Now let's set some research questions. First of all, to introduce the application regarding questions of foliation beyond of itself,
+QFT and mirror symmetry might be the obvious application, while we also further investigate the property of quotient stack itself.
+Perhaps subjectively, Lie groupoid quotient is much more dirty than that of Lie group, but in order to make it something, 
+considering the $M$ as simple as possible, hyperk\"ahler manifold, for example.
+I'd also consider the computational method with Chevalley-Eilenberg, Donaldson-Thomas/Gromov-Witten invariants.
+Another problem is to discuss what's the missing data when we define quotient stack of Lie groupoid.
 
 \begin{question}{}{}
 \begin{itemize}
-\item How to extend Lie algebroid to Lie groupoid?
-\item What happens if the foliation is Lagrangian foliation?
+\item What happens if the foliation is Lagrangian?
 \item Is there any connection to Fukaya category?
-\item Is there any either $L_\infty$ deformation or quantization?
+\item Is there any either deformation or quantization?
+\end{itemize}
+
+\begin{itemize}
+\item Restricting geometry $M$ to hyperk\"ahler, or as simple as possible?
+\item Computation of groupoid version of CE cohomology? DT/GW invariants?
+\item Does quotient stack contains all the necessary information?
 \end{itemize}
 \end{question}
 
-and some other stuffs. As somebody does it already, 
-I'll introduce the technique of derived algebraic geometry to develop this foliation problem.
 
-\begin{definition}{}{}
-\end{definition}
+To resolve these problems, I'm planning to use derived algebraic geometry.
 
 
 
