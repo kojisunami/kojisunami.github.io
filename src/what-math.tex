@@ -14,7 +14,8 @@
 \begin{document}
 
 \maketitle
-
+\tableofcontents
+\vspace{1cm}
 
 In this pdf, to discuss what math really is for expert/non-expert audiences, I'll set a grand framework of math research
 beginning from the elementary math to the research level.
@@ -25,7 +26,7 @@ Perhaps, the purposeo of this exposition is my ego, or it works for the moderate
 or those who have burned out from Alice's wonderland syndrome.
 
 
-\section {Approximation}
+\section {Approximation Method}
 
 One says all math is meaningless beyond of counting or lower division math, 
 because it's already sufficient to study statistics or computational algorithm,
@@ -122,7 +123,7 @@ Meanwhile, Toda's $\chi$-independence conjecture claims Gopakumar-Vafa invariant
 \end{itemize}
 
 
-\section {Millennium Problems}
+\section {Encountering Conjecture}
 
 The moment I started doing research math is seeing the millenium problems of Clay Math Institute.
 By seeing its problem statement by downloading the pdf, I realized understanding the problem itself isn't super hard for me in undergraduate,
@@ -166,6 +167,80 @@ However, if we have already known algebraic geometry, Weil conjecture proves the
 \end{itemize}
 
 
+
+
+
+\section{Derived Algebraic Geometry From Intuitive to Nonsense}
+
+\noindent
+\textbf{Point of View of Functional Analysis} \\
+
+Let's begin with theory of function. The function (any functions including non-continuous) defined on $\mathbb{R}^1$ might be very complicated,
+but functions defined on $S^1$ are Fourier series. Accordingly, the structure of function can be easier,
+if the domain is simplified possibly done by geometric quotient $\mathbb{R}/\mathbb{Z} = S^1$,
+and so geometric quotient might connect to the theory of functions.
+More generally, there will be more interesting problems in higher dimensions e.g. $\mathbb{R}^n$.
+If we are interested in complex geometry, in particular, functions defined on torus $\mathbb{T}^2$ is 
+holomorphic functions satisfying equivariance by torus action, so called modular form. \\
+
+In the language of geometry, the function is denoted by global section of the vector bundle,
+and sequence of global section of vector bundles formulates cohomology e.g. de Rham cohomology, and from here, 
+1st chern classes $c_1(M)$ is curvature and 2nd chern classes $c_2(M)$ is Lagrangian density to discuss its structure.
+Accordingly, geometry naturally induces cohomology to study itself,
+while its inverse is that whether cohomology contains all information needed to reconstruct the given original geometry. 
+part of this inverse problem is called Hodge conjecture, or Torelli theorem in the special situation. \\
+
+
+\noindent
+\textbf{Why Polynomial? Shape of Geometry} \\
+
+In case we are selectively study algebraic side of geometry, the next question might be why polynomial is very important in geometry.
+Na\"{\i}vely there would be many weird shapes such as urchin shape, fractal, or potato shape, some other than sphere or n-gon or calabi-yau, 
+but to understand the geometry it's not only defining its coordinate of the geometry but to find some meaning from it.
+Perhaps, the situation is the same as $S^1$ defining Fourier analysis, 
+and the geometry of polynomial can generate extremely complicated shapes.
+Beginning from K3 surface $X$, its Hilbert scheme $Hilb^n(X)$ is hyperk\"ahler.
+On another hand, the quotient can generate interesting shapes.
+Zero points set is a complex variety, but torus is algebraic variety, 
+whose quotient by Klein $4$-group $\mathbb{Z}/2\times \mathbb{Z}/2$ is either Klein bottle
+or real projective space $\mathbb{RP}^2$ depending on its group action. \\
+
+I'd also consider the meaning of polynomial based on its connection to CFT.
+According to Marc Gross, polynomial in Landau-Ginzburg model defines period integral $\int_X e^{-f(x)}$, where $f(x)$ is polynomial,
+which induces SCFT, which induces semi-infinite variation of Hodge structure, thus mirror symmetry. \\
+
+
+\noindent
+\textbf{AG vs DG} \\
+
+Comparing derived algebraic geometry and classical algebraic geometry and even differential geometry,
+all of them are interesting for different reasons. In fact, algebraic geometry can be studied differential geometrically. 
+Hodge structure, Symplectic structure, Lie algebra, moduli problem, sheaf cohomology, singularity, derived method, 
+and even counting problem are still domain of differential geometry,
+and this is for no surprise, and in fact there's tons of analysis in Fukaya category,
+and algebraic/differential geometry seem to be just different tools for the same problems.
+While to briefly list up, algebraic geometry can better treat deformation, degeneration, singularty, intersection, geometric quotient,
+or argument over finite characteristics etc. 
+Derived algebraic geometry captures the information missing in classical algebraic geometry. \\
+
+
+
+
+\section {Grumble about Myself}
+
+\noindent
+\textbf{My Research Style} \\
+
+Math needs to be rigorous no doubt, but there is no understanding without intuition, but to undertstand something, 
+it's not just about amount of knowledge, but we might need to start the new argument,
+and for the journey of math research, I hope it will not be chaotic system, where one mistake nullify the whole previous efforts. \\
+
+
+\noindent
+\textbf{About AI} \\
+
+In 2026, I personally think AI is just little more advanced model than google search with natural language interpretation.
+Since in fact, google search itself is a moderate labor, I'd support using AI to minimize our efforts.
 
 \nocite{*}
 \printbibliography
