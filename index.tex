@@ -3,7 +3,10 @@
 \usepackage{hyperref}
 \usepackage{wrapfig}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
 
+\usetikzlibrary{shapes,arrows, positioning,fit}
 
 \title{Top}
 
@@ -26,19 +29,46 @@ I’d like to develop problems in Fukaya category, moduli problems, connection w
 I listed some of my current focus below, where each of them is a distinct problem but still somewhat relevant and consistent,
 and the links below are research proposals but not publishment quality yet:
 
+
 \begin{itemize}
 \item \textbf{$A_\infty$-Enhancement of Geometry}  \\
+
 The proof of homological mirror symmetry conjecture is discussed from multi-dimensional perspective, 
 including counting Gromow-Witten invariant, or Balmer spectrum, 
 while generalizing formal geometry of non-unital $A_\infty$ algebra to $A_\infty$ category. 
 \href{https://kojisunami.github.io/src/ainfty-geometry.pdf}{[link]}
 
+\vspace{1cm}
+\tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=6em]
+\begin{tikzpicture}[auto]
+    \node [block] (a) {Fukaya Category};
+    \node [block, right of=a, node distance=5cm] (b) {Derived Category};
+    \draw [<->] (a) -- node[name=u, above=5mm] {$ $} (b);
+    \node[ block, fit=(a) (b) (u), inner sep=10pt ] {};
+\end{tikzpicture}
+\vspace{1cm}
+
 \item \textbf{DG Lie Algebroid and Quotient Stack} \\
+
 Derived algebraic geometry proves the $\infty$-equivalence of dg Lie algebroid and foliation. Now the quotient is defined by quotient of dg 
 $L_\infty$ groupoid generated from dg Lie algebroid, and it’s calculated by dg $L_\infty$ version of Chevalley-Eilenberg complex.
 I'm also wondering evaluation of the foliation using language of DT/GW invariants.
 \href{https://kojisunami.github.io/src/dgla-stack.pdf}{[link]}
-\end{itemize} 
+
+\vspace{1cm}
+\tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=6em]
+\begin{tikzpicture}[auto]
+    \node [block] (a) {dg L_\infty Groupoid};
+    \node [block, right of=a, node distance=5cm, text width=5cm, align=center] (b) {Geometrization of Foliation};
+    \node [block, right of=b, node distance=5cm, text width=5cm, align=center] (c) {Fukaya Category};
+    \draw [<->] (a) -- node[name=u, above=5mm] {$Globalization$} (b);
+    \draw [<->] (b) -- node[name=v, above=5mm] {$Integration$} (c);
+    \node[ block, fit=(a) (b) (c) (u) (v), inner sep=10pt ] {};
+\end{tikzpicture}
+\vspace{1cm}
+\end{itemize}
+
+
 
 
 
@@ -50,7 +80,8 @@ I'm also wondering evaluation of the foliation using language of DT/GW invariant
     \includegraphics[width=0.2\textwidth]{alice2.png}
 \end{wrapfigure}
 
-\textbf{Exposition}
+\noindent
+\textbf{Exposition} \\
 
 \newline
 \newline
@@ -85,7 +116,8 @@ Introducing Brown representability in triangulated category. It’s bachelor’s
     \includegraphics[width=0.2\textwidth]{alice3.png}
 \end{wrapfigure}
 
-\textbf{Casual Non-Research Interests}
+\noindent
+\textbf{Casual Non-Research Interests} \\
 
 Below is the list of materials I personally think interesting, and they are somewhat connecting to algebraic geometry. However, they are quite different from my focus, and I don’t have time for them.
 
@@ -125,7 +157,8 @@ Geometric Langlands is a duality connecting local system and D-module and Higgs 
     \includegraphics[width=0.2\textwidth]{alice4.png}
 \end{wrapfigure}
 
-\textbf{Junk}
+\noindent
+\textbf{Junk} \\
 
 I have invented two junk pdf of totally approximatelly 200 pages created with conversation of chatGPT or any others, 
 and it was a journey of searching my broad interests in math. Actually it helped me a lot, 
