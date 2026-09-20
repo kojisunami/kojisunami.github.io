@@ -33,43 +33,39 @@ and the links below are research proposals but not publishment quality yet:
 \begin{itemize}
 \item \textbf{$A_\infty$-Enhancement of Geometry}  \\
 
+\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{tikzpicture}[auto, every node/.style={font=\small}]
+  \node (a) at (0,0) {Fukaya\\ Category};
+  \node (b) at (3,0) {Derived\\ Category};
+  \draw[-, shorten <= 15pt, shorten >= 3pt] (a) -- (b);
+  \node[draw, rectangle, fit=(a) (b), inner xsep=10pt, xshift=15pt] {};
+\end{tikzpicture}
+\end{wrapfigure}
+
 The proof of homological mirror symmetry conjecture is discussed from multi-dimensional perspective, 
 including counting Gromow-Witten invariant, or Balmer spectrum, 
 while generalizing formal geometry of non-unital $A_\infty$ algebra to $A_\infty$ category. 
-\href{https://kojisunami.github.io/src/ainfty-geometry.pdf}{[link]} \\
+\href{https://kojisunami.github.io/src/ainfty-geometry.pdf}{[link]} 
 
-\par\bigskip
-\begin{center}
+\item \textbf{Derived Intersection on Foliation} \\
+
+\begin{wrapfigure}{r}{0.4\textwidth}
 \begin{tikzpicture}[auto, every node/.style={font=\small}]
-  \node (a) at (0,0) {Fukaya Category};
-  \node (b) at (3,0) {Derived Category};
+  \node (a) at (0,0) {dg $L_\infty$\\ Groupoid};
+  \node (b) at (3,0) {Quotient\\ Stack};
+  \node (c) at (6,0) {Fukaya\\ Category};
   \draw[-, shorten <= 15pt, shorten >= 3pt] (a) -- (b);
-  \node[draw, rectangle, fit=(a) (b), inner sep=10pt ] {};
+  \draw[-, shorten <= 15pt, shorten >= 3pt] (b) -- (c);
+  \node[draw, rectangle, fit=(a) (b) (c), inner xsep=10pt, xshift=15pt] {};
 \end{tikzpicture}
-\end{center}
-\par\bigskip
-
-\item \textbf{Derived Intersection Theory on Foliation} \\
+\end{wrapfigure}
 
 Derived algebraic geometry proves the $\infty$-equivalence of dg Lie algebroid and foliation. Now the quotient is defined by quotient of dg 
 $L_\infty$ groupoid generated from dg Lie algebroid, and it’s calculated by dg $L_\infty$ version of Chevalley-Eilenberg complex.
 I'm also wondering evaluation of the foliation using language of DT/GW invariants.
-\href{https://kojisunami.github.io/src/dgla-stack.pdf}{[link]}  \\
+\href{https://kojisunami.github.io/src/dgla-stack.pdf}{[link]}  
 
-\par\bigskip
-\begin{center}
-\begin{tikzpicture}[auto, every node/.style={font=\small}]
-    \node (a) at (0,0) {dg $L_\infty$ Groupoid};
-    \node (b) at (3,0) {Quotient Stack};
-    \node (c) at (6,0) {Fukaya Category};
-  \draw[-, shorten <= 15pt, shorten >= 3pt] (a) -- (b);
-  \draw[-, shorten <= 15pt, shorten >= 3pt] (b) -- (c);
-    \node[draw, rectangle, fit=(a) (b) (c), inner sep=10pt ] {};
-\end{tikzpicture}
-\end{center}
 \end{itemize}
-\par\bigskip
-
 
 
 
