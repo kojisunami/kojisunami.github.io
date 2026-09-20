@@ -4,7 +4,7 @@
 \input {math_header.tex}
 \addbibresource{dgla-stack.bib}
 
-\title{DG Lie Algebroid and Quotient Stack}
+\title{Derived Intersection Theory on Foliation}
 \author{Koji Sunami}
 
 
@@ -129,76 +129,62 @@ TBD
 \end{proposition}
 
 
-Now let's set some research questions. First of all, to introduce the application regarding questions of foliation beyond of itself,
-QFT might be the obvious application, while we also further investigate the property of quotient stack itself.
-Perhaps subjectively, Lie groupoid quotient is much more dirty than that of Lie group, but in order to make it something, 
-considering the $M$ as simple as possible, hyperk\"ahler manifold, for example.
-I'd also consider the computational method with Chevalley-Eilenberg, Donaldson-Thomas/Gromov-Witten invariants.
-Another problem is to discuss what's the missing data when we define quotient stack of Lie groupoid.
+Now let's set some research questions. To understand it structure, I consider beginning with specific geometry.
+Subjectively, groupoid foliation is too broad, think of Lie group quotient in gauge theory as a comparison, 
+Lie groupoid quotient is much more dirty than that of Lie group, so making the shape $M$ as simple as possible, for instance, to make it clear,
+and possibly $M$ could be just projective space $\mathbb{P}^n$ or a plane $\mathbb{A}^n$ or a hyperk\"ahler manifold,
+I'd also study its computation using Chevalley-Eilenberg, Donaldson-Thomas/Gromov-Witten invariants or any other,
+while it's interesting tracking what's the missing data when we define quotient stack of Lie groupoid.
+On the other hand, we could also consider the categorification to make it more abstract.
+Typically, I noticed derived algebraic geometry might be useful to discuss these problems,
+and I'll consider geometrization of moduli stack of foliations where we can discuss intersection or any others: \\
 
 \begin{question}{}{}
-(application)
-\begin{itemize}
-\item What happens if the foliation is Lagrangian?
-\item Is there any connection to Fukaya category?
-\item Is there any either deformation or quantization?
-\end{itemize}
-
-(structure)
 \begin{itemize}
 \item Making geometry $M$ as simple as possible?
 \item Computation of groupoid version of CE cohomology? DT/GW invariants?
 \item Does quotient stack contain all the necessary information?
+\item Is there either deformation or quantization or derived geometry?
+\item Categorification?
 \end{itemize}
 \end{question}
 
 
-Now here is the developing question. Suppose two distinct Lagrangian folations $\mathcal{F}_1$ and $\mathcal{F}_2$ on the same geometry $M$,
-what is the intersection between them? 
-Namely, this is an intersection theory of moduli stack.
-Even though stack is defined in Grothendieck topology, radically speaking, moduli space is not a geometry itself, it's just a generalization.
-If that is the case, I'll claim the geometrization of moduli stack.
+Another view point is that geometry is useful in QFT, for example. 
+Especially, consider Lagrangian intersection theory of Calabi-Yau geometry, 
+whose quantum cohomology generates Gromov-Witten invariant, 
+and this helps to compute path integral in both 4d/10d gauge theory.
+For this time I'll introduce derived Lagrangian intersection theory to this foliation.
+Suppose there are two distinct Lagrangian folations $\mathcal{F}_1$ and $\mathcal{F}_2$ on the same geometry $M$,
+and if considered intersection of these foliations, this might be interesting and different. \\
 
-In order to define intersection theory, derived algebraic geometry might be needed.
-
-
-Or if there is 
-possibly enhancing dg $L_\infty$ algebroid from Lie algebroid?
-
-
-
-As a comparison with $A_\infty$, is there any notion of $L_\infty$ category,
-and once we make it, is there any connection .
+Furthermore, if the whole argument contains $dg L_\infty$ algebroid as generalization of Lie algebroid,
+I wonder if there is any comparison with $A_\infty$ side in particular Fukaya category,
+or if there's any connection to homological mirror symmetry? I'll simply summarize in the list: \\
 
 
-\begin{minipage}{0.48\textwidth}
-This is the left side.
-
-You can put sentences here.
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\textwidth}
-This is the right side.
-
-You can put a diagram here:
-
-\begin{center}
-\includegraphics[width=\textwidth]{diagram.png}
-\end{center}
-\end{minipage}
+\begin{question}{}{}
+\begin{itemize}
+\item What happens if the foliation is Lagrangian?
+\item Is there any connection to Fukaya category?
+\end{itemize}
+\end{question}
 
 
-\section {Derived Approach}
+\vspace{1cm}
+For the organization of this paper, I begin with language of derived algebraic geometry and $\infty$ categories,
+then enhancing groupoid foliation in derived language as well as classically,
+and I add Lagrangian intersection theory.
+
+\vspace{1cm}
 
 
+\section {Derived Algebraic Geometry}
 
+\section {$\infty$ Category}
 
-\subsection{Classic Algebraic Geometry}
+\section {Groupoid Foliation}
 
-GIT
-
-
-\subsection{Derived Algebraic Geometry}
 
 
 \begin{definition}{}{}
@@ -213,7 +199,7 @@ GIT
 
 
 
-\section {QFT World}
+\section {Lagrangian Intersection Theory}
 
 \begin{definition}{Lagrangian}{}
 
