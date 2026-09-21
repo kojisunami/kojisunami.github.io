@@ -31,6 +31,12 @@ called 2-morphism, and iteratively $n$-morphisms.
 \end{definition}
 
 
+\begin{definition}{$A_\infty$ Functor}{}
+
+
+\end{definition}
+
+
 \begin{definition}{Fukaya Category}{}
 For a symplectic manifold $X$, Fukaya category $Fuk(X)$ is an $A_\infty$ category describing Lagrangian intersection.
 The objects of Fukaya category $Ob(Fuk(X))$ is Lagrangian submanifolds $L\subset X$, 
@@ -43,20 +49,32 @@ satisfying Stasheff associahedron property.
 \end{definition}
 
 
-$A_\infty$ enhancemenet of dg-category doesn't unique enhancement, but the uniqueness is guaranteed if dg-category is derived category $D^b(X)$.
+$A_\infty$ enhancement of dg-category doesn't have unique enhancement, 
+but the uniqueness is guaranteed if dg-category is derived category $D^b(X)$.
 
 \begin{definition}{$A_\infty$ Derived Category}{}
-$A_\infty$ enhancement of derived categeory $D^b(X)$ is 
-
-
+$A_\infty$ enhancement of derived categeory $D^b(X)$ is an $A_\infty$ category $\mathcal{A}$,
+whose homology is $H^*(\mathcal{A}(E,F))=Ext^*(E,F)$, 
+while its trivialization $H^0(\mathcal{A}(E,F))$ needs to become the based derived category $H^0(\mathcal{A}(E,F)) \cong Hom_{D^b(X)}(E,F)$.
+This $A_\infty$ enhancement $\mathcal{A}$ can be denoted as $D^b(X)$ by abuse of notation.
 \end{definition}
 
 
-\begin{definition}{}{}
-\end{definition}
+\begin{conjecture}{Homological Mirror Symmetry}{}
+There is an $A_\infty$ equivalence of categories 
+\[
+Fuk(X) \cong D^b(X)
+\]
+\end{conjecture}
 
 
-$A_\infty$ algebra is a generalization of commutative ring.$A_\infty$ category is its categorical generalization,
+For solving or developing this statement, the natural question is if there is any geometric realization of $A_\infty$ category, 
+and another question is if there is any connection to the classical or derived algebraic geometry,
+and how that changes by deformation or quantization. \\
+
+
+
+$A_\infty$ algebra is a generalization of commutative ring. $A_\infty$ category is its categorical generalization,
 especially if $A_\infty$ category wth one object is $A_\infty$ algebra.
 I'll use $A_\infty$ algebra to describe algebraic geometry.
 Recall a commutative ring defines an affine scheme by its ring spectrum $X=V(\frak{p})$ with its structure sheaf $\mathcal{O}_X$, 
@@ -72,7 +90,12 @@ including counting Gromow-Witten invariant, or Balmer spectrum, while generalizi
 of non-unital $A_\infty$-algebra to $A_\infty$-category. \\
 
 
+
+
+\section{Derived Algebraic Geometry}
+
 \section{Geometric Realization of $A_\infty$}
+
 
 \begin{definition}{Counital Coalgebra}{counital coalgebra}
 Coalgebra $B$ is a graded vector space with morphism $\Delta:B\to B\otimes B$ s.t. 
