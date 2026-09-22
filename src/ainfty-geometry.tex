@@ -67,51 +67,14 @@ Fuk(X) \cong D^b(X)
 \end{conjecture}
 
 
+
+
 What is the structure of $A_\infty$ category? The natural question is geometric realization of $A_\infty$ category.
-Starting from $A_\infty$ algebra as a special case of $A_\infty$ category, 
-
-and this can be formal scheme.
-
-
-
-
-
-One idea is identifying $A_\infty$ algebra to $L_\infty$ algebra through Hochschild cohomology by Kontsevich-Soibelman, 
-and making its generalization to $A_\infty$ category. \\
-
-$L_\infty$ algebra is a deformation of dgla, which is an analogue of Lie algebra for homological algebra
-(consider Lie algebra consists of vector field, dgla consists of endomophism of chain complex $d:V\to V$ satisfying $d^2=0$). \\
-
-<ncfp dg-manifold> \\
-
-If there is any connection to the classical or derived algebraic geometry will help. \\
-
-
-$A_\infty$ algebra is a generalization of commutative ring. $A_\infty$ category is its categorical generalization,
-especially if $A_\infty$ category wth one object is $A_\infty$ algebra.
-I'll use $A_\infty$ algebra to describe algebraic geometry.
-Recall a commutative ring defines an affine scheme by its ring spectrum $X=V(\frak{p})$ with its structure sheaf $\mathcal{O}_X$, 
-and that can also be described functorially as $F: CRing \to Set$. Hereafter I focus on functorial point of view. \\
-
-The proof of homological mirror symmetry conjecture is discussed from multi-dimensional perspective, 
-including counting Gromow-Witten invariant, or Balmer spectrum, while generalizing formal geometry 
-of non-unital $A_\infty$-algebra to $A_\infty$-category. \\
-
-
-\begin{definition}{}{}
-
-
-\end{definition}
-
-
-\tableofcontents
-
-
-\section{}
-
-
-
-\section{Geometric Realization of $A_\infty$}
+Starting from $A_\infty$ algebra as a special case of $A_\infty$ category, I define it as noncommutative formal pointed dg-manifold
+(hereafter in short, ncfp dg-manifold), and then I'll generalize to $A_\infty$ category.
+Briefly the basic idea is $A_\infty$ algebra derives coalgebra, and coalgebra is contravariantly mapped to algebra in category,
+and this is an $A_\infty$ extnesion of notion of affine scheme.
+In fact, the case of $A_\infty$ category is analogous to $A_\infty$ algebra.
 
 
 \begin{definition}{Counital Coalgebra}{counital coalgebra}
@@ -220,7 +183,6 @@ For the case of $I=\{i\}$ consists of one vertex, we write $d|_{pt} = d\circ \et
 
 
 
-
 %\mathcal{}}$ with isomorphism $B_{\mathcal{X}}\cong T^c(Q[1])$ for a quiver
 %$Q=\underset{X,Y\in Ob(\mathcal{A})}{\oplus} Hom(X,Y)$ is a quiver, $T^c(Q[1])=\underset{n\geqq 0}{\oplus} Q[1]^{\otimes n}$
 %is cofree coassociative coalgebra, and source/target needs to be corresponding in this grading.
@@ -254,13 +216,102 @@ For the case of $I=\{i\}$ consists of one vertex, we write $d|_{pt} = d\circ \et
 %equivalently $[\underset{n\geqq 1}{\Sigma} m_n, \underset{n\geqq 1}{\Sigma} m_n]=0$.
 %The proof is the same as $A_\infty$ algebra case.
 %\end{proposition}
+%
+%For the case of infinite objects $A_\infty$ category is its inductive limit of finite objects.
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+I'll define non-commtuative scheme from its coalgebra identification of $A_\infty$ algebra/category.
+Consider a functor $X: Alg \to Coalg$, mapping an associative algebra $O(X)$ to a coalgebra $B_X$.
+Associative algebra is more general than unital commutative associative algebra $CRing$, 
+and it's different from classical commutative scheme. Some idea of understanding noncommutative scheme is \\
+
+
+Recall a commutative ring defines an affine scheme by its ring spectrum $X=V(\frak{p})$ with its structure sheaf $\mathcal{O}_X$, 
+and that can also be described functorially as $F: CRing \to Set$. Hereafter I focus on functorial point of view. \\
+
+
+\begin{itemize}
+\item Deformation
+\item Quantization
+\end{itemize}
+
+I don't know the general classification of associative algebra,
+but one important fact is that commutative algebra's quantization is associative.
+I wonder if there is any connection to the classical algebraic geometry or derived algebraic geometry in general. \\
+
+\begin{remark}{Associative Algebra Example}{}
+To name some examples of associative algebra, $U(\frak{g})$, $k[G]$, $M_n(k)$, Hecke algebra, path algebra, quiver algebra etc,
+and quantization of associtive algebra is associtive algebra.
+\end{remark}
+
+
+Another approach is deformation.
+One idea for the further development is arguing the correspondece of $A_\infty$ algebra and $L_\infty$ algebra through Hochschild cohomology 
+through Kontsevich-Soibelman, where $L_\infty$ treats deformation. \\
+
+$L_\infty$ algebra is a deformation of dgla, which is an analogue of Lie algebra for homological algebra
+(consider Lie algebra consists of vector field, dgla consists of endomophism of chain complex $d:V\to V$ satisfying $d^2=0$). \\
+
+
+\begin{definition}{Hochschild Complex}{}
+\end{definition}
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+Once we create the geometric intuition of $A_\infty$ category in terms of both quantization/deformation,
+I'll consider its connection to formal scheme.
+
+formal moduli problem.
+I'll consider its connection to Fukaya category.
+
+\begin{definition}{Formal Scheme}{}
+\end{definition}
+
+
+\begin{definition}{Formal Moduli}{}
+$\frak{M}_L$ \\
+$\hat{M}_L = \projvarlim \mathcal{O}_X/ I_L^{n+1}$
+\end{definition}
+
+\begin{definition}{Fukaya Category}{}
+\end{definition}
+
+
+Now that it looks very connection with ordinary algebaric geometry. Consider .
+
+\begin{question} {}{}
+\begin{itemize}
+\item Is there any intersection theory property of formal pointed dg-manifold?
+\end{itemize}
+\end{question}
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+Finally, the proof of homological mirror symmetry conjecture is discussed from multi-dimensional perspective, 
+including counting Gromow-Witten invariant, or Balmer spectrum, while generalizing formal geometry 
+of non-unital $A_\infty$-algebra to $A_\infty$-category. \\
 
 
 
-For the case of infinite objects $A_\infty$ category is its inductive limit of finite objects.
+\tableofcontents
 
 
+\section{}
 
+\section{}
+
+\section{}
 
 
 \nocite{*}
