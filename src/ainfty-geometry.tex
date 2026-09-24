@@ -269,14 +269,46 @@ $L_\infty$ algebra is a deformation of dgla, which is an analogue of Lie algebra
 \noindent\rule{\textwidth}{0.4pt}
 \vspace{0.5cm}
 
-Once we create the geometric intuition of $A_\infty$ category in terms of both quantization/deformation,
-I'll consider its connection to formal scheme.
 
-formal moduli problem.
-I'll consider its connection to Fukaya category.
+Next, I'll consider $A_\infty$ algebra/category and its relationship with algebraic geometry.
+The question is if ncfp dg-manifold of $A_\infty$ algebra/category can be identified with formal scheme,
+but the problem is the missing data $d_Q$ used for $A_\infty$ coherence.
+I'll consider derived algebraic geometry, where we use cdga $(A,d)$, consisting differential structure on a ring $A$.
 
 \begin{definition}{Formal Scheme}{}
-$Spf(A)$
+A formal scheme is a locally ringed space $(X,\mathcal{O}_X)$ that is locally isomorphic to formal spectrum $Spf(A)$
+of a complete topological ring $A$. Assuming $A$ is $I$-adically complete for an ideal $I\subset A$ s.t. $A = \varprojlim_{n} A/I^n$.
+Then as a set, $|Spf(A)| = \{ \frak{p} \subset A  | \text{ \frak{p} is open and contains $I^n$} for some $n$\}$. 
+as a remark, prime ideal $\frak{p}$ is defined to be closed in Zariski topology, but from different point of view,
+it could be open subset in $I$-adic topology, different from Zariski. \\
+
+For a scheme $X$, formal subscheme $\hat{X_L}$ of $L\subset X$ is given by a limit of sheaf 
+$\hat{X_L} = \varprojlim_{n} \mathcal{O}_X / \mathcal{I}_L^n$ where $\mathcal{I}_L$ is an ideal sheaf of $\mathcal{O}_X$ for $L$.
+\end{definition}
+
+
+\begin{definition}{Non-Commutative Formal Pointed DG-Manifold}{}
+For coalgebra derivation $Q: T^c (V[1]) \to T^c (V[1])$ s.t. $Q^2=0$ of $A_\infty$ structure where $V$ is a vector space,
+there is a correspondence to formal scheme $(V,Q) \leftrightarrow (Spf(A), d_Q)$, where $V^\vee$ is a dual vector space,
+and $A = \hat{Sym(V^\vee)}$, and $d_Q: Spf(A) \to Spf(A)$ is a differential s.t. $d_Q (f) = Q(f)$ for every function $f\in A$.
+\end{definition}
+
+
+
+\begin{definition} {Derived Formal Scheme}{}
+\end{definition}
+
+
+\begin{definition} {}{}
+\end{definition}
+
+
+I'll consider its connection to Fukaya category.
+
+In fact, ncfp dg-manifold of $A_\infty$ algebra/category can be identified with formal scheme, not exactly the same. 
+
+
+\begin{definition} {a}{}
 \end{definition}
 
 
@@ -325,9 +357,13 @@ of non-unital $A_\infty$-algebra to $A_\infty$-category. \\
 
 If $A_\infty$ category is symmetric monoidal category, its homotopy category is tensor triangulated category.
 
+tensor triangulated category \\
 
-Balmer spectrum
 
+Balmer spectrum \\
+
+
+stable homotmopy theory \\
 
 \section{GW Invariant}
 
