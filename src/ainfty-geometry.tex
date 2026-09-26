@@ -20,7 +20,8 @@ This statement says the elaboration of mirror symmetry, originally correspondenc
 in Calabi-Yau manifold, whose symplectic side we name as A-model, the complex side as B-model, 
 mirror symmetry solves many of QFT problem as well as Landau-Ginzburg model and others,
 and homological mirror symmetry is generalization of mirror symmetry in $\infty$-category. 
-The proof isn't easy, but the understanding of the problem statement itself is not difficult. \\
+The proof isn't easy, but the understanding of the problem statement itself is not difficult. 
+The overview of the problem statement is schematically: \\
 
 
 \begin{definition}{$A_\infty$ Category}{}
@@ -224,45 +225,9 @@ For the case of $I=\{i\}$ consists of one vertex, we write $d|_{pt} = d\circ \et
 \noindent\rule{\textwidth}{0.4pt}
 \vspace{0.5cm}
 
-I'll define non-commtuative scheme from its coalgebra identification of $A_\infty$ algebra/category.
-Consider a functor $X: Alg \to Coalg$, mapping an associative algebra $O(X)$ to a coalgebra $B_X$.
-Associative algebra is more general than unital commutative associative algebra $CRing$, 
-and it's different from classical commutative scheme. Some idea of understanding noncommutative scheme is \\
 
 
-Recall a commutative ring defines an affine scheme by its ring spectrum $X=V(\frak{p})$ with its structure sheaf $\mathcal{O}_X$, 
-and that can also be described functorially as $F: CRing \to Set$. Hereafter I focus on functorial point of view. \\
 
-
-\begin{itemize}
-\item Deformation
-\item Quantization
-\end{itemize}
-
-I don't know the general classification of associative algebra,
-but one important fact is that commutative algebra's quantization is associative.
-I wonder if there is any connection to the classical algebraic geometry or derived algebraic geometry in general. \\
-
-\begin{remark}{Associative Algebra Example}{}
-To name some examples of associative algebra, $U(\frak{g})$, $k[G]$, $M_n(k)$, Hecke algebra, path algebra, quiver algebra etc,
-and quantization of associtive algebra is associtive algebra.
-\end{remark}
-
-\begin{question}{}{}
-Should we just use deformation of associative algebra, which makes $A_\infty$ algebra?
-\end{question}
-
-
-Another approach is deformation.
-One idea for the further development is arguing the correspondece of $A_\infty$ algebra and $L_\infty$ algebra through Hochschild cohomology 
-through Kontsevich-Soibelman, where $L_\infty$ treats deformation. \\
-
-$L_\infty$ algebra is a deformation of dgla, which is an analogue of Lie algebra for homological algebra
-(consider Lie algebra consists of vector field, dgla consists of endomophism of chain complex $d:V\to V$ satisfying $d^2=0$). \\
-
-
-\begin{definition}{Hochschild Complex}{}
-\end{definition}
 
 
 \vspace{0.5cm}
@@ -270,16 +235,52 @@ $L_\infty$ algebra is a deformation of dgla, which is an analogue of Lie algebra
 \vspace{0.5cm}
 
 
-Next, I'll consider $A_\infty$ algebra/category and its relationship with algebraic geometry.
-The question is if ncfp dg-manifold of $A_\infty$ algebra/category can be identified with formal scheme,
-but the problem is the missing data $d_Q$ used for $A_\infty$ coherence.
-I'll consider derived algebraic geometry, where we use cdga $(A,d)$, consisting differential structure on a ring $A$.
+For $A_\infty$ category and its relationship with algebraic geometry,
+Kontsevich-Soibelman claims definition of ncfp dg-manifold of $A_\infty$ algebra and its identification with
+Hochschild cochain complex as well as formal scheme.
+This notion can be generalized to $A_\infty$ category including Fukaya category via coalgebra,
+and I don't know the prospective of future development, but connection of Stable $\infty$-category from Lurie might have 
+connection to derived scheme. \\
+
+On the other hand, there's a transformation of ncfp dg-manifold of $A_\infty$-algebra into derived formal scheme,
+and the derived method captures the missing data $d_Q$ used for $A_\infty$ coherence, where ordinary formal scheme cannot have.
+In dag, we use cdga $(A,d)$, consisting differential structure on a ring $A$. \\
+
+
+\begin{definition}{Hochschild Cochain Complex}{}
+For an associative algebra $A$, take $A^e = A\otimes A$. Let $M$ as $A$-bimodule or equivalenrtly $A^e$-module, 
+we define Hochschild cochain as $CC^n (A,M) = Hom_{A^e} (A^{\otimes n}, M)$,
+and it's differential is given by $d_{Hoch} : CC^n \to CC^{n+1}$. 
+Its cohomology class is given by homological extension $HC^\cdot (A,M) = Ext^\cdot_{A^e} (A,M)$. \\
+
+For the case of category $\mathcal{C}$, the Hochschild cochain complex is 
+$HH^\cdot (\mathcal{C}) \cong Ext_{\mathcal{C}^e}^\cdot (\mathcal{C}, \mathcal{C})$ 
+where $\mathcal{C}^e= \mathcal{C}^{op}\otimes \mathcal{C}$.
+\end{definition}
+
+
+It should be veried that notion could be well-defined on Fukaya category.
+Fukaya category has the corresponding coalgebra by Kontsevich-Soibelman, 
+It could be identified with a coderivation complex.
+
+\begin{proposition}{Cobar Construction}{}
+\[ CC^\cdot (A,A) = CC^\cdot (A) \cong Coder (BA) \]
+
+In particular, $CC^\cdot (Fuk(X)) \cong Coder (BFuk(X))$ where coalgebra of Fukaya category $Fuk(X)$ is $BFuk(X)$.
+\end{proposition}
+
+
+
+
+\begin{definition} {}{}
+\end{definition}
+
 
 \begin{definition}{Formal Scheme}{}
 A formal scheme is a locally ringed space $(X,\mathcal{O}_X)$ that is locally isomorphic to formal spectrum $Spf(A)$
 of a complete topological ring $A$. Assuming $A$ is $I$-adically complete for an ideal $I\subset A$ s.t. $A = \varprojlim_{n} A/I^n$.
-Then as a set, $|Spf(A)| = \{ \frak{p} \subset A  | \text{ \frak{p} is open and contains $I^n$} for some $n$\}$. 
-as a remark, prime ideal $\frak{p}$ is defined to be closed in Zariski topology, but from different point of view,
+Then as a set, $|Spf(A)| = \{ \mathfrak{p} \subset A  | \text{ $\mathfrak{p}$ is open and contains $I^n$ for some $n$} \}$. 
+As a remark, prime ideal $\mathfrak{p}$ is defined to be closed in Zariski topology, but from different point of view,
 it could be open subset in $I$-adic topology, different from Zariski. \\
 
 For a scheme $X$, formal subscheme $\hat{X_L}$ of $L\subset X$ is given by a limit of sheaf 
@@ -294,36 +295,16 @@ and $A = \hat{Sym(V^\vee)}$, and $d_Q: Spf(A) \to Spf(A)$ is a differential s.t.
 \end{definition}
 
 
+For the case of Fukaya category, $CF^*(L,L)$ is $A_\infty$ algebra, and it generates $Spf(\hat{Sym( CF^*(L,L)^\vee[-1])})$.
+$A_\infty$ CF(L,L) encodes formal deformatio ntheory of L.
+formna lderived moduli problem at [L]
 
-\begin{definition} {Derived Formal Scheme}{}
-\end{definition}
-
-
-\begin{definition} {}{}
-\end{definition}
-
-
-I'll consider its connection to Fukaya category.
-
-In fact, ncfp dg-manifold of $A_\infty$ algebra/category can be identified with formal scheme, not exactly the same. 
-
-
-\begin{definition} {a}{}
-\end{definition}
-
-
-\begin{definition}{Formal Moduli}{}
-$\frak{M}_L$ \\
-
-$\hat{M}_L = \varprojlim \mathcal{O}_X/ I_L^{n+1}$
-\end{definition}
-
-\begin{definition}{Fukaya Category}{}
-\end{definition}
 
 
 \begin{definition}{Derived Formal Scheme}{}
-$Spf(A)$
+Derived formal scheme is a functor $cdga \to \infty-groupoid$ s.t. \\
+
+$\pi_0 (A) = Spf(A)$
 \end{definition}
 
 
@@ -336,9 +317,15 @@ Now that it looks very connection with ordinary algebaric geometry. Consider .
 \end{question}
 
 
+
+
+
+
 \vspace{0.5cm}
 \noindent\rule{\textwidth}{0.4pt}
 \vspace{0.5cm}
+
+
 
 
 Finally, the proof of homological mirror symmetry conjecture is discussed from multi-dimensional perspective, 
@@ -348,8 +335,18 @@ of non-unital $A_\infty$-algebra to $A_\infty$-category. \\
 
 
 \tableofcontents
+\vspace{1cm}
 
-\section{Formal Moduli Problem}
+
+\section{Derived Algebraic Geometry}
+
+
+So far Fukaya category has a categorical Hochschild cochain complex to dicuss the deformation of formal moduli space,
+but Fukaya category is typically difficult to directly compute it.
+Though this is still on-going research, I'll consider Lurie's stable infty category and its connection to derived geometry,
+since Fukaya category $Fuk(X)$ has transformation to stable $\infty$-cateogry $Tw^\pi (Fuk(X))$,
+
+
 
 
 
@@ -363,9 +360,85 @@ tensor triangulated category \\
 Balmer spectrum \\
 
 
-stable homotmopy theory \\
+Stable homotmopy theory \\
 
-\section{GW Invariant}
+
+
+
+
+
+\section{Quantization and Deformation}
+
+I'll define non-commtuative scheme from its coalgebra identification of $A_\infty$ algebra/category.
+Consider a functor $X: Alg \to Coalg$, mapping an associative algebra $O(X)$ to a coalgebra $B_X$.
+Associative algebra is more general than unital commutative associative algebra $CRing$, 
+and it's different from classical commutative scheme. Some idea of understanding noncommutative scheme is \\
+
+
+Recall a commutative ring defines an affine scheme by its ring spectrum $X=V(\mathfrak{p})$ with its structure sheaf $\mathcal{O}_X$, 
+and that can also be described functorially as $F: CRing \to Set$. Hereafter I focus on functorial point of view. \\
+
+
+\begin{itemize}
+\item Deformation
+\item Quantization
+\end{itemize}
+
+I don't know the general classification of associative algebra,
+but one important fact is that commutative algebra's quantization is associative.
+I wonder if there is any connection to the classical algebraic geometry or derived algebraic geometry in general. \\
+
+\begin{remark}{Associative Algebra Example}{}
+To name some examples of associative algebra, $U(\mathfrak{g})$, $k[G]$, $M_n(k)$, Hecke algebra, path algebra, quiver algebra etc,
+and quantization of associtive algebra is associtive algebra.
+\end{remark}
+
+
+\begin{question}{}{}
+Should we just use deformation of associative algebra, which makes $A_\infty$ algebra?
+\end{question}
+
+
+Another approach is deformation.
+One idea for the further development is arguing the correspondece of $A_\infty$ algebra and $L_\infty$ algebra through Hochschild cohomology 
+through Kontsevich-Soibelman, where $L_\infty$ treats deformation. \\
+
+$L_\infty$ algebra is a deformation of dgla, which is an analogue of Lie algebra for homological algebra
+(consider Lie algebra consists of vector field, dgla consists of endomophism of chain complex $d:V\to V$ satisfying $d^2=0$). \\
+
+
+\begin{definition}{$L_\infty$ Algebra}{}
+\end{definition}
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+If Ganatra claims relationship of Hochschild cochain complex and quantum cohomology and symplectic cohomology,
+there should be the connection to Gromov-Witten invariants. \\
+
+
+\begin{definition}{Quantum Cohomology}{}
+
+\end{definition}
+
+
+\begin{definition}{Symplectic Cohomology}{}
+
+\end{definition}
+
+
+\begin{proposition}{}{}
+\[ QH^* (X) \overset{CO}{\cong} HH_* (\mathcal{F}(X)) \]
+
+\[ HH_* (\mathcal{F}(X)) \overset{OC}{\cong} QH^{*+n}(X) \]
+
+where $CO$ and $OC$ are closed-open and open-closed map.
+\end{proposition}
+
+
 
 
 \nocite{*}
