@@ -21,19 +21,22 @@ in Calabi-Yau manifold, whose symplectic side we name as A-model, the complex si
 mirror symmetry solves many of QFT problem as well as Landau-Ginzburg model and others,
 and homological mirror symmetry is generalization of mirror symmetry in $\infty$-category. 
 The proof isn't easy, but the understanding of the problem statement itself is not difficult. 
-I'll write the overview of the problem statement is schematically, and I'll write the few possible speculation for the solution. \\
+I'll write the overview of the problem statement is schematically, precise but not very rigorous,
+and further I'll write the few possible speculation. \\
 
 
-\begin{definition}{$A_\infty$ Category}{}
+\begin{definition}{$A_\infty$-Tool Set}{}
+($A_\infty$-Category) \\
 An $A_\infty$ category $\mathcal{A}$ is a quasi-category which consists of objects $X\in Ob(\mathcal{A})$
 and $1$-morphisms $f\in Mor^1(\mathcal{A})$, and the $1$-morphism contains higher coherence $\alpha: f\Rightarrow g$, 
-called 2-morphism, and iteratively $n$-morphisms.
-\end{definition}
+called 2-morphism, and iteratively $n$-morphisms. \\
 
-
-\begin{definition}{$A_\infty$ Functor}{}
-
-
+($A_\infty$-Functor) \\
+For $A_\infty$ category $\mathcal{C}$ and $\mathcal{D}$, $A_\infty$ functor $F:\mathcal{C}\to \mathcal{D}$ consists of 
+$F_0:Ob(\mathcal{C})\to Ob(\mathcal{D})$ and higher maps
+$F_n: Hom_\mathcal{C} (X_{n-1}, X_n)  \otimes \cdots \otimes Hom_\mathcal{C} (X_0, X_1) \to Hom_\mathcal{D} (F_0(X_0), F_0(X_n))$. 
+$F_0$ is a mapping of objects, and $F_1(f)$ is a mapping of morphisms, but it doesn't satisfy the composition 
+$(f\circ g)\circ h\not\cong f\circ (g\circ h)$. Thus the higher map $F_n$ where $n\geqq 2$ measures the failure of the composition.
 \end{definition}
 
 
@@ -62,20 +65,57 @@ This $A_\infty$ enhancement $\mathcal{A}$ can be denoted as $D^b(X)$ by abuse of
 
 Accordingly, homological mirror symmetry conjecture claim that there is an $A_\infty$ equivalence of categories 
 where $D^b(Y)$ is an $A_\infty$ enhanced derived category, and $Y$ is mirror dual of $X$.
+
 \begin{conjecture}{Homological Mirror Symmetry}{}
+The ordinary HMS conjecture is
+
 \[
 Fuk(X) \cong D^b(Y)
 \]
-\end{conjecture}
 
+Some modern version of HMS conjecture is $A_\infty$ equivalence of dg-category of right hand side
 
-The modern formulation of homological mirror symmetry is stable $\infty$ category of the right side.
-
-\begin{conjecture}{Homological Mirror Symmetry -- Ver 2}{}
 \[
-Fuk(X) \cong Perf_\infty(X)
+Fuk(X) \cong Perf_{dg}(Y)
 \]
 \end{conjecture}
+
+
+From the above statement of HMS conjecture, the left hand side $Fuk(X)$ describes the symplectic structure called A-model,
+and right hand side $D^b(X)$ describes complex structure called B-model.
+The spontaneous question is if there is any different variety of HMS conjecture,
+possibly more simplied version of that model, or some model already being verified? 
+In particular, original version of mirror symmetry or the QFT version?  \\
+
+
+
+\noindent
+The minimum version of mirror symmetry is the correspondence of Hodge structure of symplectic side called A-model
+and complex side called B-model. According to the outcome of K\"ahler geometry, symplectic data can be contained in Hodge diamond (why). \\
+
+
+\begin{definition}{Mirror Symmetry -- Classical Ver}{}
+For $X$ the Calabi-Yau 3-fold,\\
+$h^{1,1}(X) = h^{2,1}(Y)$\\
+$h^{2,1}(X) = h^{1,2}(Y)$
+TBD
+\end{definition}
+
+
+\noindent
+The different version of mirror symmetry is QFT.
+From Marc Gross, classical intersection theory of Kontsevich moduli space whose quantization derives quantum cohomology,
+which makes semi-infinite variation of Hodge structure in A-model, 
+while period integral of Landau-Ginzburg model generates SCFT, which makes another semi-infinite variation of Hodge structure in B-model.
+I only introduce A-model side: \\
+
+\begin{definition}{Mirror Symmetry -- QFT Ver}{}
+TBD
+\end{definition}
+
+
+
+
 
 
 \vspace{0.5cm}
@@ -83,12 +123,19 @@ Fuk(X) \cong Perf_\infty(X)
 \vspace{0.5cm}
 
 
-What is the structure of $A_\infty$ category? The natural question is geometric realization of $A_\infty$ category.
-Starting from $A_\infty$ algebra as a special case of $A_\infty$ category, I define it as noncommutative formal pointed dg-manifold
-(hereafter in short, ncfp dg-manifold), and then I'll generalize to $A_\infty$ category.
-Briefly the basic idea is $A_\infty$ algebra derives coalgebra, and coalgebra is contravariantly mapped to algebra in category,
-and this is an $A_\infty$ extnesion of notion of affine scheme.
-In fact, the case of $A_\infty$ category is analogous to $A_\infty$ algebra.
+
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+What is the structure of $A_\infty$ category? The natural question is geometric realization of $A_\infty$ category,
+which might be Hochschild cochain complex and derive formal scheme, and I use the method of coalgebra construction for them.
+The geometric interpretation of $A_\infty$-algebra is noncommutative formal pointed dg-manifold
+(hereafter in short, ncfp dg-manifold), and $A_\infty$-category is generalization of $A_\infty$-algebra.
+Indeed, similarly $A_\infty$-category has a correspondence coalgebra, where we can define its geometry.
 
 
 \begin{definition}{Counital Coalgebra}{counital coalgebra}
@@ -225,7 +272,7 @@ where $\mathcal{C}^e= \mathcal{C}^{op}\otimes \mathcal{C}$.
 \end{definition}
 
 
-It should be veried that notion could be well-defined on Fukaya category.
+It should be verified that notion could be well-defined on Fukaya category.
 Fukaya category has the corresponding coalgebra by Kontsevich-Soibelman, 
 It could be identified with a coderivation complex.
 
@@ -236,14 +283,95 @@ In particular, $CC^\cdot (Fuk(X)) \cong Coder (BFuk(X))$ where coalgebra of Fuka
 \end{proposition}
 
 
-So far Fukaya category has a categorical Hochschild cochain complex to dicuss the deformation of formal moduli space,
-but once it's done, Fukaya category is still difficult to directly compute it in general,
-and though this is still on-going research, I'll consider Lurie's stable $\infty$-category and its connection to derived geometry,
-since Fukaya category $Fuk(X)$ has transformation to stable $\infty$-cateogry $Tw^\pi (Fuk(X))$.
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+\noindent
+Considered that in particular shifted Hochschild complex with Gerstenhaber bracket is dgla,
+I define deformation functor for the study of deformation of dgla.
+The deformation functor of dgla spontaneously defines formal moduli problem, and I think it will be a wonderful argument, 
+since Fukaya cagegory for example or any other categories has more structure than its Hochschild. \\
 
 
-\begin{definition}{}{}
+\begin{definition}{Deformation Functor}{}
+Let $mathfrak{g}$ be a dgla, and $Art$ is a category of artinian rings. 
+Deformation functor is a functor $Def_{\mathfrak{g}}: Art \to Set$ s.t.
+
+\[
+Def_{\mathfrak{g}}(R) := \frac {\{ \mathfrak{g} \otimes \mathfrak{m}_R |  \} }{\text{gauge}} 
+\]
+
+satisfying Schlessinger axiom (TBD).
 \end{definition}
+
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+
+The application of this Hochschild construction is to derive Gromov-Witten invariants.
+According to Ganatra, Hochschild cochain complex of Fukaya category derives quantum cohomology by open-closed map,
+and similarly symplectic cohomology.
+
+
+\begin{definition}{Quantum Cohomology}{}
+TBD
+\end{definition}
+
+
+\begin{definition}{Symplectic Cohomology}{}
+TBD
+\end{definition}
+
+
+\begin{proposition}{}{}
+\[ QH^* (X) \overset{CO}{\cong} HH_* (\mathcal{F}(X)) \]
+
+\[ HH_* (\mathcal{F}(X)) \overset{OC}{\cong} QH^{*+n}(X) \]
+
+where $CO$ and $OC$ are closed-open and open-closed map.
+\end{proposition}
+
+
+
+
+So far, Fukaya category has an GW invariant, but GW invariant doesn't describe the whole picture of Fukaya category.
+As stable $\infty$-category has a derived geometric interpretation according to Lurie,
+I'll consider Fukaya category $Fuk(X)$, and its transformation to stable $\infty$-category $Tw^\pi (Fuk(X))$. \\
+
+
+\begin{definition}{Stable $\infty$-Category}{}
+A stable $\infty$-category $\mathcal{C}$ consits of zero objects $0\in\mathcal{C}$ meaning it's object both initial and terminal.
+$\mathcal{C}$ has all finite limits and finite colimits. A commutative diagram  \\
+\begin{tikzpicture}[auto] 
+    \node (a) at (1.5,1.5) {A};
+    \node (b) at (  0,1.5) {B};
+    \node (c) at (1.5,  0) {C};
+    \node (d) at (  0,  0) {D};
+    \draw [->] (a) -- (b);
+    \draw [->] (a) -- (c);
+    \draw [->] (b) -- (d);
+    \draw [->] (c) -- (d);
+\end{tikzpicture}
+
+is a pullback iff it's a pushout.
+\end{definition}
+
+
+Though it's different from $Tw^\pi (Fuk(X))$, some example of stable $\infty$-category is $\mathcal{C}= Perf(X)$,
+and the loop space $LX = Map(S^1, X)$ can also be derived self-intersection $LX = X \times_{X\times X}^h X$, connecting to Hochschild complex.
+
+
+\begin{definition}{Connection to DAG}{}
+
+\end{definition}
+
+
+
 
 
 Meanwhile, I'll consider the formal scheme interpretation without using Hochschild cochain complex.
@@ -260,6 +388,20 @@ For a scheme $X$, formal subscheme $\hat{X_L}$ of $L\subset X$ is given by a lim
 $\hat{X_L} = \varprojlim_{n} \mathcal{O}_X / \mathcal{I}_L^n$ where $\mathcal{I}_L$ is an ideal sheaf of $\mathcal{O}_X$ for $L$.
 \end{definition}
 
+\noindent
+For investigating few of the properties, like an ordinary scheme, a formal scheme has closed subschemes in terms of Zariski topology, 
+and any proper close subscheme has codimension at least $1$, 
+and in addition the intersection of close subscheme has only finite points (why).\\
+
+\noindent
+
+
+\noindent
+In particular, for the case of Fukaya category $Fuk(X)$, $CF^*(L,L)$ is $A_\infty$ algebra, 
+generating its formal scheme $Spf(\hat{Sym( CF^*(L,L)^\vee[-1])})$.
+The differential structure $d_Q$ was a direct consequence of coderivation $Q: T^c (CF^*(L,L)^\vee[-1]) \to T^c (CF^*(L,L)^\vee[-1])$,
+with $A_\infty$ coherence. \\
+
 
 \begin{example}{Non-Commutative Formal Pointed DG-Manifold}{}
 For coalgebra derivation $Q: T^c (V[1]) \to T^c (V[1])$ s.t. $Q^2=0$ of $A_\infty$ structure where $V$ is a vector space,
@@ -267,11 +409,11 @@ there is a correspondence to formal scheme $(V,Q) \leftrightarrow (Spf(A), d_Q)$
 and $A = \hat{Sym(V^\vee)}$, and $d_Q: Spf(A) \to Spf(A)$ is a differential s.t. $d_Q (f) = Q(f)$ for every function $f\in A$.
 \end{example}
 
-For the case of Fukaya category $Fuk(X)$, $CF^*(L,L)$ is $A_\infty$ algebra, and it generates $Spf(\hat{Sym( CF^*(L,L)^\vee[-1])})$.
-$A_\infty$ CF(L,L) encodes formal deformation theory of L. \\
 
 \noindent
-There's still $d_Q$ as missing data in formal scheme, but I'll consider derived method so all of them can be discussed at once.
+So far ncfp dg-manifold has interpretation of formal geometry, and it was a domain of algebraic geometry.
+However, ncfp dg-manifold contains indispensable ingredient $d_Q$ other than $Spf(A)$, not atually defined in formal scheme yet,
+but derived formal scheme includes differential $d_Q$ data in itself. For defining derived formal scheme: \\
 
 
 \begin{definition}{Derived Formal Scheme}{}
@@ -279,16 +421,26 @@ Derived formal scheme is a functor $cdga \to \infty-groupoid$ s.t. $\pi_0 (A) = 
 \end{definition}
 
 
-For the case of Fukaya category $Fuk(X)$, $CF^*(L,L)$ is $A_\infty$ algebra, and it generates $Spf(\hat{Sym( CF^*(L,L)^\vee[-1])})$.
-$A_\infty$ CF(L,L) encodes formal deformation theory of L.
+\noindent
+As an example, for the case of Fukaya category $Fuk(X)$, $CF^*(L,L)$ is $A_\infty$ algebra, 
+and it generates $Spf(\hat{Sym( CF^*(L,L)^\vee[-1])})$. Adding the derived structure, it will be (TBD). \\
 
 
-\begin{question} {}{}
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
 So far we created derived formal scheme from Fukaya category in two ways: one uses Hochschild and the other is not.
 What is the relationship between them if any?
-\end{question}
+So to summarize the above arguments, studying Fukaya category involves:
 
-
+\begin{itemize}
+\item Quantum/Symplectic cohomology
+\item Stable $\infty$-category
+\item Derived formal scheme
+\end{itemize}
 
 
 
@@ -305,15 +457,18 @@ What is the relationship between them if any?
 \vspace{1cm}
 
 
-\section{Derived Algebraic Geometry}
+\section{Deformation Theory}
+
+Deformation theory is literally a study of deformation functor, but the contextual meaning is to track infinitesimal change of geometry.
 
 
-So far Fukaya category has a categorical Hochschild cochain complex to dicuss the deformation of formal moduli space,
-but Fukaya category is typically difficult to directly compute it.
-Though this is still on-going research, I'll consider Lurie's stable infty category and its connection to derived geometry,
-since Fukaya category $Fuk(X)$ has transformation to stable $\infty$-cateogry $Tw^\pi (Fuk(X))$.
+I don't know if there's a unified way of formalizing deformation theory, 
+but one thing is solution space of Maurer-Cartan equation by gauge equivalence, that's noted by deformation functor.
 
 
+
+
+\section{Stable $\infty$-Category}
 
 
 
@@ -345,12 +500,17 @@ A notable non-obvious example of tensor triangulated category is stable homotopy
 
 \section{Quantization and Deformation}
 
-I'll define non-commtuative scheme from its coalgebra identification of $A_\infty$ algebra/category.
+I don't know where to put this section to the introduction, and it might be a branch of main question of this pdf.
+Away from category, I go back to the basic of abstract algebra to discuss examples of associativity, 
+in particular quantization and deformation. \\
+
+\noindent
+Recall non-commtuative scheme from its coalgebra has an identification of $A_\infty$ algebra/category.
 Consider a functor $X: Alg \to Coalg$, mapping an associative algebra $O(X)$ to a coalgebra $B_X$.
 Associative algebra is more general than unital commutative associative algebra $CRing$, 
 and it's different from classical commutative scheme. Some idea of understanding noncommutative scheme is \\
 
-
+\noindent
 Recall a commutative ring defines an affine scheme by its ring spectrum $X=V(\mathfrak{p})$ with its structure sheaf $\mathcal{O}_X$, 
 and that can also be described functorially as $F: CRing \to Set$. Hereafter I focus on functorial point of view. \\
 
@@ -369,50 +529,29 @@ To name some examples of associative algebra, $U(\mathfrak{g})$, $k[G]$, $M_n(k)
 and quantization of associtive algebra is associtive algebra.
 \end{remark}
 
+\noindent 
+The spontaneous question is what is the invariant under the quantization operation? 
+Notice especially the boring part is the matrix ring $M_n(k)$, since it's deformation invariant so it's Morita equivalent to $k$,
+but I'd also wonder the quantized version.
+
+\begin{definition}{Morita Equivalence of Quantization}{}
+TBD
+\end{definition}
+
 
 \begin{question}{}{}
 Should we just use deformation of associative algebra, which makes $A_\infty$ algebra?
 \end{question}
 
 
-Another approach is deformation.
-One idea for the further development is arguing the correspondece of $A_\infty$ algebra and $L_\infty$ algebra through Hochschild cohomology 
-through Kontsevich-Soibelman, where $L_\infty$ treats deformation. \\
-
-$L_\infty$ algebra is a deformation of dgla, which is an analogue of Lie algebra for homological algebra
-(consider Lie algebra consists of vector field, dgla consists of endomophism of chain complex $d:V\to V$ satisfying $d^2=0$). \\
-
-
-\begin{definition}{$L_\infty$ Algebra}{}
-\end{definition}
-
 
 \vspace{0.5cm}
 \noindent\rule{\textwidth}{0.4pt}
 \vspace{0.5cm}
 
-Fukaya category deriveds Gromov-Witten invariants.
-If Ganatra claims relationship of Hochschild cochain complex and quantum cohomology and symplectic cohomology,
-there should be the connection to Gromov-Witten invariants. \\
 
+Another approach is deformation (TBD). 
 
-\begin{definition}{Quantum Cohomology}{}
-
-\end{definition}
-
-
-\begin{definition}{Symplectic Cohomology}{}
-
-\end{definition}
-
-
-\begin{proposition}{}{}
-\[ QH^* (X) \overset{CO}{\cong} HH_* (\mathcal{F}(X)) \]
-
-\[ HH_* (\mathcal{F}(X)) \overset{OC}{\cong} QH^{*+n}(X) \]
-
-where $CO$ and $OC$ are closed-open and open-closed map.
-\end{proposition}
 
 
 
