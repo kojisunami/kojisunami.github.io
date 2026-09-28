@@ -348,10 +348,10 @@ I'll consider Fukaya category $Fuk(X)$, and its transformation to stable $\infty
 A stable $\infty$-category $\mathcal{C}$ consits of zero objects $0\in\mathcal{C}$ meaning it's object both initial and terminal.
 $\mathcal{C}$ has all finite limits and finite colimits. A commutative diagram  \\
 \begin{tikzpicture}[auto] 
-    \node (a) at (1.5,1.5) {A};
-    \node (b) at (  0,1.5) {B};
-    \node (c) at (1.5,  0) {C};
-    \node (d) at (  0,  0) {D};
+    \node (a) at (  0,1.5) {A};
+    \node (b) at (1.5,1.5) {B};
+    \node (c) at (  0,  0) {C};
+    \node (d) at (1.5,  0) {D};
     \draw [->] (a) -- (b);
     \draw [->] (a) -- (c);
     \draw [->] (b) -- (d);
@@ -459,16 +459,92 @@ So to summarize the above arguments, studying Fukaya category involves:
 
 \section{Deformation Theory}
 
-Deformation theory is literally a study of deformation functor, but the contextual meaning is to track infinitesimal change of geometry.
+For defining the notion of deformation theory, one thing is literally a study of deformation functor.
 
 
-I don't know if there's a unified way of formalizing deformation theory, 
-but one thing is solution space of Maurer-Cartan equation by gauge equivalence, that's noted by deformation functor.
+But to brainstorm the intuition and goal of the theory, we'll begin with example of deformation and problems in classical algebraic geometry.
+
+
+The contextual meaning is to track infinitesimal change of geometry.
+
+\begin{example}{Tangent Bundle}{}
+For a Lie group $G$, its deformation is tangent bundle $TG$.
+\end{example}
+
+
+\begin{example}{Deformation Retract}{}
+\end{example}
+
+
+\noindent
+The problem of classical algebraic geometry is intersection theory problem.
+In affine scheme, the fiber product is a dual of tensor product.
+
+\begin{example}{}{}
+\begin{tikzpicture}[auto] 
+    \node (a) at (  0,1.5) {$X$};
+    \node (b) at (1.5,1.5) {?};
+    \node (c) at (  0,  0) {$k$};
+    \node (d) at (1.5,  0) {$k[x]/(x^2)$};
+    \draw [->] (a) -- (b);
+    \draw [->] (a) -- (c);
+    \draw [->] (b) -- (d);
+    \draw [->] (c) -- (d);
+\end{tikzpicture}
+\end{example}
+
+Deformation guarantees the existence of tangent bundles if obstruction vanishes.
+What is the meaning of obstruction?
+
+derived technique is a branch of algebraic geometry that can contain obstruction class.
+
+
+observation 1:
+literal mean of deformation in algebraic topology (deformation retract)
+
+observation 2:
+algebraic deformation
+
+observation 3:
+geometric deformation
+
+observation 4:
+categeorical deformation
+
+observation 5:
+derived technique
+
+
+How to study derived?
+
+
 
 
 
 
 \section{Stable $\infty$-Category}
+
+
+\begin{definition} {Derived Scheme}{}
+
+\end{definition}
+
+
+\begin{definition} {Derived Scheme Realization of Stable $\infty$-Category}{}
+$Spec (HH^\cdot (\mathcal{C}))$
+\end{definition}
+
+
+\begin{definition} {Stable $\infty$-Category}{}
+\end{definition}
+
+
+\begin{definition} {Triangualted Category}{}
+\end{definition}
+
+
+\begin{definition} {Model Category}{}
+\end{definition}
 
 
 
@@ -488,10 +564,15 @@ A notable non-obvious example of tensor triangulated category is stable homotopy
 
 
 \begin{definition} {Balmer Spectrum}{}
+For a tensor triangulated category $\mathcal{C}$, Balmer spectrum $Spc(\mathcal{C})$ is defined by \\
 \end{definition}
 
 
 \begin{definition} {Stable Homotopy Theory}{}
+\end{definition}
+
+
+\begin{definition} {Stable Homotopy Category}{}
 \end{definition}
 
 

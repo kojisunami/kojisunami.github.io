@@ -11,8 +11,6 @@
 \begin{document}
 
 \maketitle
-\tableofcontents
-\vspace{1cm}
 
 In this pdf, to discuss what math really is for expert/non-expert audiences, I'll set a grand framework of math research
 beginning from the elementary math to the research level.
@@ -20,10 +18,18 @@ To do this, I'll introduce my point of view of numerical approximation, and symm
 and finally where is a reasonable place to start math.
 The goal of this paper is recall for everybody including experts and beginners why math is needed, especially 
 Perhaps, the purposeo of this exposition is my ego, or it works for the moderate beginners trying to decide their major in college,
-or those who have burned out from Alice's wonderland syndrome.
+or those who have burned out from Alice's wonderland syndrome. \\
 
+\noindent
+The organization of this pdf is divided short , and topic of each section is independent
 
-\section {Approximation Method}
+\tableofcontents
+\vspace{1cm}
+
+\section{Approximation}
+\begin{quote}
+\textit{The Illusion We Feel Knowing Everything}
+\end{quote}
 
 One says all math is meaningless beyond of counting or lower division math, 
 because it's already sufficient to study statistics or computational algorithm,
@@ -71,7 +77,67 @@ is a connected component of the image by topological data analysis. There's many
 Does research stop here??
 
 
+
+
+
+
+\section {Research as Undergraduate}
+\begin{quote}
+\textit{Understanding Clay Math Prize with Calculus and Linear Algebra}
+\end{quote}
+
+The moment I started doing research math is seeing the millenium problems of Clay Math Institute.
+By seeing its problem statement by downloading the pdf, I realized understanding the problem itself isn't super hard for me in undergraduate,
+even though its proof might be unknown to anybody other than Poincare conjecture.
+I'm explaining when I started math, in the same why I study math.
+Here I'll leave some comments on the seven problems with the level of difficulty of understanding the problem statements.
+
+\begin{itemize}
+\item P=NP Problem (difficulty: $\bigstar\bigstar\bigstar$) \\
+idk
+
+\item Yang-Mill Mass Gap (difficulty: $\bigstar\bigstar\bigstar$) \\
+Yang-Mill Mass Gap is originated from gauge theory in math physics.
+The mass gap means that the total mass of quarks is different from that of proton/neutron,
+and this energy appears in nuclear reaction, even though total amount of quarks doesn't change by the reaction!
+One points out there're some attempts by lattice gauge theory or OPE of CFT.
+
+\item Hodge Conjecture (difficulty: $\bigstar\bigstar$) \\
+An algebraic variety can be described by homology/cohomology with Hodge decomposition, which isn't difficult,
+but its inverse problem is difficult.
+
+\item Poincare Conjecture (difficulty: $\bigstar\bigstar$) \\
+This involves the notion of manifold, so the level of difficulty is higher than Navier-Stokes.
+This is an simple extension of Hamiltonian flow, but the notion of flow itself isn't very difficult.
+Consider that an manifold doesn't have a shape as a topological space, as long as the metric isn't defined.
+Now if the Riemannian metric changes time-dependent, the shape will change; this is the notion of flow.
+The questions is that the flow could make some singularity in the geometry, 
+and Perelman's technique is to resolve it differential geometrically.
+
+\item Navier Stokes Equation (difficulty: $\bigstar$) \\
+Navier Stokes Equation is simply a multi-variate calculus, so the difficulty is equivalent to Riemann Hyopthesis.
+Ladyzhenskaya solved 2d NSE and 2.5d NSE using functional analysis, but 3d NSE hasn't been proved.
+If anticipating algebra instead of functinal analysis, consider CFT lower-bound derives relativistic NSE, which makes ordinary NSE.
+Perhaps NSE might be quantization or deformation problem.
+
+\item Riemann Hypothesis (difficulty: $\bigstar$) \\
+If Riemann Hypothesis might be an simple extension of prime number theorem,
+it is probably the easiest to access, if we can understand the basic calculus, assuming any 1-dimensional complex analysis is 
+equivalent to 1-dimensional lower-division calculus, where we can see the zeta function and gamma function.
+However, if we have already known algebraic geometry, Weil conjecture proves the analogue of Riemann Hypothesis.
+\end{itemize}
+
+
+
+
+
+
+
+
 \section {Structure and Symmetry}
+\begin{quote}
+\textit{What I Thought After Learning Abstract Algebra}
+\end{quote}
 
 Anyways, is the study of math simply the study of finding the more efficient algorithms for the sake of computations?
 I personally believe The pure math has a different direction, and it is a process of finding a structure,
@@ -120,54 +186,58 @@ Meanwhile, Toda's $\chi$-independence conjecture claims Gopakumar-Vafa invariant
 \end{itemize}
 
 
-\section {Encountering Conjecture}
 
-The moment I started doing research math is seeing the millenium problems of Clay Math Institute.
-By seeing its problem statement by downloading the pdf, I realized understanding the problem itself isn't super hard for me in undergraduate,
-even though its proof might be unknown to anybody other than Poincare conjecture.
-I'm explaining when I started math, in the same why I study math.
-Here I'll leave some comments on the seven problems with the level of difficulty of understanding the problem statements.
+\section {Set Theory}
+\begin{quote}
+\textit{Bourbaki Flavored Algebraic Geometry}
+\end{quote}
 
 \begin{itemize}
-\item P=NP Problem (difficulty: $\bigstar\bigstar\bigstar$) \\
-idk
+\item \textbf{Intersection/Union}\\
+In Euclidean topology, finite intersection and union of open sets are dimen-
+sional invariant, while intersection of closed sets just add up their codimension
+if transversal. This makes Chow ring. By the way, Noetherian scheme is com-
+pact. It’s clear why Noetherian ring is important.
 
-\item Yang-Mill Mass Gap (difficulty: $\bigstar\bigstar\bigstar$) \\
-Yang-Mill Mass Gap is originated from gauge theory in math physics.
-The mass gap means that the total mass of quarks is different from that of proton/neutron,
-and this energy appears in nuclear reaction, even though total amount of quarks doesn't change by the reaction!
-One points out there're some attempts by lattice gauge theory or OPE of CFT.
+\item \textbf{Cartesian Product}\\
+Consider a simplicial set. If a finite set A is a set of vertices, cartesian product
+AxA is a set of edges, AxAxA is a set of faces. This makes the standard
+resolution if abelianized. Also, what if the vertex is replaced by spec(k), or
+spec(k[x]) in general? We are already talking advanced algebraic geometry.
+Also, cartesian product has affinity to category theory.
 
-\item Hodge Conjecture (difficulty: $\bigstar\bigstar$) \\
-An algebraic variety can be described by homology/cohomology with Hodge decomposition, which isn't difficult,
-but its inverse problem is difficult.
+\item \textbf {Hom and Quotient} \\
+In set theory, quotient is to classify each element of the sets by equivalence
+classes. If a groupoid is a category, whose domain is hom, hom is a moduli space.
+If hom is tensor adjunct, tensor is dual of fiber product, and fiber product is
+fibration, which is geometric quotient. We use stack to classify fibration. This
+is the quotient. Tensor is kinda linear algebra, and if hom is dual to tensor,
+moduli space is kinda vector bundle.
 
-\item Poincare Conjecture (difficulty: $\bigstar\bigstar$) \\
-This involves the notion of manifold, so the level of difficulty is higher than Navier-Stokes.
-This is an simple extension of Hamiltonian flow, but the notion of flow itself isn't very difficult.
-Consider that an manifold doesn't have a shape as a topological space, as long as the metric isn't defined.
-Now if the Riemannian metric changes time-dependent, the shape will change; this is the notion of flow.
-The questions is that the flow could make some singularity in the geometry, 
-and Perelman's technique is to resolve it differential geometrically.
+\item \textbf{Injectivity and Surjectivity I (Representation)}\\
+Representation is "re"+"presentation." By analogy, in abstract algebra, presen-
+tation of a group is a free group with equivalence relation. Obviously, in any
+groups, presentations exists, but uniqueness, so maybe "re." Naturally, surjec-
+tion from the free group to that group. In category theory, Hom(X,Y) is the set
+of all the possible morphisms of X,Y, which means any set of morphisms of X,Y
+are subset of Hom(X,Y), while a representable functor Hom(X,-) is representing
+the whole situations (surjecitivity).
 
-\item Navier Stokes Equation (difficulty: $\bigstar$) \\
-Navier Stokes Equation is simply a multi-variate calculus, so the difficulty is equivalent to Riemann Hyopthesis.
-Ladyzhenskaya solved 2d NSE and 2.5d NSE using functional analysis, but 3d NSE hasn't been proved.
-If anticipating algebra instead of functinal analysis, consider CFT lower-bound derives relativistic NSE, which makes ordinary NSE.
-Perhaps NSE might be quantization or deformation problem.
-
-\item Riemann Hypothesis (difficulty: $\bigstar$) \\
-If Riemann Hypothesis might be an simple extension of prime number theorem,
-it is probably the easiest to access, if we can understand the basic calculus, assuming any 1-dimensional complex analysis is 
-equivalent to 1-dimensional lower-division calculus, where we can see the zeta function and gamma function.
-However, if we have already known algebraic geometry, Weil conjecture proves the analogue of Riemann Hypothesis.
+\item \textbf{Injectivity and Surjectivity II (Covering Map)}\\
+The covering map is a surjective map of local homeomorphism (injectivity).
+Local isomorphism is etaleness. The purpose of topology is installing injectiv-
+ity/surjectivity at one time.
 \end{itemize}
 
 
 
 
 
-\section{Derived Algebraic Geometry From Intuitive to Nonsense}
+
+\section{How to Find Question in Research}
+\begin{quote}
+\textit{Derived Algebraic Geometry From Intuitive to Nonsense}
+\end{quote}
 
 \noindent
 \textbf{Point of View of Functional Analysis} \\
@@ -234,25 +304,9 @@ so we can make generalization of cohomology. \\
 
 
 
-\section {Grumble about Myself}
 
-\noindent
-\textbf{My Research Style} \\
 
-Math needs to be rigorous no doubt, but there is no understanding without intuition, but to undertstand something, 
-it's not just about amount of knowledge, but we might need to start the new argument,
-and for the journey of math research, I hope it will not be chaotic system, where one mistake nullify the whole previous efforts. \\
 
-Or for non-research level, the important thing is not necessarily the accuracy but to accomplish the argument.
-In a sentence, quantity precedes quality in the learning process so as to cultivate intellectual stamina,
-so we can attempt to modify the problem rather than ability to modify itself.
-It's similar to football, the most important thing is to run \& dribble \& pass not the accuracy of dribble or pass. \\
-
-\noindent
-\textbf{My View of AI} \\
-
-In 2026, I personally think AI is just little more advanced model than google search with natural language interpretation.
-If using google search itself is already a moderate labor, I use AI to reduce the amount.
 
 \nocite{*}
 \printbibliography
