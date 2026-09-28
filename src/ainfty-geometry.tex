@@ -457,7 +457,9 @@ So to summarize the above arguments, studying Fukaya category involves:
 \vspace{1cm}
 
 
-\section{Deformation Theory}
+\section{Algebraic Geometry}
+
+\subsection{Deformation Theory}
 
 For defining the notion of deformation theory, one thing is literally a study of deformation functor.
 
@@ -468,12 +470,24 @@ But to brainstorm the intuition and goal of the theory, we'll begin with example
 The contextual meaning is to track infinitesimal change of geometry.
 
 \begin{example}{Tangent Bundle}{}
-For a Lie group $G$, its deformation is tangent bundle $TG$.
+For a Lie group $G$, its deformation is tangent bundle $TG$. \\
+
+From functor of point perspective it should be $TG = Hom(spec(k[x]/(x^2) , G)$.
+\end{example}
+
+
+What if the geometry $M$ is singular? is tangent bundle still definable?
+
+\begin{example}{}{}
+A
 \end{example}
 
 
 \begin{example}{Deformation Retract}{}
+
 \end{example}
+
+
 
 
 \noindent
@@ -500,22 +514,64 @@ derived technique is a branch of algebraic geometry that can contain obstruction
 
 
 observation 1:
-literal mean of deformation in algebraic topology (deformation retract)
+literal mean of deformation in algebraic topology (deformation retract) \\
 
 observation 2:
-algebraic deformation
+algebraic deformation \\
 
 observation 3:
-geometric deformation
+geometric deformation \\
 
 observation 4:
-categeorical deformation
+categeorical deformation \\
 
 observation 5:
-derived technique
+derived technique \\
 
 
-How to study derived?
+\subsection{Derived Algebraic Geometry}
+
+To list the problem of classical algebraic geometry. \\
+
+\begin{itemize}
+\item Multiplicity of zero points $y=x^2$
+\item Intersection if not transversal
+\item Moduli problem
+\end{itemize}
+
+\noindent
+Beginning from introducing few direct application of derived intersection. \\
+
+
+\begin{example}{Virtual Fundamental Class}{}
+The classical fundamental class is an algebraic cycle of homology class $[M]\in H_{2n}(M)$ for $M$ a closed $n$-dimensional manifold,
+which is the identity by the intersection pairing $[M]\cdot[Z] =[Z]$ for its any subscheme $Z\subset M$. 
+The intersection pairing is literally correspondence of multiplication of algebraic cycles to that of set-theoretical intersection
+$[X]\cdot [Y] = [X\cap Y]$ \\
+
+Similarly, virtual fundamental class is an algebraic cycle $[M]^{vir} \in H_{2 vdim(M)}(M)$,
+where virtual dimension $vdim(M)$ is defined by $vdim(M) := (1-g) (dim(X)-3) + \int_\beta c_1(T_X) + n$,
+not necessarily the same $vdim(M) \neq dim(M)$,
+and he virtual fundamental class is an identity under the multiplication $[M]^{vir}\cdot [Z]^{vir} = [Z]^{vir}$.
+The multiplication of the algebraic cycle is defined by derived interseection $[X]^{vir}\cdot [Y]^{vir} = [X\times_Z^R Y]^{vir}$. \\
+\end{example}
+
+
+\noindent
+Accordingly, GW/DT invariants can be defined by using virtual fundamental class. 
+I'll explain the meaning of GW invariants in other time.
+
+
+\begin{example} {}{}
+\begin{itemize}
+\item \[ \int_{[\overline{M}_{g,n} (X,\beta)]^{vir}} \underset{i=1}{\overset{n}{\prod}} \psi_i^{a_i} ev_i(\gamma_i)
+\tag{\text{GW Invariants }} \] 
+
+\item \[ \int_{[M_\beta (X)]^{vir}} 1 
+\tag{ \text{DT Invariants}} \]
+\end{itemize}
+\end{example}
+
 
 
 
