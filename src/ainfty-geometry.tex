@@ -520,47 +520,74 @@ By continuing the argument, can we apply the deformation technique to singular m
 For the case of algebraic variety, the tangent space is definable at every point regardless of singularity. \\
 
 
-
 \begin{example}{Deformation -- Singular Case}{}
-Let $M$ be an algebraic variety. For $p\in M$, the Zariski tangent space is defined by na\"{\i}vely
+Let $M$ be an algebraic variety. For $p\in M$, if the singular point is a closed point.  the Zariski tangent space is defined by na\"{\i}vely
 \[
 T_p M = \mathfrak{m}/\mathfrak{m}^2 \hfill \text{where $\{p\}=V(\mathfrak{m})$}
 \]
 
-if the singular point is a closed point. Nonetheless, not all points are guaranteed to be singular. Consider \\
+Nonetheless, not all points are guaranteed to be singular. Consider \\
 
 \[T_p M = Hom_{\kappa(p)}(\mathfrak{m}_p/\mathfrak{m}_p^2, \kappa(p))
 \hfill \text{where $\kappa(p) = A_{\mathfrak{p}}/\mathfrak{p} A_{\mathfrak{p}}$ and $\mathfrak{m}_p = \mathfrak{p} A_{\mathfrak{p}}$}
 \]
-Accordingly, the Zariski tangent space exists everywhere.
+
+Or more concisely, \\
+\[ T_x M \cong Hom_{k-alg} (\mathcal{O}_{M,x}, k[x]/(x^2)) \]
+
+Accordingly, the Zariski tangent space exists everywhere on $M$. 
 \end{example}
+
+\noindent
+As a result of existence of Zariski tangent space at every point $p\in M$, 
+the tangent sheaf $\mathcal{T}_M = Hom(\mathcal{\Omega}_M, \mathcal{O}_M)$ cane be constructed from this data.
+Now if our goal of deformation is to create tangent bundle $TM$, 
+and existence of $TM$ depends only if the tangent sheaf is locally free, which isn't generally true. 
+I'll consider cotangent complex to resolve this issue. \\
+
+
+\begin{definition}{Cotangent Complex}{}
+$\mathbb{L}_{X/Y}$
+\end{definition}
+
+
+\begin{definition}{Derived Tangent Sheaf}{}
+$\mathbb{T}_{X/Y}$
+\end{definition}
+
+
+\begin{example}{Deformation -- Singular Case (Revisited)}{}
+\end{example}
+
 
 
 \noindent
-However, the existence of tangent space everywhere doesn't mean the existence of tangent bundle, 
-The tangent sheaf needs to be locally free in order to describe vector bundle.
-and here deformation theory is no longer a trivial problem.
-
-
-\begin{example}{Deformation -- Singular Case (Modified)}{}
-
-\end{example}
-
-
+Another approach of deformation theory is to make more than tangent bundle.
+If we use higher order $k[x]/(x^n)$ for $n\geqq 3$ or any artinian rings in general, it will generate the different geoemtric objects.
 
 Deformation is a study of deformation functor, 
 
 
+\begin{example}{Deformation -- Obstruction Bundle}{}
+Use $Ext$ as obstruction instead of Zariski tangent space. TBD.
+\end{example}
+
+
 \noindent
-The simple case is deformation of Lie group, which is simply tangent bundle and no obstruction. \\
-Furthermore, to generalize this argument to any smooth manifold $M$, and further consider if the geometry $M$ is singular.
-Is tangent bundle still definable? \\
+Finally, we will formalize the argument above into deformation functor.\\
+
+
+\begin{definition}{Deformation Functor}{}
+\[Def_{\mathfrak{g}}(R) = \{ x \in \mathfrak{g}\otimes \mathfrak{m}_R | dx + \frac{1}{2}[x,x] = 0\} \]
+\end{definition}
 
 
 
 
 
-
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
 
 
 \noindent
@@ -600,6 +627,22 @@ categeorical deformation \\
 
 observation 5:
 derived technique \\
+
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+\noindent
+One of the huge application of deformation theory is to solve moduli problem.
+Consider deformation of neighborhood of moduli space. TBD \\
+
+
+\begin{definition}{Moduli Problem and Deformation}{}
+\end{definition}
+
+
 
 
 \subsection{Derived Algebraic Geometry}
@@ -651,14 +694,136 @@ I'll explain the meaning of GW invariants in other time.
 
 
 
-\section{Stable $\infty$-Category}
+\section{On $\infty$-Category}
 
-The definition of $Tw^\pi$ is \\
 
-\begin{definition}{Split-Closed Derived Fukaya Category}{}
-For the construction of split-closed derived Fukaya category, \\
+\subsection{Geometry of Category}
 
+Localization of category is really the same as localization of commutative ring in that it has a multiplicative inverse from its subset,
+and the multiplicative inverse makes idals of commutative rings trivial, and the category theory is the same.
+I'll consider localization of Fukaya category.
+
+
+
+\subsection{Homotopy Theory}
+
+\noindent
+Let's consider categorification of homotopy theory.
+For a topological space $X$, a homotopy is classically an isomorphism class $[f]\in \pi^n (X)$ where $f:S^n \to X$,
+whose equivalence class is given by existence of homotopy equivalence $H: S^n\times [0,1] \to X$
+where $f(x) = H(x,0)$ and $g(x) = H(x,1)$ with continuous transformation. 
+In this case, there is the equivalence $f\sim g$, also noted by $[f]=[g]$.
+Accordingly, for a category of topological space $Top$ over $X$, homotopy category whose morphism consists of homotopy equivalence $[X,Y]$.
+Henceforth, \\
+
+\begin{definition} {Na \"{\i}ve Homotopy Category}{}
+Homotopy category is a category $Ho(Top)$ where its morphism $Hom_{Ho(Top)}(X,Y) = [X,Y]$ with any objects $X$ and $Y$.
+the morphism $[f],[g]\in Ho(Top)$ have a composition $[f]\circ [g] = [f\circ g]$.
 \end{definition}
+
+
+\noindent
+To modernize this notion, the functions $f,g\in Map(S^n, X)$ are elements in the functional space $Map(S^n,X)$, which is a topological space,
+and the equivalence $f\sim g$ is path connectedness in $Map(S^n,X)$.
+As a result, number of homotopically distinguishable elements are number of connected components, thus $\pi_n(X) = \pi_0 (Map(S^n, X))$.
+Let's replace $X=S^n$ and $Y=X$ symbolically. By using $\infty$-category, homotopy category will be defined as follows: \\
+
+\begin{definition} {Homotopy Category}{}
+For $\mathcal{C}$ an $\infty$-category, homotopy category is a category $h\mathcal{C}$ 
+where its morphism $Hom_{h\mathcal{C}}(X,Y) = \pi_0(Map_{\mathcal{C}}(X,Y))$ with any objects $X$ and $Y$.
+\end{definition}
+
+
+\noindent
+The spontaneous question is the inverse problem if we can generate $\infty$-category from this homotopy category.
+Using a model category $\mathcal{C}$, take $W$ a set of all weak equivalences, then the localization $\mathcal{C}[W^{-1}]$ 
+is $\infty$-category.
+
+\begin{proposition} {From Model to $\infty$}{}
+TBD
+\end{proposition}
+
+
+\begin{definition} {Stable $\infty$-Category}{}
+Stable $\infty$-category $\mathcal{C}$ is an $\infty$-category consists of 
+
+\begin{itemize}
+\item zero object $0\in\mathcal{C}$
+\item every morphism $f:X\to Y$ has a fiber/cofiber through diagrams $fib(f)\to X\to Y$ and $X\to Y\to cofib(f)$.
+\item every pullback is pushout.
+\end{itemize}
+\end{definition}
+
+\noindent
+Note: there are a variety of different formulation of stable $\infty$-category. \\
+
+\begin{definition} {Stable $\infty$-Category (Modified)}{}
+Stable $\infty$-category $\mathcal{C}$ is an $\infty$-category consists of 
+
+\begin{itemize}
+\item zero object $0\in\mathcal{C}$
+\item all finite limit/colimit
+\item suspension functor $\Sigma:\mathcal{C}\to \mathcal{C}$ is an equivalence.
+Suspension $\Sigma$ is $\Sigma X: cofib(X\to 0)$, whose inverse $\Omega$ is $\Omega X: fib(0\to X)$
+
+\end{itemize}
+\end{definition}
+
+
+
+\noindent
+Now to introduce some examples of stable $\infty$-categories, $Tw^\pi(Fuk(X))$ generated from Fukaya category is stable $\infty$-category,
+and category of prefect complexes $Perf(X)$ is also stable $\infty$-category.
+
+
+\begin{example}{Split-Closed Derived Fukaya Category}{}
+In the process of making $Tw^\pi(Fuk(X))$ from Fukaya category $Fuk(X)$, 
+first of all $Tw(Fuk(X))$ adds \\
+
+\begin{itemize}
+\item shifts $L[k]$
+\item finite direct sum $L_1\oplus L_2$
+\item mapping cones $Cone(f)$ for $f:L_1\to L_2$
+\item twisted complexes
+\end{itemize}
+
+and the split-closure (the denoted by $\pi$) adds idempotent completion $E \cong im(e) \oplus im(1-e)$,
+where e is an idempotent $e:E\to E$ s.t. $e^2 = e$.
+\end{example}
+
+
+\noindent
+What is the actual meaning of split? Split means the invertivility of injection, but the geometric analogue is the deformation retract.
+
+
+\begin{example}{Perfect Complex}{}
+$Perf(X)$ is a stable symmetric monoidal $\infty$-category, whose objects are perfect complexes.
+$E\in D_{qc}(X)$ is perfect if for any open affine $U\subset X$, the projective resolution $P^\cdot \to E$ is of finite length.
+It's closed under derived tensor product $E\otimes^L F\in Perf(X)$ for $E,F\in Perf(X)$
+\end{example}
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+\noindent 
+Now what do the homotopical proerties do? In particular, fib/cofib is.TBD. \\
+
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+\noindent
+Let's consider the connection of Stable $\infty$-category to derived scheme.
+
+\begin{proposition}{Connection of Stable $\infty$ to DAG}{}
+$Spec (HH^\cdot (\mathcal{C}))$
+\end{proposition}
 
 
 
@@ -667,21 +832,17 @@ For the construction of split-closed derived Fukaya category, \\
 \end{definition}
 
 
-\begin{definition} {Derived Scheme Realization of Stable $\infty$-Category}{}
-$Spec (HH^\cdot (\mathcal{C}))$
-\end{definition}
-
-
-\begin{definition} {Stable $\infty$-Category}{}
-\end{definition}
-
-
 \begin{definition} {Triangualted Category}{}
 \end{definition}
 
 
-\begin{definition} {Model Category}{}
-\end{definition}
+
+
+
+
+
+
+
 
 
 
@@ -713,7 +874,9 @@ For a tensor triangulated category $\mathcal{C}$, Balmer spectrum $Spc(\mathcal{
 \end{definition}
 
 
+Generalizating Balmer spectrum to $\infty$-language?
 
+$Spc(\mathcal{C}):= Spc(h\mathcal{C}) $
 
 
 \section{Quantization and Deformation}
