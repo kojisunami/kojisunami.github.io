@@ -88,8 +88,13 @@ possibly more simplied version of that model, or some model already being verifi
 In particular, original version of mirror symmetry or the QFT version?  \\
 
 
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
 
 \noindent
+This might be a little derailed, but the history of mirror symmetry to catch up the intuition of what $A/B$-models are.
 The minimum version of mirror symmetry is the correspondence of Hodge structure of symplectic side called A-model
 and complex side called B-model. According to the outcome of K\"ahler geometry, symplectic data can be contained in Hodge diamond (why). \\
 
@@ -110,11 +115,8 @@ while period integral of Landau-Ginzburg model generates SCFT, which makes anoth
 I only introduce A-model side: \\
 
 \begin{definition}{Mirror Symmetry -- QFT Ver}{}
-TBD
+TBD -- See Marc Gross "Tropical Geometry and Mirror Symmetry"
 \end{definition}
-
-
-
 
 
 
@@ -123,7 +125,32 @@ TBD
 \vspace{0.5cm}
 
 
+\noindent
+Going back to HMS, I'll continue making a paraphrase of the conjecture to make a strategy.
+From the conjectural formula $Fuk(X) \cong Perf_{dg}(Y)$, Fukaya category $Fuk(X)$ can be transformed to a stable $\infty$-category
+$tw^\pi(Fuk(X))$ called split-closed (idempotent-complete) derived Fukaya category, 
+where $tw$ is a twisted complex and $\pi$ is Karoubi completion,
+while the right hand side $Perf(Y)$, a category of perfect complexes, which is also stable $\infty$-category.
+This is not 100\% but quite an analogue of HMS. In addition, perfect complex is well-studied by the languauge of derived algebraic geometry,
+consider the reconstructivity of the geometry $Y$ from the category $Perf(Y)$ (as an analogy of Tannakian duality),
+so the natural question is if there is any morphism $tw^\pi(Fuk(X)) \to Y$.
+As a result, HMS is modified to be: \\
 
+\begin{proposition}{Tannakian Duality}{}
+There is a 1-to-1(why) correspondence of geometry $Y$ and its category of perfect complexes $Perf(Y)$ \\
+\[Y\leftrightarrow Perf(Y)\]
+\end{proposition}
+
+
+\begin{conjecture}{HMS Modified}{}
+\[tw^\pi(Fuk(X))\cong Perf(Y)\]
+
+In addition, there exists a Sunami (my name) morphism\\
+
+\[
+Sunami : tw^\pi(Fuk(X))\to Y
+\]
+\end{conjecture}
 
 
 \vspace{0.5cm}
@@ -328,13 +355,13 @@ TBD
 \end{definition}
 
 
-\begin{proposition}{}{}
+\begin{definition}{Open-Closed Mapping}{}
 \[ QH^* (X) \overset{CO}{\cong} HH_* (\mathcal{F}(X)) \]
 
 \[ HH_* (\mathcal{F}(X)) \overset{OC}{\cong} QH^{*+n}(X) \]
 
 where $CO$ and $OC$ are closed-open and open-closed map.
-\end{proposition}
+\end{definition}
 
 
 
@@ -461,31 +488,77 @@ So to summarize the above arguments, studying Fukaya category involves:
 
 \subsection{Deformation Theory}
 
-For defining the notion of deformation theory, one thing is literally a study of deformation functor.
+Deformation theory studies infinitesimal change of geometry to understand its structure.
+Perhaps, the most primitive deformation example is deformation retract: \\
 
 
-But to brainstorm the intuition and goal of the theory, we'll begin with example of deformation and problems in classical algebraic geometry.
+\begin{definition}{Deformation Retract}{}
+For a topological space $X$ and a subspace $A\subset X$, a continuous map $r:X\to A$ is a retraction if it's restriction to $A$
+$r|_A$ is the identity map on $A$.
+\end{definition}
 
 
-The contextual meaning is to track infinitesimal change of geometry.
+\noindent
+Consider, in particular, the projection of tangent bundle to its base manifold $TM\to M$ is a deformation retract,
+where $M$ is a smooth manifold,
+and its converse is generated from differentiating the possible path on each point, which makes tangent space.
+Let's make a tangent bundle:\\
+
 
 \begin{example}{Tangent Bundle}{}
-For a Lie group $G$, its deformation is tangent bundle $TG$. \\
-
-From functor of point perspective it should be $TG = Hom(spec(k[x]/(x^2) , G)$.
+A smooth manifold $M$, whose deformation is tangent bundle $TM$. 
+From functor of point perspective, the tangent bundle should be $TM = Hom(spec(k[\epsilon]/(\epsilon^2) , M)$.
+The mapping of Hom is a functional space s.t. $a+b\epsilon \mapsto f(a+b\epsilon)$ for each $f\in Hom(spec(k[\epsilon]/(\epsilon^2) , M)$,
+and satisfying $f(a+b\epsilon) = f(a) + b f'(a) \epsilon$ by linear appximation by infinitesimality of $\epsilon$.
+Verify $f(a) + b f'(a)\in TM$ where we put $g=f(a)\in M$ and $v=f'(a)\in T_g M$.
 \end{example}
 
 
-What if the geometry $M$ is singular? is tangent bundle still definable?
+\noindent
+In the above example, I used an artinian algebra $k[x]/(x^2)$ to make a tangent bundle.
+By continuing the argument, can we apply the deformation technique to singular manifolds?
+For the case of algebraic variety, the tangent space is definable at every point regardless of singularity. \\
 
-\begin{example}{}{}
-A
+
+
+\begin{example}{Deformation -- Singular Case}{}
+Let $M$ be an algebraic variety. For $p\in M$, the Zariski tangent space is defined by na\"{\i}vely
+\[
+T_p M = \mathfrak{m}/\mathfrak{m}^2 \hfill \text{where $\{p\}=V(\mathfrak{m})$}
+\]
+
+if the singular point is a closed point. Nonetheless, not all points are guaranteed to be singular. Consider \\
+
+\[T_p M = Hom_{\kappa(p)}(\mathfrak{m}_p/\mathfrak{m}_p^2, \kappa(p))
+\hfill \text{where $\kappa(p) = A_{\mathfrak{p}}/\mathfrak{p} A_{\mathfrak{p}}$ and $\mathfrak{m}_p = \mathfrak{p} A_{\mathfrak{p}}$}
+\]
+Accordingly, the Zariski tangent space exists everywhere.
 \end{example}
 
 
-\begin{example}{Deformation Retract}{}
+\noindent
+However, the existence of tangent space everywhere doesn't mean the existence of tangent bundle, 
+The tangent sheaf needs to be locally free in order to describe vector bundle.
+and here deformation theory is no longer a trivial problem.
+
+
+\begin{example}{Deformation -- Singular Case (Modified)}{}
 
 \end{example}
+
+
+
+Deformation is a study of deformation functor, 
+
+
+\noindent
+The simple case is deformation of Lie group, which is simply tangent bundle and no obstruction. \\
+Furthermore, to generalize this argument to any smooth manifold $M$, and further consider if the geometry $M$ is singular.
+Is tangent bundle still definable? \\
+
+
+
+
 
 
 
@@ -579,6 +652,14 @@ I'll explain the meaning of GW invariants in other time.
 
 
 \section{Stable $\infty$-Category}
+
+The definition of $Tw^\pi$ is \\
+
+\begin{definition}{Split-Closed Derived Fukaya Category}{}
+For the construction of split-closed derived Fukaya category, \\
+
+\end{definition}
+
 
 
 \begin{definition} {Derived Scheme}{}

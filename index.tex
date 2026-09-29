@@ -34,21 +34,28 @@ Here is a list of research proposals: \\
 \item \textbf{On Homological Mirror Symmetry} \\
 
 \begin{wrapfigure}{r}{0.4\textwidth}
-\begin{tikzpicture}[auto, every node/.style={font=\small}]
-  \node (a) at (0,0) {Fukaya\\ Category};
-  \node (b) at (3,0) {Derived\\ Category};
-  \draw[-, shorten <= 15pt, shorten >= 3pt] (a) -- (b);
-  \node[draw, rectangle, fit=(a) (b), inner xsep=10pt, xshift=15pt] {};
+\begin{tikzpicture}[auto, every node/.style={font=\tiny\bfseries}]
+  \node (a) at (0,0) {Fukaya\\\vspace{-3mm} Category};
+  \node (b1) at (3,0) {Stable $\infty$\\ Category};
+  \node (b2) at (6,0) {Tannakian\\ Duality};
+  \node (c1) at (3,1.5) {Hochshild\\ Category};
+  \node (c2) at (6,1.5) {Derived Formal\\ Moduli};
+  \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (b1);
+  \draw[-, shorten <= 15pt, shorten >= 3pt] (b1) -- (b2);
+  \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (c1);
+  \draw[-, shorten <= 15pt, shorten >= 3pt] (c1) -- (c2);
+  \node[draw, rectangle, fit=(a) (b1) (b2) (c1) (c2), inner xsep=10pt, xshift=15pt] {};
 \end{tikzpicture}
 \end{wrapfigure}
 
-Proving HMS involves Hochschild deformation of Fukaya category or Stable $\infty$, which induces derived formal geometry.
+For Proving HMS 1: Hochschild deformation of Fukaya category or Stable $\infty$, which induces derived formal geometry,
+2: Comparing Fukaya category with Perf(Y), whose Tannakian duality is Y.
 \href{https://kojisunami.github.io/src/ainfty-geometry.pdf}{[link]} 
 
 \item \textbf{Derived Intersection on Foliation} \\
 
 \begin{wrapfigure}{r}{0.4\textwidth}
-\begin{tikzpicture}[auto, every node/.style={font=\small}]
+\begin{tikzpicture}[auto, every node/.style={font=\tiny\bfseries}]
   \node (a) at (0,0) {dg $L_\infty$\\ Groupoid};
   \node (b) at (3,0) {Quotient\\ Stack};
   \node (c) at (6,0) {Fukaya\\ Category};
@@ -58,7 +65,7 @@ Proving HMS involves Hochschild deformation of Fukaya category or Stable $\infty
 \end{tikzpicture}
 \end{wrapfigure}
 
-Foliation has $\infty$-equivalence with dg Lie algebroid, whose dg Lie groupoid defines quotient stack.
+$\infty$-equivalence of foliation and dg Lie algebroid, which defines quotient stack.
 Some of my goals are to introduce Lagrangian intersection to quotient stack,
 and evaluation with CE complex and DT/GW invariants and any other.
 \href{https://kojisunami.github.io/src/dgla-stack.pdf}{[link]}  
@@ -90,8 +97,8 @@ This is a list of expositions previously shown to other people or intended to be
 
 \begin{itemize}
 \item \textbf{(Fall 2026) What is Math?} \\
-This is ideally for everybody, who are doubting the purpose of math higher than calculus and linear algebra. 
-The tone of the argument is describing the process of how the high school math jump into the research math.
+I'll organize the overview of pure math reseach pov of just finishing calculus and linear algebra or abstract algebra.
+I describe the evolution process of how the high school math jump into the research math based on my biography.
 \href{https://kojisunami.github.io/src/what-math.pdf}{[link]}
 
 \item \textbf{(Spring 2026) Intro to Deformation} \\
