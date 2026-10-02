@@ -3,7 +3,7 @@
 \input{math_header.tex}
 \addbibresource{ainfty-geometry.bib}
 
-\title{$A_\infty$ Enhancement of Geometry}
+\title{On Homological Mirror Symemtry}
 \author{Koji Sunami}
 
 \begin{document}
@@ -547,12 +547,12 @@ I'll consider cotangent complex to resolve this issue. \\
 
 
 \begin{definition}{Cotangent Complex}{}
-$\mathbb{L}_{X/Y}$
-\end{definition}
+A cotangent complex $\mathbb{L}_{B/A}\in D^b (B)$ is a chain complex s.t. 
+$\mathbb{L}_{B/A}:= \Omega_{P_\cdot/A}^1 \otimes_{P_\cdot} B$ where $P_\cdot \to B$ is a simplicial resolution,
+and its dual $\mathbb{L}_{X/Y}$ where $X=Spec(A)$ and $Y=Spec(B)$. Often in short, $\mathbb{L}_X := \mathbb{L}_{X/k}$.
 
-
-\begin{definition}{Derived Tangent Sheaf}{}
-$\mathbb{T}_{X/Y}$
+The dual notion of cotangent complex is tangent complex 
+$\mathbb{T}_{X/Y} = \mathcal{R}\mathrm{Hom}_{\mathcal{O}_X} (L_{X/Y},\mathcal{O}_X)$.
 \end{definition}
 
 
@@ -636,11 +636,78 @@ derived technique \\
 
 \noindent
 One of the huge application of deformation theory is to solve moduli problem.
-Consider deformation of neighborhood of moduli space. TBD \\
+Moduli space is roughly speaking a parameter space where each point corresponds to some object,
+whose deformation is an activity of generating neighborhood of moduli space, and this is often called moving of the point. \\
+
+\noindent
+Assuming point $x$ corresponds to $[X_0]$ in the moduli parameter space, define the movement of the point $x$ is the deformation of 
+the corresponding geometry $[X_0]$. Its deformation is the family $[X_t]$, which corresponds to the path $f(t)$ where $f(0)=p$,
+and $t\in U$ is the open neighborhood. \\
+
+\begin{question}{}{}
+Consider the deformation theory of moduli space, what is the invariant? For example,
+does deformation of a points $x$ really belong to the moduli space $\mathcal{M}$ itself, so $U\subset \mathcal{M}$?
+\end{question}
+
+\noindent
+Perhaps, the solution is providing new spaces such as derived moduli space $\mathcal{M}^{der}$ or moduli of moduli space or any others. \\
 
 
 \begin{definition}{Moduli Problem and Deformation}{}
+The deformation of point of derived moduli space $[E]\in\mathcal{M}^{der}$ where $E\to X$ is a vector bundle is 
+controlled by $Ext^\cdot (E,E)$, that can be $T_{[E]}\mathcal{M}^{der} \cong Ext^\cdot (E,E)[1]$.
 \end{definition}
+
+
+\noindent
+I'd also consider derived version of moduli sapce $\mathcal{M}^{der}$ for the sake of deformation invariant. \\
+
+
+\begin{definition}{Derived Moduli Space}{}
+Derived moduli space $\mathcal{M}^{der}$ is a derived enhancement of moduli space $\mathcal{M}$.
+Derived enhancement of moduli space $\mathcal{M}$ at each point $p\in \mathcal{M}$ maps to tangent complex $p\mapsto T_p \mathcal{M}^{der}$,
+which makes a tangent sheaf structure, which needs to be locally free.
+\end{definition}
+
+
+
+
+\noindent
+Another variety is formal moduli space, that can be generated from formal deformation of some space.
+Formal moduli space is that it's closed under formal deformation.
+
+
+\begin{definition}{Formal Moduli Space}{}
+Formal moduli space is infinitesimal neighborhood of a point $x\in\mathcal{M}$ inside a moduli space $\mathcal{M}$.
+Formal moduli space is controlled by deformation of dgla.\\
+
+\[ \hat{\mathcal{M}}_E \leftrightarrow Def(\mathfrak{g}) \]
+\end{definition}
+
+
+\begin{definition}{Derived Formal Moduli Space}{}
+TBD
+\end{definition}
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+\noindent
+What about deformation problem in Fukaya category?
+The morphism of Fukaya category $CF(L,L)$ controls Lagrangian intersection data, 
+which makes formal neighborhood $U = \hat{\mathcal{M}}_{[L]} = MC(CF^*(L,L))/\text{gauge}$.
+
+
+\begin{question}{Fukaya Category and Formal Moduli}{}
+Consider relationship $\hat{\mathcal{M}}_{[L]} \to \hat{L}$ formal schemes. To find something meaningful TBD
+\end{question}
+
+
+
+
 
 
 
@@ -656,7 +723,71 @@ To list the problem of classical algebraic geometry. \\
 \end{itemize}
 
 \noindent
-Beginning from introducing few direct application of derived intersection. \\
+Beginning from introducing few direct application of derived intersection. 
+
+\noindent
+Derived intersection resolves multiplicity and non-transversality in classical intersection.
+Derived intersection $X\times_Z^R Y$ is a derived version of fiber product $X \times_Z Y$, 
+which is set theoretically an intersection $X\cap Y$.
+Consider that this notion can be reformulated in commutative diagram, and in category of topological spaces $Top$, 
+all the morphisms are inclusion, and the pull back is $\iota_0, \iota_1:X\cap Y\hookrightarrow X,Y$. 
+Similarly, in category of affine schemes, pull back is $\iota_0, \iota_1:X\times_Z Y\hookrightarrow X,Y$.
+The dual is commutative ring $X=Spec(A)$, $Y=Spec(B)$ and $Z=Spec(R)$ and $A$ and $B$ are $R$ algebra,
+and $X\times_Z Y = Spec(A\otimes_R B)$, since $A\otimes_R B$ is still an $R$-algebra,
+and the commutative diagram below is the visualization: \\
+
+\begin{tikzpicture}[auto] 
+    \node (a) at (  0,1.5) {$X\times_Z Y$};
+    \node (b) at (1.5,1.5) {Y};
+    \node (c) at (  0,  0) {X};
+    \node (d) at (1.5,  0) {Z};
+    \draw [->] (a) -- (b);
+    \draw [->] (a) -- (c);
+    \draw [->] (b) -- (d);
+    \draw [->] (c) -- (d);
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}[auto] 
+    \node (a) at (  0,1.5) {$A\otimes_R B$};
+    \node (b) at (1.5,1.5) {B};
+    \node (c) at (  0,  0) {A};
+    \node (d) at (1.5,  0) {R};
+    \draw [<-] (a) -- (b);
+    \draw [<-] (a) -- (c);
+    \draw [<-] (b) -- (d);
+    \draw [<-] (c) -- (d);
+\end{tikzpicture}
+
+\noindent
+What's the missing data in this formalization is the multiplicatively and self-intersections.
+Consider the affine plane for the simplicity of argument and $A=B=k[x]$ and $R=k[x,y]$,
+the tensor product is $k[x]\otimes_{k[x,y]}k[x] = k[x]$, which means $\mathbb{A}^1 \otimes_{\mathbb{A}^2} \mathbb{A}^1=\mathbb{A}^1$,
+so it's self-intersection $A\cap A=A$, which is not transversal,
+and I use derived intersection to measure the failing of transversality, by capturing tangent spaces and $i$-th higher data $H^i(X)$, 
+whose intersection $H^i(Z) = H^i(X) \otimes_{H^i(S)} H^i(Y)$ defines the higher structure of $Z$,
+or in other words, consider the intersection of the two deformed spaces, 
+think of the meaning if we are already aware of what deformation is(what).
+Accordingly, derived intersection is classical intersection together with infinitesimal data.
+
+
+\begin{definition}{Derived Intersection}{}
+Derived intersection $X\times_Z^R Y$ is a derived tensor product $A\otimes_R^L B$ s.t. $X\times_Z^R Y = Spec(A\otimes_R^L B)$.
+Derievd tensor product $A\otimes_R^L B$ is a chain complex $P\cdot \otimes_R B$ with a projective resolution $P_\cdot\to A$.
+\end{definition}
+
+
+\noindent
+Let's calculate the derived intersection. From the previous example $A=B=k[x]$ and $R=k[x,y]$, TBA.
+
+
+\begin{question}{}{}
+Is derived intersection invariant under deformation $X_t$ and $Y_t$? It's generally no.
+\end{question}
+
+
+\begin{remark} {Local Complete Intersection}{}
+TBD
+\end{remark}
 
 
 \begin{example}{Virtual Fundamental Class}{}
