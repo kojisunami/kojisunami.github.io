@@ -14,189 +14,6 @@
 
 
 
-\noindent\rule{\textwidth}{0.4pt}
- 
-
-\textbf{Web Development With Latex}
-
-I use Latex and github to design this website, and I’ll talk about the construction howto of the environment. 
-The Latex compiler I’m using is Latexmlc, that outputs .html files from .tex file, 
-while its CLI automation of the uploading files is done by github. The whole automation procedure is programmed on its Makefile given below:
-
-\begin{verbatim}
-HTML_PROJECTS = index random-thoughts misc
-PDF_PROJECTS = cv-koji
-
-.PHONY: all src
-
-all: $(HTML_PROJECTS:%=%.html) $(PDF_PROJECTS:%=%.pdf) src
-
-%.html : %.tex
-    latexmlc $< --dest=$@ --css=style.css
-
-%.pdf: %.tex
-    pdflatex $<
-
-src:
-    make -C src
-
-clean:
-    rm *aux *log *out
-    make -C src clean
-
-run:
-    git add .
-    git status
-    git commit -a -m "uploading"
-    git push origin master
-\end{verbatim}
- 
-Continuing from the main html web page, I separated some exposition pdf files on src/ directory where there is another Makefile linked
-as follows:
-
-\begin{verbatim}
-PROJECTS = ainfty-geometry dgla-stack dt-moduli  what-math
-.PHONY: all
-all: $(PROJECTS:%=%.pdf)
-
-%.pdf : %.tex
-    pdflatex $*
-    biber $*
-    pdflatex $*
-    pdflatex $*
-
-clean :
-    rm *aux *bbl *bcf *blg *log *out *xml
-\end{verbatim}
-
-
-
-
-\noindent\rule{\textwidth}{0.4pt}
-
-
-\textbf{Algorithm of Finding University That Fits You}
-
-Searching new environment that fits us isn’t easy, but making database of professors and their research interests 
-will help our future career selection. There’s already mathjobs.org for postdoc jobs, 
-but there seems to be no equivalent for the PhD admission, and I use python code with OpenAlex.
-OpenAlex is a web database of academic network, where we can search the name of professors and their profile,
-including their research papers and their coauthors, and we can use it from python library called pyalex from an automated way.
-
-The procedure of finding the list of professors relevant to my interest is to find coauthor of my current advisor Yan Soibelman, 
-so I’ll search the profile of my advisor by using pyalex library to extract all of his coauthors.
-In addition, once we find his coauthors, we’ll find coauthors of coauthors. This is Erdos number 2.
-
-\begin{verbatim}
-from pyalex import Authors, Works
-import csv
-import os
-
-#name = input(": ")
-name = "Yan Soibelman"
-
-def find_coauthor (name):
-    author = Authors().search(name).get()[0]
-
-     coauthors = set()
-
-    for work in Works().filter(
-        authorships={"author": {"id": author["id"]}}
-    ).get():
-        for a in work["authorships"]:
-            if a["author"]["id"] != author["id"]:
-                coauthors.add(a["author"]["display_name"])
-
-    print(f"\n{author[’display_name’]} Coauthor:")
-
-    #for name in sorted(coauthors):
-    #    print(name)
-    return sorted(coauthors)
-
-
-# find and make list of professors
-names = []
-for name in find_coauthor(name):
-    #print (find_coauthor(name))
-    names.extend(find_coauthor(name))
-
-
-# eliminate double counting from the list
-names = list (dict.fromkeys(names))
-
-
-# export data in csv
-filename = "coauthors.csv"
-i = 1
-while os.path.exists(filename):
-    filename = f"coauthors{i}.csv"
-    i += 1
-
-with open(filename, "w", newline="", encoding="utf-8") as f:
-    writer = csv.writer(f)
-    for name in names:
-        writer.writerow([name])
-\end{verbatim}
-
-
-Now once we have created the list of professors, we’ll type each of their names with pyalex and gain a profile 
-about the name of the university they belong, research interests, and the title of top 3 most cited research papers respectively. 
-Once we finish collecting the data, we’ll output in csv. Here is another python code beginning from the professors’s name list:
-
-\begin{verbatim}
-from pyalex import Authors, Works
-import csv
-import os
-## search the information of professors
-def info_professor(name) :
-    author = Authors().search(name).get()[0]
-    institutions = author["last_known_institutions"]
-    university = institutions[0]["display_name"] if institutions else "NONE"
-
-    topics = author["topics"][:3]
-    topic_names = [t["display_name"] for t in topics]
-
-    # 
-    works = Works().filter( author={"id": author["id"]}).sort(cited_by_count="desc").get()
-    top_papers = works[:3]
-
-    paper_names = [
-        f"{w[’title’]} ({w[’cited_by_count’]} citations)"
-        for w in top_papers
-    ]
-
-    institution_name = institutions[-1]["display_name"] if institutions else ""
-    country_code = institutions[-1]["country_code"] if institutions else ""
-
-    return [author["display_name"], institution_name, country_code, "\n".join(topic_names), "\n".join(paper_names)]
-
-
-# Run functions
-list_profile = []
-for name in names:
-    list_profile.append(info_professors(name))
-
-
-# export data in csv
-filename = "coauthors_profile.csv"
-i = 1
-while os.path.exists(filename):
-    filename = f"coauthors_profile{i}.csv"
-    i += 1
-
-with open(filename, "w", newline="", encoding="utf-8") as f:
-    writer = csv.writer(f)
-    for profile in list_profile:
-        writer.writerow(profile)
-\end{verbatim}
-
-
-Finally, I'll leave here the result of the search. In the CSV file, there's the list of professors' name, institution, country,
-topic, and top 3 research abstract. We can filter professors of the list by country (probably US only), or research interests
-(some of them might be physics or analysis).
-
-\href{https://kojisunami.github.io/coauthors\_profile.csv}{coauthors\_profile.csv}
-
 
 \noindent\rule{\textwidth}{0.4pt}
 
@@ -266,23 +83,38 @@ can we do the same with algebraic geometry or math physics?
 
 \begin{itemize}
 \item Good Philosophy \\
-I personally think Darwin and UNIX and quantum mechanics are the best philosophy in 20th century.
+Darwin and UNIX and Newton are the best philosophy in history, or it might be symmetry/structure eqvialant in math.
+Ideally, the question is clear, everybody can understand, nobody can imitate.
+Meanwhile, statistics and quantum mechanics and Marxism are nobody understands, everybody can imitate.
 
 \item Abstract Nonsense \\
-Math is often metaphored by climbing mountain. Skilled climber says climb up to the notch rather than climb down if we stuck the way
-because we easily lose the direction(why). Abstract nonsense is like the apex of the mountain.
+Math is like climbing mountain. Skilled climber says climb up to the notch rather than climb down if we're lost(why).
+Abstract nonsense is like the apex of the mountain, doesn't mean there is some meaning in itself.
 
-\item Good Topic \\
-Good topic is, ideally, everybody can understand, nobody can imidate the work.
+\item Good Way of Reading \\
+Good way of reading philosophy is how to read it not what exactly is written, 
+since the author might be lying or mistaking, and math is the same.
+
+\item Intro to Socrates \\
+Socrates was the smartest person by the time of Oracle. If Masters' degree is literally mastering, it means smart,
+and if PhD is about philosophy, it's something different.
 
 \item Socialism vs Capitalism \\
-By assumption of materialism, 1 person has 1 labor force by definition, and if population is twice, GDP is twice,
-hence socialism is invented as a management of huge population,
-while the purpose of capitalism is to resolve population problem from Pest. It's data science.
+The purpose of equity is to define 1 person has 1 unit of labor force. 
+If population is twice, GDP is twice, and 1.4 bil is 3 mil times superior to 400 in Vatican,
+while capitalism is a solution of population problem from Pest. 
+It's data science, where number is meaningless unless we find meaning from it.
 
-\item Party Affiliation \\
-Calculate divorce rate in Alabama and California, and compare which is more conservative. It's data science.
+\item Liberal vs Conservative \\
+Calculate divorce rate of Alabama and California, and compare which is more conservative. It's data science.
+\end{itemize}
+
+
+
 \end{document}
  
+
+
+
 
 
