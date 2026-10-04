@@ -1,5 +1,7 @@
 \documentclass{article}
 
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{mathrsfs, mathtools, mathbbol}
 \usepackage{hyperref}
 \usepackage{wrapfig}
 \usepackage{graphicx}
@@ -26,7 +28,7 @@
 \textbf{Research}
 
 \noindent
-My interest in algebraic geometry is typically category / cohomology / homotopic and those of deformation,
+My interest in algebraic geometry is typically categorical / cohomological / homotopic and those of deformation,
 I’d like to develop problems in Fukaya category, moduli problems, quotient stack, or any others. 
 Here is a list of research proposals: \\
 
@@ -37,45 +39,26 @@ Here is a list of research proposals: \\
 
 \begin{wrapfigure}{r}{0.4\textwidth}
 \begin{tikzpicture}[auto, every node/.style={font=\tiny\bfseries}]
-  \node (a) at (0,0) {Fukaya\\\vspace{-3mm} Category};
-  \node (b1) at (3,0) {Stable $\infty$\\ Category};
-  \node (b2) at (6,0) {Tannakian\\ Duality};
-  \node (c1) at (3,1.5) {Hochshild\\ Category};
-  \node (c2) at (6,1.5) {Derived Formal\\ Moduli};
+  \node (a)  at (3,2) {Fukaya\\ Category};
+  \node (b1) at (0,0) {Tannakian\\ Duality};
+  \node (b2) at (3,0) {Equivariant\\ Intersection};
+  \node (b3) at (6,0) {Derived Formal\\ Moduli};
   \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (b1);
-  \draw[-, shorten <= 15pt, shorten >= 3pt] (b1) -- (b2);
-  \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (c1);
-  \draw[-, shorten <= 15pt, shorten >= 3pt] (c1) -- (c2);
-  \node[draw, rectangle, fit=(a) (b1) (b2) (c1) (c2), inner xsep=10pt, xshift=15pt] {};
+  \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (b2);
+  \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (b3);
+  \node[draw, rectangle, fit=(a) (b1) (b2) (b3), inner xsep=10pt, inner ysep=10pt, xshift=10pt] {};
 \end{tikzpicture}
 \end{wrapfigure}
 
 For Proving HMS 1: Hochschild deformation of Fukaya category or Stable $\infty$, which induces derived formal geometry,
-2: Comparing Fukaya category with Perf(Y), whose Tannakian duality is Y.
+2: Comparing Fukaya category with $Perf(Y)$, whose Tannakian duality is $Y$.
 \href{https://kojisunami.github.io/src/ainfty-geometry.pdf}{[link]} 
 
 \item \textbf{Derived Intersection on Foliation} \\
 
-\begin{wrapfigure}{r}{0.4\textwidth}
-\begin{tikzpicture}[auto, every node/.style={font=\tiny\bfseries}]
-  \node (a) at (0,0) {dg $L_\infty$\\ Groupoid};
-  \node (b) at (3,0) {Quotient\\ Stack};
-  \node (c) at (6,0) {Fukaya\\ Category};
-  \draw[-, shorten <= 15pt, shorten >= 3pt] (a) -- (b);
-  \draw[-, shorten <= 15pt, shorten >= 3pt] (b) -- (c);
-  \node[draw, rectangle, fit=(a) (b) (c), inner xsep=10pt, xshift=15pt] {};
-\end{tikzpicture}
-\end{wrapfigure}
-
-$\infty$-equivalence of foliation and dg Lie algebroid, which defines quotient stack.
-Some of my goals are to introduce Lagrangian intersection to quotient stack,
-and evaluation with CE complex and DT/GW invariants and any other.
+For Proving HMS 3: Enhancing Lagrangian intersection of Fukaya category $Fuk([X/\mathcal{G}])$,
+where the quotient stack $[X/\mathcal{G}]$ is foliation of dg $L_\infty$ groupoid $\mathcal{G}$.
 \href{https://kojisunami.github.io/src/dgla-stack.pdf}{[link]}  
-
-\item \textbf{On Derived Enhancement} \\
-Other than pure aspect of dag, concrete calculation is the problem,
-which in particular is making classical algebraic geometry to derived e.g. Nakajima Quiver variety?
-[link]
 \end{itemize}
 
 
@@ -100,11 +83,16 @@ This is a list of expositions previously shown to other people or intended to be
 \newline
 
 \begin{itemize}
+\item \textbf{(Fall 2026) On Derived Enhancement} \\
+Other than pure aspect of dag, concrete calculation is the problem,
+which in particular is making classical algebraic geometry to derived e.g. Nakajima Quiver variety?
+[link]
+
 \item \textbf{(Fall 2026) On Symplectic Calculus} \\
 Intersection, Nijenhuis, sheaf quantization, cone, singularity, topology etc. [link]
 
-\item \textbf{(Fall 2026) On DAG} \\
-DAG stands from AG + deformation. $\infty$-language. [link]
+\item \textbf{(Fall 2026) Note on Triangulated Category} \\
+Perverse sheaf, suspension/cylinder triangulation, dg-enhancement, stable-$\infty$, stable homotopy, and their geometric realization. [link]
 
 \item \textbf{(Fall 2026) What is Math?} \\
 I'll organize the overview of pure math reseach pov of just finishing calculus and linear algebra or abstract algebra.

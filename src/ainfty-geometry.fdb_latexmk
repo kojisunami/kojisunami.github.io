@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber ainfty-geometry"] 1790720020.35591 "ainfty-geometry.bcf" "ainfty-geometry.bbl" "ainfty-geometry" 1790925824.35487 0
-  "ainfty-geometry.bcf" 1790925824.1922 108562 f84739b0397722ae3310c340e4b43ab0 "pdflatex"
+["biber ainfty-geometry"] 1790720020.35591 "ainfty-geometry.bcf" "ainfty-geometry.bbl" "ainfty-geometry" 1791084977.93372 0
+  "ainfty-geometry.bcf" 1791084977.67287 108562 f84739b0397722ae3310c340e4b43ab0 "pdflatex"
   "ainfty-geometry.bib" 1790708518.17351 10010 5977b115763f53267c759efa082eeb57 ""
   (generated)
   "ainfty-geometry.bbl"
   "ainfty-geometry.blg"
   (rewritten before read)
-["pdflatex"] 1790925821.78308 "ainfty-geometry.tex" "ainfty-geometry.pdf" "ainfty-geometry" 1790925824.35524 0
+["pdflatex"] 1791084972.79327 "ainfty-geometry.tex" "ainfty-geometry.pdf" "ainfty-geometry" 1791084977.93422 0
   "/etc/texmf/web2c/texmf.cnf" 1769424892.38577 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/k/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/labx1000.tfm" 1769676979.81983 3300 6abb8e321227ead2a8e929e5abc72bd3 ""
   "/home/k/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1769676982.75983 3308 eee81981029f67083258db36df06e523 ""
@@ -54,6 +54,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm" 1229303445 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
@@ -294,12 +295,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1741904018 41538 c016915c1d51223b6dbbfe27341748a8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1769426689 5467255 9a64d1b40e0b893fc5588ecce9d8accf ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1769426896 3348445 41607985cb8127f67de1e4b742144da0 ""
-  "ainfty-geometry.aux" 1790925824.1882 4647 44c4da92a4f5ba9f89ed1d32e418133a "pdflatex"
+  "ainfty-geometry.aux" 1791084977.66887 4764 7fb924ef0dd055c5c834f44e1f0b8c17 "pdflatex"
   "ainfty-geometry.bbl" 1790720020.96553 46987 4da241f64a60a2696b980800976b8f19 "biber ainfty-geometry"
-  "ainfty-geometry.out" 1790925824.1922 1193 0b30239eaef41489081773687e886bbd "pdflatex"
-  "ainfty-geometry.run.xml" 1790925824.1922 2387 cdf8e3f035ddfe04cd501d4955050834 "pdflatex"
-  "ainfty-geometry.tex" 1790925820.6962 42272 e6174e1c9c8d7a0f8a9810feceed6eaa ""
-  "ainfty-geometry.toc" 1790925824.1922 685 04312152e641bfab31292738478a7fb1 "pdflatex"
+  "ainfty-geometry.out" 1791084977.67287 1286 089d3fe17b4afcad71862268a31d0ade "pdflatex"
+  "ainfty-geometry.run.xml" 1791084977.67687 2387 cdf8e3f035ddfe04cd501d4955050834 "pdflatex"
+  "ainfty-geometry.tex" 1791084970.92087 45024 ea3679efb9bd3acabfa01ce7c42f51c5 ""
+  "ainfty-geometry.toc" 1791084977.67687 761 dcf728fd294675018b2732ba4baecd7f "pdflatex"
   "math_header.tex" 1789988864.32033 2707 013eef42758e022be2a10d35e3f8438c ""
   (generated)
   "ainfty-geometry.aux"

@@ -157,6 +157,238 @@ Sunami : tw^\pi(Fuk(X))\to Y
 \noindent\rule{\textwidth}{0.4pt}
 \vspace{0.5cm}
 
+\noindent
+Beginning Fukaya category from what is already known, consider cotangent bundle $T^*X$, which is a symplectic manifold,
+Nadler-Zaslow claims an analogue of HMS for the case of $Fuk(T^*X)$ using microlocal analysis.
+
+\begin{proposition}{Nadler-Zaslow}{}
+There is an equivalence of category 
+
+\[Fuk(T^*X) \cong Sh_c(X)\]
+
+where $c$ means constructible not compactness.
+\end{proposition}
+
+
+\begin{question}{}{}
+\begin{itemize}
+\item Can we reduce $Sh_c(X)$ to $Coh(X)$ or $Perf(X)$ so we can treat it algebraic geometrically?
+\item Can the cotangent bundle $T^*X$ be generalized to any other symplectic geometry?
+Does geometric quotient $T^*X//G$ act functorially on $Fuk(T^*X//G)$?
+What about fibration, toric variety, quiver variety, birational geometry, and any other geometric operations?
+\end{itemize}
+\end{question}
+
+
+\begin{conjecture}{}{}
+There exists a following commutative diagram \\
+\begin{tikzpicture}[auto] 
+    \node (a) at (  0,1.5) {$Fuk(T^*X)$};
+    \node (b) at (2.5,1.5) {$Sh_c(X)$};
+    \node (d) at (2.5,  0) {$Perf(X)$};
+    \draw [->] (a) -- (b);
+    \draw [->] (a) -- (d);
+    \draw [->] (b) -- (d);
+\end{tikzpicture}
+\end{conjecture}
+
+
+\begin{conjecture}{Geometric Quotient in Fukaya Category}{}
+\begin{tikzpicture}[auto] 
+    \node (a) at (  0,1.5) {$T^* X$};
+    \node (b) at (2.5,1.5) {$Fuk(T^*X)$};
+    \node (c) at (  0,  0) {$T^*X//G$};
+    \node (d) at (2.5,  0) {$Fuk(T^*X//G)$};
+    \draw [->] (a) -- (b);
+    \draw [->] (a) -- (c);
+    \draw [->] (b) -- (d);
+    \draw [->] (c) -- (d);
+\end{tikzpicture}
+\end{conjecture}
+
+
+\begin{conjecture}{Fiber Product Decomposition of Fukaya Category}{}
+Consider the category of constructible sheaves have decomposition by fiber product
+$Sh_c(X\times_Z Y) \cong Sh_c(X) \times_{Sh_c(Z)} Sh_c(Y)$,
+is there any Fukaya analogue $Fuk(X\times_Z Y) \cong Fuk(X) \times_{Fuk(Z)} Fuk(Y)$?
+\end{conjecture}
+
+
+
+
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+\noindent
+Hochschild cochain complex might be used for understanding Fukaya category,
+and just consider $HH^\cdot (Fuk(X))$ to induce GW invariants or Symplectic cohomology through open-closed mapping. \\
+
+\begin{definition}{Hochschild Cochain Complex}{}
+The Hochschild cochain complex of a category $\mathcal{C}$ is
+$HH^\cdot (\mathcal{C}) \cong Ext_{\mathcal{C}^e}^\cdot (\mathcal{C}, \mathcal{C})$ 
+where $\mathcal{C}^e= \mathcal{C}^{op}\otimes \mathcal{C}$.
+\end{definition}
+
+
+\noindent
+Considered that in particular shifted Hochschild complex with Gerstenhaber bracket is dgla,
+I define deformation functor for the study of deformation of dgla.
+The deformation functor of dgla spontaneously defines formal moduli problem, and I think it will be a wonderful argument, 
+since Fukaya cagegory for example or any other categories has more structure than its Hochschild. \\
+
+
+
+\begin{definition}{Quantum Cohomology}{}
+TBD
+\end{definition}
+
+
+\begin{definition}{Symplectic Cohomology}{}
+TBD
+\end{definition}
+
+
+\begin{definition}{Open-Closed Mapping}{}
+\[ QH^* (X) \overset{CO}{\cong} HH_* (\mathcal{F}(X)) \]
+
+\[ HH_* (\mathcal{F}(X)) \overset{OC}{\cong} QH^{*+n}(X) \]
+
+where $CO$ and $OC$ are closed-open and open-closed map.
+\end{definition}
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+
+So far, Fukaya category has an GW invariant, but GW invariant doesn't describe the whole picture of Fukaya category.
+As stable $\infty$-category has a derived geometric interpretation according to Lurie,
+I'll consider Fukaya category $Fuk(X)$, and its transformation to stable $\infty$-category $Tw^\pi (Fuk(X))$. \\
+
+
+\begin{definition}{Stable $\infty$-Category}{}
+A stable $\infty$-category $\mathcal{C}$ consits of zero objects $0\in\mathcal{C}$ meaning it's object both initial and terminal.
+$\mathcal{C}$ has all finite limits and finite colimits. A commutative diagram  \\
+\begin{tikzpicture}[auto] 
+    \node (a) at (  0,1.5) {A};
+    \node (b) at (1.5,1.5) {B};
+    \node (c) at (  0,  0) {C};
+    \node (d) at (1.5,  0) {D};
+    \draw [->] (a) -- (b);
+    \draw [->] (a) -- (c);
+    \draw [->] (b) -- (d);
+    \draw [->] (c) -- (d);
+\end{tikzpicture}
+
+is a pullback iff it's a pushout.
+\end{definition}
+
+
+Though it's different from $Tw^\pi (Fuk(X))$, some example of stable $\infty$-category is $\mathcal{C}= Perf(X)$,
+and the loop space $LX = Map(S^1, X)$ can also be derived self-intersection $LX = X \times_{X\times X}^h X$, connecting to Hochschild complex.
+
+
+\begin{definition}{Connection to DAG}{}
+TBD
+\end{definition}
+
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+Meanwhile, I'll consider the formal scheme interpretation without using Hochschild cochain complex.
+
+
+\begin{definition}{Formal Scheme}{}
+A formal scheme is a locally ringed space $(X,\mathcal{O}_X)$ that is locally isomorphic to formal spectrum $Spf(A)$
+of a complete topological ring $A$. Assuming $A$ is $I$-adically complete for an ideal $I\subset A$ s.t. $A = \varprojlim_{n} A/I^n$.
+Then as a set, $|Spf(A)| = \{ \mathfrak{p} \subset A  | \text{ $\mathfrak{p}$ is open and contains $I^n$ for some $n$} \}$. 
+As a remark, prime ideal $\mathfrak{p}$ is defined to be closed in Zariski topology, but from different point of view,
+it could be open subset in $I$-adic topology, different from Zariski. \\
+
+For a scheme $X$, formal subscheme $\hat{X_L}$ of $L\subset X$ is given by a limit of sheaf 
+$\hat{X_L} = \varprojlim_{n} \mathcal{O}_X / \mathcal{I}_L^n$ where $\mathcal{I}_L$ is an ideal sheaf of $\mathcal{O}_X$ for $L$.
+\end{definition}
+
+\noindent
+For investigating few of the properties, like an ordinary scheme, a formal scheme has closed subschemes in terms of Zariski topology, 
+and any proper close subscheme has codimension at least $1$, 
+and in addition the intersection of close subscheme has only finite points (why).\\
+
+\noindent
+
+
+\noindent
+In particular, for the case of Fukaya category $Fuk(X)$, $CF^*(L,L)$ is $A_\infty$ algebra, 
+generating its formal scheme $Spf(\hat{Sym( CF^*(L,L)^\vee[-1])})$.
+The differential structure $d_Q$ was a direct consequence of coderivation $Q: T^c (CF^*(L,L)^\vee[-1]) \to T^c (CF^*(L,L)^\vee[-1])$,
+with $A_\infty$ coherence. \\
+
+
+\begin{example}{Non-Commutative Formal Pointed DG-Manifold}{}
+For coalgebra derivation $Q: T^c (V[1]) \to T^c (V[1])$ s.t. $Q^2=0$ of $A_\infty$ structure where $V$ is a vector space,
+there is a correspondence to formal scheme $(V,Q) \leftrightarrow (Spf(A), d_Q)$, where $V^\vee$ is a dual vector space,
+and $A = \hat{Sym(V^\vee)}$, and $d_Q: Spf(A) \to Spf(A)$ is a differential s.t. $d_Q (f) = Q(f)$ for every function $f\in A$.
+\end{example}
+
+
+\noindent
+So far ncfp dg-manifold has interpretation of formal geometry, and it was a domain of algebraic geometry.
+However, ncfp dg-manifold contains indispensable ingredient $d_Q$ other than $Spf(A)$, not atually defined in formal scheme yet,
+but derived formal scheme includes differential $d_Q$ data in itself. For defining derived formal scheme: \\
+
+
+\begin{definition}{Derived Formal Scheme}{}
+Derived formal scheme is a functor $cdga \to \infty-groupoid$ s.t. $\pi_0 (A) = Spf(A)$.
+\end{definition}
+
+
+\noindent
+As an example, for the case of Fukaya category $Fuk(X)$, $CF^*(L,L)$ is $A_\infty$ algebra, 
+and it generates $Spf(\hat{Sym( CF^*(L,L)^\vee[-1])})$. Adding the derived structure, it will be (TBD). \\
+
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+So far we created derived formal scheme from Fukaya category in two ways: one uses Hochschild and the other is not.
+What is the relationship between them if any?
+So to summarize the above arguments, studying Fukaya category involves:
+
+\begin{itemize}
+\item Quantum/Symplectic cohomology
+\item Stable $\infty$-category
+\item Derived formal scheme
+\end{itemize}
+
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+
+
+
+
+\tableofcontents
+\vspace{1cm}
+
+
+
+\section{$A_\infty$-Category}
 
 What is the structure of $A_\infty$ category? The natural question is geometric realization of $A_\infty$ category,
 which might be Hochschild cochain complex and derive formal scheme, and I use the method of coalgebra construction for them.
@@ -340,148 +572,6 @@ satisfying Schlessinger axiom (TBD).
 
 
 
-The application of this Hochschild construction is to derive Gromov-Witten invariants.
-According to Ganatra, Hochschild cochain complex of Fukaya category derives quantum cohomology by open-closed map,
-and similarly symplectic cohomology.
-
-
-\begin{definition}{Quantum Cohomology}{}
-TBD
-\end{definition}
-
-
-\begin{definition}{Symplectic Cohomology}{}
-TBD
-\end{definition}
-
-
-\begin{definition}{Open-Closed Mapping}{}
-\[ QH^* (X) \overset{CO}{\cong} HH_* (\mathcal{F}(X)) \]
-
-\[ HH_* (\mathcal{F}(X)) \overset{OC}{\cong} QH^{*+n}(X) \]
-
-where $CO$ and $OC$ are closed-open and open-closed map.
-\end{definition}
-
-
-
-
-So far, Fukaya category has an GW invariant, but GW invariant doesn't describe the whole picture of Fukaya category.
-As stable $\infty$-category has a derived geometric interpretation according to Lurie,
-I'll consider Fukaya category $Fuk(X)$, and its transformation to stable $\infty$-category $Tw^\pi (Fuk(X))$. \\
-
-
-\begin{definition}{Stable $\infty$-Category}{}
-A stable $\infty$-category $\mathcal{C}$ consits of zero objects $0\in\mathcal{C}$ meaning it's object both initial and terminal.
-$\mathcal{C}$ has all finite limits and finite colimits. A commutative diagram  \\
-\begin{tikzpicture}[auto] 
-    \node (a) at (  0,1.5) {A};
-    \node (b) at (1.5,1.5) {B};
-    \node (c) at (  0,  0) {C};
-    \node (d) at (1.5,  0) {D};
-    \draw [->] (a) -- (b);
-    \draw [->] (a) -- (c);
-    \draw [->] (b) -- (d);
-    \draw [->] (c) -- (d);
-\end{tikzpicture}
-
-is a pullback iff it's a pushout.
-\end{definition}
-
-
-Though it's different from $Tw^\pi (Fuk(X))$, some example of stable $\infty$-category is $\mathcal{C}= Perf(X)$,
-and the loop space $LX = Map(S^1, X)$ can also be derived self-intersection $LX = X \times_{X\times X}^h X$, connecting to Hochschild complex.
-
-
-\begin{definition}{Connection to DAG}{}
-
-\end{definition}
-
-
-
-
-
-Meanwhile, I'll consider the formal scheme interpretation without using Hochschild cochain complex.
-
-
-\begin{definition}{Formal Scheme}{}
-A formal scheme is a locally ringed space $(X,\mathcal{O}_X)$ that is locally isomorphic to formal spectrum $Spf(A)$
-of a complete topological ring $A$. Assuming $A$ is $I$-adically complete for an ideal $I\subset A$ s.t. $A = \varprojlim_{n} A/I^n$.
-Then as a set, $|Spf(A)| = \{ \mathfrak{p} \subset A  | \text{ $\mathfrak{p}$ is open and contains $I^n$ for some $n$} \}$. 
-As a remark, prime ideal $\mathfrak{p}$ is defined to be closed in Zariski topology, but from different point of view,
-it could be open subset in $I$-adic topology, different from Zariski. \\
-
-For a scheme $X$, formal subscheme $\hat{X_L}$ of $L\subset X$ is given by a limit of sheaf 
-$\hat{X_L} = \varprojlim_{n} \mathcal{O}_X / \mathcal{I}_L^n$ where $\mathcal{I}_L$ is an ideal sheaf of $\mathcal{O}_X$ for $L$.
-\end{definition}
-
-\noindent
-For investigating few of the properties, like an ordinary scheme, a formal scheme has closed subschemes in terms of Zariski topology, 
-and any proper close subscheme has codimension at least $1$, 
-and in addition the intersection of close subscheme has only finite points (why).\\
-
-\noindent
-
-
-\noindent
-In particular, for the case of Fukaya category $Fuk(X)$, $CF^*(L,L)$ is $A_\infty$ algebra, 
-generating its formal scheme $Spf(\hat{Sym( CF^*(L,L)^\vee[-1])})$.
-The differential structure $d_Q$ was a direct consequence of coderivation $Q: T^c (CF^*(L,L)^\vee[-1]) \to T^c (CF^*(L,L)^\vee[-1])$,
-with $A_\infty$ coherence. \\
-
-
-\begin{example}{Non-Commutative Formal Pointed DG-Manifold}{}
-For coalgebra derivation $Q: T^c (V[1]) \to T^c (V[1])$ s.t. $Q^2=0$ of $A_\infty$ structure where $V$ is a vector space,
-there is a correspondence to formal scheme $(V,Q) \leftrightarrow (Spf(A), d_Q)$, where $V^\vee$ is a dual vector space,
-and $A = \hat{Sym(V^\vee)}$, and $d_Q: Spf(A) \to Spf(A)$ is a differential s.t. $d_Q (f) = Q(f)$ for every function $f\in A$.
-\end{example}
-
-
-\noindent
-So far ncfp dg-manifold has interpretation of formal geometry, and it was a domain of algebraic geometry.
-However, ncfp dg-manifold contains indispensable ingredient $d_Q$ other than $Spf(A)$, not atually defined in formal scheme yet,
-but derived formal scheme includes differential $d_Q$ data in itself. For defining derived formal scheme: \\
-
-
-\begin{definition}{Derived Formal Scheme}{}
-Derived formal scheme is a functor $cdga \to \infty-groupoid$ s.t. $\pi_0 (A) = Spf(A)$.
-\end{definition}
-
-
-\noindent
-As an example, for the case of Fukaya category $Fuk(X)$, $CF^*(L,L)$ is $A_\infty$ algebra, 
-and it generates $Spf(\hat{Sym( CF^*(L,L)^\vee[-1])})$. Adding the derived structure, it will be (TBD). \\
-
-
-
-\vspace{0.5cm}
-\noindent\rule{\textwidth}{0.4pt}
-\vspace{0.5cm}
-
-
-So far we created derived formal scheme from Fukaya category in two ways: one uses Hochschild and the other is not.
-What is the relationship between them if any?
-So to summarize the above arguments, studying Fukaya category involves:
-
-\begin{itemize}
-\item Quantum/Symplectic cohomology
-\item Stable $\infty$-category
-\item Derived formal scheme
-\end{itemize}
-
-
-
-\vspace{0.5cm}
-\noindent\rule{\textwidth}{0.4pt}
-\vspace{0.5cm}
-
-
-
-
-
-
-\tableofcontents
-\vspace{1cm}
 
 
 \section{Algebraic Geometry}
