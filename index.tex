@@ -10,6 +10,8 @@
 
 \usetikzlibrary{shapes,arrows, positioning,fit}
 
+\setlength{\textwidth}{19cm}
+
 \title{Top}
 
 \begin{document}
@@ -19,30 +21,34 @@
 
 \noindent\rule{\textwidth}{0.4pt}
 
-\begin{wrapfigure}{r}{0.25\textwidth}
-    \centering
-    \includegraphics[width=0.2\textwidth]{alice1.png}
-\end{wrapfigure}
 
+\begin{minipage}{0.85\textwidth}
 \noindent
-\textbf{Research}
+\textbf{Research} \\
 
 \noindent
 My interest in algebraic geometry is typically categorical / cohomological / homotopic and those of deformation,
 I’d like to develop problems in Fukaya category, moduli problems, quotient stack, or any others. 
 Here is a list of research proposals: \\
+\end{minipage}
+\hfill
+\begin{minipage}{0.15\textwidth}
+\centering
+\includegraphics[width=0.15\textwidth]{alice1.png}
+\end{minipage}
 
-\newline
 
+
+\begin{minipage}{\textwidth}
 \begin{itemize}
 \item \textbf{On Homological Mirror Symmetry} \\
 
 \begin{wrapfigure}{r}{0.4\textwidth}
 \begin{tikzpicture}[auto, every node/.style={font=\tiny\bfseries}]
-  \node (a)  at (3,2) {Fukaya\\ Category};
-  \node (b1) at (0,0) {Tannakian\\ Duality};
-  \node (b2) at (3,0) {Equivariant\\ Intersection};
-  \node (b3) at (6,0) {Derived Formal\\ Moduli};
+  \node (a)  at (2.5,2) {Fukaya\\ Category};
+  \node (b1) at (  0,0) {Tannakian\\ Duality};
+  \node (b2) at (2.5,0) {Equivariant\\ Intersection};
+  \node (b3) at (  5,0) {Derived Formal\\ Moduli};
   \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (b1);
   \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (b2);
   \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (b3);
@@ -60,28 +66,28 @@ For Proving HMS 3: Enhancing Lagrangian intersection of Fukaya category $Fuk([X/
 where the quotient stack $[X/\mathcal{G}]$ is foliation of dg $L_\infty$ groupoid $\mathcal{G}$.
 \href{https://kojisunami.github.io/src/dgla-stack.pdf}{[link]}  
 \end{itemize}
-
+\end{minipage}
 
 
 \noindent\rule{\textwidth}{0.4pt}
 
 
-\begin{wrapfigure}{r}{0.25\textwidth}
-    \centering
-    \includegraphics[width=0.2\textwidth]{alice2.png}
-\end{wrapfigure}
-
+\begin{minipage}{0.85\textwidth}
 \noindent
 \textbf{Exposition} \\
 
 \noindent
 This is a list of expositions previously shown to other people or intended to be distributed in the future.
+\end{minipage}
+\hfill
+\begin{minipage}{0.15\textwidth}
+\centering
+\includegraphics[width=0.15\textwidth]{alice2.png}
+\end{minipage}
 
 
-\newline
-\newline
-\newline
 
+\begin{minipage}{\textwidth}
 \begin{itemize}
 \item \textbf{(Fall 2026) On Symplectic Calculus} \\
 Intersection, Nijenhuis, sheaf quantization, cone, singularity, topology etc. [link]
@@ -106,26 +112,28 @@ Grand relationship among AG, RT, and NT.
 Introducing Brown representability in triangulated category. It’s bachelor’s thesis.
 \href{https://kojisunami.github.io/study_notes/brt.pdf}{[link]}
 \end{itemize}
-
+\end{minipage}
 
 
 \noindent\rule{\textwidth}{0.4pt}
 
 
-\begin{wrapfigure}{r}{0.25\textwidth}
-    \centering
-    \includegraphics[width=0.2\textwidth]{alice3.png}
-\end{wrapfigure}
-
+\begin{minipage}{0.85\textwidth}
 \noindent
 \textbf{Casual Non-Research Interests} \\
 
 \noindent
 Below is the list of materials I personally think interesting, and they are somewhat connecting to algebraic geometry. 
 They are quite different from my focus, however.
+\end{minipage}
+\hfill
+\begin{minipage}{0.15\textwidth}
+\centering
+\includegraphics[width=0.15\textwidth]{alice3.png}
+\end{minipage}
 
-\newline
 
+\begin{minipage}{\textwidth}
 \begin{itemize}
 \item \textbf{AdS/CFT} \\
 AdS/CFT claims AdS conformal boundary corresponds to CFT, called holography.
@@ -143,24 +151,27 @@ Geometric Langlands bridges local system, D-module, and Higgs bundle, and this i
 \item \textbf{Vertex Operator Algebra} \\
 There are many application in physics and other area of math.
 \end{itemize}
+\end{minipage}
 
 
 
 \noindent\rule{\textwidth}{0.4pt}
 
-
-\begin{wrapfigure}{r}{0.25\textwidth}
-    \centering
-    \includegraphics[width=0.2\textwidth]{alice4.png}
-\end{wrapfigure}
-
+\noindent
+\begin{minipage}[t]{0.85\textwidth}
 \noindent
 \textbf{Junk} \\
 
 \noindent
-Two junk pdf of totally 200 pages based on rabbit holing ChatGPT or wikipedia for a period of time.
-Muscle doesn't betray us. \\
+Two junk pdf of totally 200 pages based on rabbit holing ChatGPT or wikipedia for a period of time. Muscle doesn't betray us. 
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.15\textwidth}
+\raggedleft
+\includegraphics[width=0.15\textwidth]{alice4.png}
+\end{minipage}
 
+\begin{minipage}{\textwidth}
 \begin{itemize}
 \item \textbf{(Spring 2026) Intro to Geometry} \\
 Post-Hartshorne NC alg/diff geometry. Prelim for reading mirror symmetry papers.
@@ -170,6 +181,7 @@ Post-Hartshorne NC alg/diff geometry. Prelim for reading mirror symmetry papers.
 QFT, string theory, mirror symmetry and AdS/CFT, beginning from classical. 
 \href{https://kojisunami.github.io/study_notes/physics-intro.pdf}{[link]}
 \end{itemize}
+\end{minipage}
 
 
 
