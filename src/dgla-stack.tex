@@ -162,6 +162,33 @@ Is there any connection of quotient stack by Lie groupoid and derived foliation,
 \noindent\rule{\textwidth}{0.4pt}
 \vspace{0.5cm}
 
+Consider the intersetion theory problem of quotient stack of the foliation.
+Intersection theory is to compare two different geometry on the same domain.
+Consider two quotient projection maps $p:X\to X/\mathcal{F}$ and $q:X\to X/\mathcal{G}$, which are foliations,
+and their algebra are contravariant
+$p^*: \mathcal{O}_{X/\mathcal{F}} \to \mathcal{O}_X$ and $q^*: \mathcal{O}_{X/\mathcal{G}} \to \mathcal{O}_X$,
+and it makes a pullback diagram below to make a fiber product $\mathcal{O}_{X/\mathcal{F} \times_X X/\mathcal{G}}$, 
+that's how we define as the derived intersection: \\
+
+\vspace{1cm}
+\begin{tikzpicture}[auto]
+    \node (a) at (  0,1.5) {$\mathcal{O}_{X/\mathcal{F} \times_X X/\mathcal{G}}$};
+    \node (b) at (2.5,1.5) {$\mathcal{O}_{X/\mathcal{F}}$};
+    \node (c) at (  0,  0) {$\mathcal{O}_{X/\mathcal{F}}$};
+    \node (d) at (2.5,  0) {$\mathcal{O}_X$};
+    \draw [->] (a) -- (b);
+    \draw [->] (a) -- (c);
+    \draw [->] (b) -- node[right]{$p^*$}(d);
+    \draw [->] (c) -- node[above]{$q^*$}(d);
+\end{tikzpicture}
+\vspace{1cm}
+
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
 
 
 \noindent
@@ -248,7 +275,7 @@ However, supposely we assume very na\"{\i}vely
 an identification of the quotient stack of foliation and some derived cotangent analogue in this formula \footnote{prove it},
 cotangent bundle has particularly important of general symplectic manifold. Below is a conjecture: \\
 
-\begin{conjecture}{}{}
+\begin{conjecture}{Symplectic Cotangent}{}
 \[
 [X/\mathcal{G}] \cong [T^* Y]_{der}
 \]
@@ -297,17 +324,18 @@ and I add Lagrangian intersection theory.
 
 
 \begin{definition}{Graded Mixed CDGA}{}
-
+For defining graded mixed cdga, cdga is a graded commutative $xy = (-1)^{|x||y|}yx$ and dg algebra,
+and let graded mixed object $E$ be a $\mathbb{Z}$-graded object $E=\oplus E(n)$ with extra differential $\epsilon_n: E(n)\to E(n+1)[-1]$
+or $\epsilon: E\to E((1))[-1]$ s.t. $\epsilon^2=0$. Each $E(n)$ has a differential $d:E(n)^i\to E(n)^{i+1}$.
+$\infty$-category of graded mixed objects are denoted by $\epsilon-dg^{gr}$,
+and if $E$ is also cdga, it forms category $\epsilon-cdga^{gr}$. I'll denote category of derived affine scheme 
+$dAff^{\mathcal{F}} = \epsilon-cdga^{gr}$ as contravariant of that of the graded mixed cdga. 
+In addition, consider an $\infty$-functor $DR: cdga \to \epsilon-cdga^{gr}$ where $DR(A) = Sym_{A'}^u (\Omega_{A'}^1[1])$.
+This $DR$ is functorial in the sense of $\infty$-categories, and analogously, $DR(X) = Sym_{\mathcal{O}_X}(\mathbb{L}_X [-1])$.
 \end{definition}
-
-\begin{example}{De Rham Cochain Complex}{}
-\[ Sym_A(\Omega^1_A [1]) \cong \Omega_A^\cdot\]
-\[ Sym_{\mathcal{O}_X}(\mathbb{L}_X [-1]) = DR(X) \]
-\end{example}
 
 
 \begin{definition}{Derived Affine Scheme}{}
-
 \end{definition}
 
 
@@ -316,7 +344,11 @@ and I add Lagrangian intersection theory.
 
 
 \begin{definition}{Affine Derived Foliation}{}
+An affine derived foliation is a graded mixed cdga $A$ with connectivity, perfectness, and quasi-freeness.
+
+$Fol$ is an $\infty$-functor $Fol: dAff^{op}\to Cat_\infty$.
 \end{definition}
+
 
 What's Fol(X)? roughly category whose objects are cdga.
 
