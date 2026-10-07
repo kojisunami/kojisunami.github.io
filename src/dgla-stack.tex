@@ -129,7 +129,43 @@ TBD
 \end{proposition}
 
 
-Now let's set some research questions. To understand it structure, I consider beginning with specific geometry.
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+\noindent
+Let's consider foliation algebraically. From To\"en, derived foliation is \\
+
+\begin{definition}{Affine Derived Foliation}{}
+TBD
+\end{definition}
+
+\noindent
+The problem here is affine derived foliation works by complex dimension not in real, 
+and this might be inconvenient for Lagrangian foliation for instance. \\
+
+\begin{definition}{Affine Derived Foliation --Fixed}{}
+TBD
+\end{definition}
+
+
+\noindent
+and the general derived foliation $Fol(X)$ is projective limiti of affine derived foliation $Fol(X) = \varprojlim Fol(Spec(A))$. \\
+
+
+\begin{question}{}{}
+Is there any connection of quotient stack by Lie groupoid and derived foliation, as geometry and algebra correspondence?
+\end{question}
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+
+\noindent
+Now let's set some research questions. To understand its structure, I consider beginning with specific geometry.
 Subjectively, groupoid foliation is too broad, think of Lie group quotient in gauge theory as a comparison, 
 Lie groupoid quotient is much more dirty than that of Lie group, so making the shape $M$ as simple as possible, for instance, to make it clear,
 and possibly $M$ could be just projective space $\mathbb{P}^n$ or a plane $\mathbb{A}^n$ or a hyperk\"ahler manifold,
@@ -169,6 +205,79 @@ or if there's any connection to homological mirror symmetry? I'll simply summari
 \item Is there any connection to Fukaya category?
 \end{itemize}
 \end{question}
+
+
+\noindent
+I'll skip the technical detail here, but to conjecturally answer these questions,
+I'll begin with Symplectic vector space and its generalization to derived algebraic geometry.
+Consider(informal) Lagrangian quotient in place of Lie groupoid quotient.
+Let Symplectic vector space be $V$ with its 2-form $\omega$ and some Lagrangian $L \subset V$ s.t. $\omega|_L=0$,
+the quotient $V/L$ as a vector space is the baby form of Lagrangian foliation problem,
+where we have further generalization: \\
+
+
+\begin{definition} {}{}
+\begin{itemize}
+\item step 1 (vector space): \\
+The quotient $V/L$ is no longer a symplectic space, but it induces the pair $L\times V/L \to \mathbb{R}$
+in addition the duality $L\cong (V/L)^*$ make it $(V/L)^* \times V/L \to \mathbb{R}$. 
+
+\item step 2 (cotangent bundle): \\
+For a smooth manifold $X$, cotangent bundle $T^*X$ is a symplectic manifold.
+
+\item step 3 (symplectic manifold): \\
+For the underived case, let a symplectic manifold $X$ and its tangent bundle $TX$ and Lagrangian $L$, 
+the quotient $TX/L$ replaces $(V/L)$. 
+
+\item step 4 (derived method): \\
+Globally, we use $L_\infty$ groupoid quotient stack $[X/\mathcal{G}]$, and 
+derived tangent complex $\mathbb{T}_{[X/\mathcal{G}]} \cong [\mathfrak{g}f \to TX]$ 
+or noted by $\mathbb{T}_{\mathcal{F}}$ of derived foliation.
+the duality pairing will be $\mathbb{T}_{\mathcal{F}}^\vee \otimes \mathbb{T}_{\mathcal{F}} \to \mathcal{O}L_X$.
+\end{itemize}
+\end{definition}
+
+
+\noindent
+So far we defined Symplectic calculus using Lagrangian quotient, which works fine on vector space,
+but it doesn't work in general, since not all leaves on the Lagrangian foliation are the same.
+But is it still possible to trivialize Lagrangian foliation, 
+so each leaves of that foliation is isomorphic to one fixed foliation up to deformation or any other?
+Locally yes, but it doesn't work in general for obstruction of holonomy and topology.
+However, supposely we assume very na\"{\i}vely 
+an identification of the quotient stack of foliation and some derived cotangent analogue in this formula \footnote{prove it},
+cotangent bundle has particularly important of general symplectic manifold. Below is a conjecture: \\
+
+\begin{conjecture}{}{}
+\[
+[X/\mathcal{G}] \cong [T^* Y]_{der}
+\]
+\end{conjecture}
+
+
+\noindent
+Now to introduce Nadler-Zaslow as an application of cotangent bundle $T^*X$,
+which is an analogue of HMS for the case of $Fuk(T^*X)$ using microlocal analysis. \\
+
+\begin{proposition}{Nadler-Zaslow}{}
+There is an equivalence of category
+
+\[Fuk(T^*X) \cong Sh_c(X)\]
+
+where $c$ means constructible not compactness.
+\end{proposition}
+
+\noindent
+I'd also put generalization \footnote{prove it} to derived algebraic geometry.
+
+\begin{conjecture}{Nadler-Zaslow Enhanced}{}
+\[Fuk(\mathbb{T}_X) \cong Sh_c(X)\]
+\end{conjecture}
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
 
 
 \vspace{1cm}
@@ -314,45 +423,9 @@ Consider a mapping $X\to [X/G]$ where $G$ is a group.
 \end{definition}
 
 
-\section {Symplectic Vector Space}
-
-\noindent
-Consider (informal) Lagrangian quotient in place of Lie groupoid quotient.
-Let Symplectic vector space be $V$ with its 2-form $\omega$ and some Lagrangian $L \subset V$ s.t. $\omega|_L=0$,
-the quotient $V/L$ as a vector space is the baby form of Lagrangian foliation problem,
-where we gradually make a generalization. \\
-
-\begin{definition} {}{}
-step 1: \\
-The quotient $V/L$ is no longer a symplectic space, but it induces the pair $L\times V/L \to \mathbb{R}$
-in addition the duality $L\cong (V/L)^*$ make it $(V/L)^* \times V/L \to \mathbb{R}$. \\
-
-step 2: \\
-For the underived case, let a symplectic manifold $X$ and its tangent bundle $TX$ and Lagrangian $L$, 
-the quotient $TX/L$ replaces $(V/L)$. \\
-
-step 3: \\
-Globally, we use $L_\infty$ groupoid quotient stack $[X/\mathcal{G}]$, and 
-derived tangent complex $\mathbb{T}_{[X/\mathcal{G}]} \cong [\mathfrak{g}f \to TX]$ 
-or noted by $\mathbb{T}_{\mathcal{F}}$ of derived foliation.
-the duality pairing will be $\mathbb{T}_{\mathcal{F}}^\vee \otimes \mathbb{T}_{\mathcal{F}} \to \mathcal{O}L_X$.
-\end{definition}
-
-
-\noindent
-So far we defined Symplectic calculus using Lagrangian quotient, which works fine on vector space,
-but it doesn't work in general, since not all leaves on the Lagrangian foliation are the same.
-But is it still possible to trivialize Lagrangian foliation, 
-so each leaves of that foliation is isomorphic to one fixed foliation up to deformation or any other?
-Locally yes, but there is obstruction of holonomy and topology in general.
 
 
 
-\begin{note} {Cohomological Shift}{}
-Its cohomological shift \\
-
-$\mathbb{T}A_{[X/\mathcal{G}]}\to \mathbb{L}A_{[X/\mathcal{G}]}[n]$
-\end{note}
 
 
 
