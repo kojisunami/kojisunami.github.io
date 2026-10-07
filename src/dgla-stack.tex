@@ -1,9 +1,9 @@
 \documentclass{article}
 
-
 \input {math_header.tex}
 
 \addbibresource{dgla-stack.bib}
+
 
 \title{Derived Intersection Theory on Foliation}
 \author{Koji Sunami}
@@ -184,8 +184,97 @@ and I add Lagrangian intersection theory.
 
 
 
+\section {Derived Foliation}
+
+
+\begin{definition}{Graded Mixed CDGA}{}
+
+\end{definition}
+
+\begin{example}{De Rham Cochain Complex}{}
+\[ Sym_A(\Omega^1_A [1]) \cong \Omega_A^\cdot\]
+\[ Sym_{\mathcal{O}_X}(\mathbb{L}_X [-1]) = DR(X) \]
+\end{example}
+
+
+\begin{definition}{Derived Affine Scheme}{}
+
+\end{definition}
+
+
+\begin{definition}{Derived DM Stack}{}
+\end{definition}
+
+
+\begin{definition}{Affine Derived Foliation}{}
+\end{definition}
+
+What's Fol(X)? roughly category whose objects are cdga.
+
+\begin{note}{Scheme}{}
+Note on scheme. Scheme is defined to be locally isomorphic to an affine scheme, but that can be also described as
+a projective limit of affine schemes.
+\end{note}
+
+
+\begin{definition}{Derived Foliation}{}
+\[Fol(X)  = \varprojlim Fol(Spec(A)) \]
+\end{definition}
+
+
+\begin{definition}{Foliation over Formal Completion}{}
+\end{definition}
+
+
+
+\begin{definition}{Lie Algebroid}{}
+
+
+\end{definition}
+
+
+\begin{definition}{Chevalley-Eilenberg Algebra}{}
+For a Lie algeboid $T$, CE algebra $CE^*(T)$ is. \\
+
+$C^*(T) = Sym_{\mathcal{O}_X}(T^\vee [-1])$ \\
+
+CE algebra $CE^*(T)$ is used to compute derived foliation.
+\end{definition}
+
+
+\begin{definition}{}{}
+\end{definition}
+
+
+\begin{definition}{Perfect Crystal}{}
+Crystal is a vector bundle with flat connection.
+Perfect crystal is a crystal whose underlying complex is perfect.
+\end{definition}
+
+
+
+\begin{question}{}{}
+Is there any extension of foliation to Lagrangian foliation?
+To answer this question, all the previous foliation is complex dimension.
+\end{question}
+
+
+
+\begin{definition}{}{}
+\end{definition}
+
+
+\begin{definition}{}{}
+\end{definition}
+
+
+\begin{definition}{}{}
+\end{definition}
+
+
 
 \section {Structure of Quotient Stack}
+
 
 
 \begin{definition}{}{}
@@ -223,6 +312,56 @@ Consider a mapping $X\to [X/G]$ where $G$ is a group.
 
 \begin{definition} {}{}
 \end{definition}
+
+
+\section {Symplectic Vector Space}
+
+\noindent
+Consider (informal) Lagrangian quotient in place of Lie groupoid quotient.
+Let Symplectic vector space be $V$ with its 2-form $\omega$ and some Lagrangian $L \subset V$ s.t. $\omega|_L=0$,
+the quotient $V/L$ as a vector space is the baby form of Lagrangian foliation problem,
+where we gradually make a generalization. \\
+
+\begin{definition} {}{}
+step 1: \\
+The quotient $V/L$ is no longer a symplectic space, but it induces the pair $L\times V/L \to \mathbb{R}$
+in addition the duality $L\cong (V/L)^*$ make it $(V/L)^* \times V/L \to \mathbb{R}$. \\
+
+step 2: \\
+For the underived case, let a symplectic manifold $X$ and its tangent bundle $TX$ and Lagrangian $L$, 
+the quotient $TX/L$ replaces $(V/L)$. \\
+
+step 3: \\
+Globally, we use $L_\infty$ groupoid quotient stack $[X/\mathcal{G}]$, and 
+derived tangent complex $\mathbb{T}_{[X/\mathcal{G}]} \cong [\mathfrak{g}f \to TX]$ 
+or noted by $\mathbb{T}_{\mathcal{F}}$ of derived foliation.
+the duality pairing will be $\mathbb{T}_{\mathcal{F}}^\vee \otimes \mathbb{T}_{\mathcal{F}} \to \mathcal{O}L_X$.
+\end{definition}
+
+
+\noindent
+So far we defined Symplectic calculus using Lagrangian quotient, which works fine on vector space,
+but it doesn't work in general, since not all leaves on the Lagrangian foliation are the same.
+But is it still possible to trivialize Lagrangian foliation, 
+so each leaves of that foliation is isomorphic to one fixed foliation up to deformation or any other?
+Locally yes, but there is obstruction of holonomy and topology in general.
+
+
+
+\begin{note} {Cohomological Shift}{}
+Its cohomological shift \\
+
+$\mathbb{T}A_{[X/\mathcal{G}]}\to \mathbb{L}A_{[X/\mathcal{G}]}[n]$
+\end{note}
+
+
+
+\begin{definition} {}{}
+\end{definition}
+
+
+
+
 
 
 

@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber dgla-stack"] 1790623337.87084 "dgla-stack.bcf" "dgla-stack.bbl" "dgla-stack" 1791186806.956 0
-  "dgla-stack.bcf" 1791186806.81053 108557 dfdab4794f7a8fadb7684c247da91f22 "pdflatex"
+["biber dgla-stack"] 1791280100.57691 "dgla-stack.bcf" "dgla-stack.bbl" "dgla-stack" 1791356408.05579 0
+  "dgla-stack.bcf" 1791356407.92817 108557 dfdab4794f7a8fadb7684c247da91f22 "pdflatex"
   "dgla-stack.bib" 1790360124.33115 6251 78a3dc6186eadce4cc9489bac8a83bb2 ""
   (generated)
   "dgla-stack.bbl"
   "dgla-stack.blg"
   (rewritten before read)
-["pdflatex"] 1791186805.29719 "dgla-stack.tex" "dgla-stack.pdf" "dgla-stack" 1791186806.95629 0
+["pdflatex"] 1791356406.1498 "dgla-stack.tex" "dgla-stack.pdf" "dgla-stack" 1791356408.05609 0
   "/etc/texmf/web2c/texmf.cnf" 1769424892.38577 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/k/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/labx1000.tfm" 1769676979.81983 3300 6abb8e321227ead2a8e929e5abc72bd3 ""
   "/home/k/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1769676976.90783 3304 6a543c07045572737981351171e0505e ""
@@ -23,6 +23,9 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm" 1246382020 1040 b84415f97d114011685943ade933dc71 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm5.tfm" 1246382020 1040 a9d2074f3fa062d4d9046b92e2334d8c ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm" 1246382020 1040 82eb6630b094bff824fccca83ff507f9 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
@@ -57,6 +60,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb" 1336858727 21098 d4aee7c0aac232caac5688b586b9363c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb" 1290383964 25452 d4e98a3bf6b13d4b7dcffd6302990a65 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -156,6 +160,7 @@
   "/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty" 1576624663 7008 f92eaa0a3872ed622bbf538217cd2ab7 ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1359763108 13829 94730e64147574077f8ecfea9bb69af4 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd" 1359763108 1047 4252767c0fde12e3ce9f914ef4bb1ea1 ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd" 1359763108 961 6518c6525a34feb5e8250ffa91731cff ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd" 1359763108 961 d02606146ba5601b5645f987c92e6193 ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1717359999 2222 2166a1f7827be30ddc30434e5efcee1b ""
@@ -282,13 +287,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1741904018 41538 c016915c1d51223b6dbbfe27341748a8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1769426689 5467255 9a64d1b40e0b893fc5588ecce9d8accf ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1769426896 3348445 41607985cb8127f67de1e4b742144da0 ""
-  "dgla-stack.aux" 1791186806.81053 2755 326ae9f4e96b21a983412195b0c5012e "pdflatex"
-  "dgla-stack.bbl" 1790623338.39083 22681 2926598e6395ea75f7fbacc4ca14a17f "biber dgla-stack"
-  "dgla-stack.out" 1791186806.81053 638 7b320b71ed77d22e5171f032f7a3bbc8 "pdflatex"
-  "dgla-stack.run.xml" 1791186806.81453 2347 b6ed8e6c8a3faac62883bf49c88c51fe "pdflatex"
-  "dgla-stack.tex" 1791180691.7288 10590 6e6f4089f83ba8b3b71d726844da9700 ""
-  "dgla-stack.toc" 1791186806.81453 343 61612259fdf811b54b5240b8a8b2d36a "pdflatex"
-  "math_header.tex" 1789988864.32033 2707 013eef42758e022be2a10d35e3f8438c ""
+  "dgla-stack.aux" 1791356407.92417 2989 888e7d903c54df906b6f670c8dbf6c7c "pdflatex"
+  "dgla-stack.bbl" 1791280102.00504 22681 2926598e6395ea75f7fbacc4ca14a17f "biber dgla-stack"
+  "dgla-stack.out" 1791356407.92817 933 2f5a427b0c8d71528ca5ac939f67c614 "pdflatex"
+  "dgla-stack.run.xml" 1791356407.92817 2347 b6ed8e6c8a3faac62883bf49c88c51fe "pdflatex"
+  "dgla-stack.tex" 1791356403.84017 14007 0f136616ff54245944a6d2e2b10f3693 ""
+  "dgla-stack.toc" 1791356407.92817 495 e9a45d02fe1dc8221e84a5a11c8d113e "pdflatex"
+  "math_header.tex" 1791279034.213 2708 365c4964cb6671601558e3c1456bb4fa ""
   (generated)
   "dgla-stack.aux"
   "dgla-stack.bcf"
