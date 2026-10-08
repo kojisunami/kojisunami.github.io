@@ -27,8 +27,7 @@
 \textbf{Research} \\
 
 \noindent
-My interest in algebraic geometry is typically categorical / cohomological / homotopic and those of deformation,
-I’d like to develop problems in Fukaya category, moduli problems, quotient stack, or any others. 
+My interest is typically modern perspective of algebraic geometry to solve Fukaya category and non-linear PDE.
 Here is a list of research proposals: \\
 \end{minipage}
 \hfill
@@ -64,6 +63,46 @@ For Proving HMS 1: Hochschild deformation of Fukaya category or Stable $\infty$,
 
 For Proving HMS 3: If all symplectic are somewhat cotangent, Nadler-Zaslow might be generalized to any Fukaya category.
 \href{https://kojisunami.github.io/src/dgla-stack.pdf}{[link]}  
+
+\item \textbf{Quantum Satake on Classical Mechanics} \\
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{tikzpicture}[auto, every node/.style={font=\tiny\bfseries}]
+  \node (a) at (  4,0) {Fourier-Mukai};
+  \node (b) at (1.5,1) {CFT};
+  \node (c) at (  4,1) {Classical Mechanics};
+  \node (d) at (  8,1) {Quantum Cohomology};
+  \node (e) at (  4,2) {Representation of Quiver};
+  \draw[-] (a)  -- (c);
+  \draw[-] (b)  -- (c);
+  \draw[-] (d)  -- (c);
+  \draw[-] (e)  -- (c);
+  \node[draw, rectangle, fit=(a) (b) (c) (d) (e), inner xsep=20pt, inner ysep=10pt, xshift=15pt] {};
+\end{tikzpicture}
+\end{wrapfigure}
+
+Quantum Satake (analogue of Fourier-Mukai everybody knows) of $OG(5,10)$ is Apery's diffyq, is there any equivalent in NSE? 
+Marc Gross B-model SCFT of Landau-Ginzburg model? Of course, string theory induces SUGRA.
+There are many classical mechanics but quantized view. [link]
+
+\item \textbf{Categorification of Quiver} \\
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{tikzpicture}[auto, every node/.style={font=\tiny\bfseries}]
+  \node (a) at (  0,1) {Rep(G)};
+  \node (b) at (2.5,1) {G};
+  \node (c) at (  0,0) {Rep(Q)};
+  \node (d) at (2.5,0) {Q};
+  \draw[<->, shorten <= 15pt, shorten >= 3pt] (a)  -- (b);
+  \draw[<->, shorten <= 15pt, shorten >= 3pt] (c)  -- (d);
+  \draw[<->] (a)  -- (c);
+  \draw[<->] (b)  -- (d);
+  \node[draw, rectangle, fit=(a) (b) (c) (d), inner xsep=20pt, inner ysep=10pt, xshift=15pt] {};
+\end{tikzpicture}
+\end{wrapfigure}
+
+$Rep(G)$ is symmetric monoidal abelian, while $Rep(Q)$ is abelian but not symmetric monoidal.
+Is there any categorification of Dynkin diagram? [link]
 \end{itemize}
 \end{minipage}
 
