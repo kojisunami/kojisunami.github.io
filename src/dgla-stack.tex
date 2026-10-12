@@ -1,6 +1,5 @@
 \documentclass{article}
 
-\usepackage{enumitem}
 \input {math_header.tex}
 
 \addbibresource{dgla-stack.bib}
@@ -204,7 +203,7 @@ Typically, I noticed derived algebraic geometry might be useful to discuss these
 and I'll consider geometrization of moduli stack of foliations where we can discuss intersection or any others: \\
 
 \begin{question}{}{}
-\begin{itemize}[label=$\star$]
+\begin{itemize}
 \item Making geometry $M$ as simple as possible?
 \item Computation of groupoid version of CE cohomology? DT/GW invariants?
 \item Does quotient stack contain all the necessary information?
@@ -336,7 +335,63 @@ This $DR$ is functorial in the sense of $\infty$-categories, and analogously, $D
 \end{definition}
 
 
-\begin{definition}{Derived Affine Scheme}{}
+\begin{definition}{Derived Scheme}{}
+A derived scheme $(X,\mathcal{O}_X)$ consists of functor $\mathcal{O}_X: Open(X)^{op}\to sComm$,
+mapping $U \mapsto \mathcal{O}_X(U)$ where $sComm$ is an $\infty$-category of simplicial commutative rings (also called derived rings)
+defined by $sComm := Fun(\Delta^{op}, CRing)$.
+This $sComm$ can be realized as a category of graded commutative ring $GrCRing$ mapping $\mathcal{O}_X \mapsto \pi^*(\mathcal{O}_X)$,
+whose trivialization to the ordinary scheme is $sComm \to CRing$ mapping $\mathcal{O}_X(U) \mapsto \pi_0(\mathcal{O}_X(U))$.
+
+
+\vspace{1cm}
+\begin{tikzpicture}[auto]
+    \node (a) at (  0,1.5) {$sComm$};
+    \node (b) at (2.5,1.5) {$GrCRing$};
+    \node (d) at (2.5,  0) {$CRing$};
+    \draw [->] (a) -- (b);
+    \draw [->] (a) -- (d);
+    \draw [->] (b) -- (d);
+\end{tikzpicture}
+\begin{tikzpicture}[auto]
+    \node (a) at (  0,1.5) {$\mathcal{O}_X$};
+    \node (b) at (2.5,1.5) {$\pi_*(\mathcal{O}_X)$};
+    \node (d) at (2.5,  0) {$\pi_0(\mathcal{O}_X)$};
+    \draw [|->] (a) -- (b);
+    \draw [|->] (a) -- (d);
+    \draw [|->] (b) -- (d);
+\end{tikzpicture}
+\vspace{1cm}
+
+The truncation of derived scheme $t_0$ is taking $\pi_0$ on $(X,\mathcal{O}_X)$, denoted by $t_0: dSch \to Sch$, 
+and its inverse is full embedding $i^*:Sch \to dSch$ by using $i:CRing \to sComm$.
+
+\vspace{1cm}
+\begin{tikzpicture}[auto]
+    \node (a) at (  0,0) {$dSch$};
+    \node (b) at (2.5,0) {$Sch$};
+    \draw [->] ([yshift=1mm]a.east) -- node [above] {$t_0$} ([yshift=1mm]b.west);
+    \draw [<-] ([yshift=-1mm]a.east) -- node [below] {$i^*$} ([yshift=-1mm]b.west);
+\end{tikzpicture}
+\vspace{1cm}
+\end{definition}
+
+
+\noindent
+One of natural question might be if the scheme $(X,t_0(\mathcal{O}_X))$ can reconstruct the original derived scheme?
+The existence of higher homotopy by Postnikov tower 
+\[\mathcal{O}_X \to \cdots \to t_{\leqq n}(\mathcal{O}_X) \to t_{\leqq n-1}(\mathcal{O}_X) \to \cdots \to 
+t_0(\mathcal{O}_X) = \pi_0(\mathcal{O}_X) \]
+making a sequence of derived schemes $\{(X,t_{\leqq n}(\mathcal{O}_X)) \}$. \\
+
+
+\noindent
+Now for defining derived stack $dSt$, 
+
+Grothendieck topology
+
+
+\begin{definition}{Derived Stack}{}
+
 \end{definition}
 
 
