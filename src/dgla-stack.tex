@@ -385,43 +385,78 @@ making a sequence of derived schemes $\{(X,t_{\leqq n}(\mathcal{O}_X)) \}$. \\
 
 
 \noindent
-Now for defining derived stack $dSt$, 
+We define affine derived foliation using the definition of derive scheme. As noted later, affine derived foliation is a graded mixed cdga,
+whose category can be identified with derived stack. Intuitively, if foliation is a transformation of a manifold to a set of disjoint union,  
+transformating derived scheme to derived foliation is to transform cdga to graded mixed cdga, which is many cdga. \\
+ 
 
-Grothendieck topology
+\begin{definition}{Affine Derived Foliation}{}
+An affine derived foliation is a graded mixed cdga $A$ with connectivity, perfectness, and quasi-freeness.
+
+\begin{itemize}
+\item (Connectivity) \\
+The underlying cdga $A(0)$ is cohomologically concentrated in non-positive degrees and is finitely presented over $\mathbb{C}$.
+\item (Perfectness) \\
+The $A(0)$-dg-module $A(1)[-1]$ is perfect and connective.
+\item (Quasi-freeness) \\
+The natural morphism of graded cdga's
+\[Sym_{A(0)}(A(1)) \to A \]
+is a quasi-isomorphism of graded cdga.
+\end{itemize}
+
+Affine derived foliation generates a category $dAff^{\mathcal{F}}$, and it has a canonical $\infty$-functor
+$dAff^{\mathcal{F}} \to dAff$ with canonical mapping $A\mapsto Spec(A(0))$.
+\end{definition}
+
+
+\noindent
+For the further formalization, an $\infty$-functor $Fol: dAff^{op}\to Cat_\infty$ desribes all the possible foliations,
+while $dAff^{\mathcal{F}}$ only describes one of them, namely a foliation is an object $\mathcal{F} \in Fol(X)$.
+
+
+\begin{definition}{Derived Foliation}{}
+\vspace{1cm}
+\begin{tikzpicture}[auto]
+    \node (a) at (  0,1.5) {$dAff$};
+    \node (b) at (2.5,1.5) {$Cat_\infty$};
+    \node (d) at (2.5,  0) {$dAff^{\mathcal{F}}$};
+    \draw [->] (a) -- node [above] {$Fol$} (b);
+    \draw [->] ([yshift= 1mm]a.east) -- node [below] {$ $} ([yshift= 1mm]d.west);
+    \draw [<-] ([yshift=-1mm]a.east) -- node [below] {$ $} ([yshift=-1mm]d.west);
+    \draw [->] (b) -- node [above] {$ $} (d);
+\end{tikzpicture}
+\begin{tikzpicture}[auto]
+    \node (a) at (  0,1.5) {$Spec(A)$};
+    \node (b) at (2.5,1.5) {$Fol(Spec(A))$};
+    \node (d) at (2.5,  0) {$Spec(A')$};
+    \draw [|->] (a) -- node [above] {$ $} (b);
+    \draw [|->] (a) -- node [above] {$ $} (d);
+    \draw [|->] (b) -- node [above] {$ $} (d);
+\end{tikzpicture}
+\vspace{1cm}
+
+where $A= A'(0)$.
+\end{definition}
+
+
+\noindent
+For the generalization of derived affine scheme $Spec(A)$ to derived stack $X\in dSt$, 
+consider scheme is defined to be locally isomorphic to an affine scheme, 
+but categorically reformulated to a projective limit of affine schemes.
+Accordingly, the foliation will be rewitten as 
+\[Fol(X)  = \varprojlim_{Spec(A)\to \mathcal{F}} Fol(Spec(A)) \]
+where for definining derived stack $dSt$, we'll start from classical stack,
+and roughly speaking, stack is a 2-sheaf, in other words a functor from category of vector bundles to
+some category with Grothendieck topology and descent. Typically the codomain would be $\infty$-groupoid.
+For derived argument, derived prestack is category $P(dAff_k^{op}) = Fun(dAff_k^{op}, S)$,
+and derived stack is an embedding $Shv(dAff_k, \tau) \hookrightarrow Fun(dAff_k^{op}, S)$, this embedding functor has an adjoint,
+called stackification. This topology $\tau$ defines an accessible left-exact localization, this is a presentable $\infty$-category,
+uses as a replacement of Grothendieck topology. \\
 
 
 \begin{definition}{Derived Stack}{}
 
 \end{definition}
-
-
-\begin{definition}{Derived DM Stack}{}
-\end{definition}
-
-
-\begin{definition}{Affine Derived Foliation}{}
-An affine derived foliation is a graded mixed cdga $A$ with connectivity, perfectness, and quasi-freeness.
-
-$Fol$ is an $\infty$-functor $Fol: dAff^{op}\to Cat_\infty$.
-\end{definition}
-
-
-What's Fol(X)? roughly category whose objects are cdga.
-
-\begin{note}{Scheme}{}
-Note on scheme. Scheme is defined to be locally isomorphic to an affine scheme, but that can be also described as
-a projective limit of affine schemes.
-\end{note}
-
-
-\begin{definition}{Derived Foliation}{}
-\[Fol(X)  = \varprojlim Fol(Spec(A)) \]
-\end{definition}
-
-
-\begin{definition}{Foliation over Formal Completion}{}
-\end{definition}
-
 
 
 \begin{definition}{Lie Algebroid}{}
