@@ -412,6 +412,7 @@ $dAff^{\mathcal{F}} \to dAff$ with canonical mapping $A\mapsto Spec(A(0))$.
 \noindent
 For the further formalization, an $\infty$-functor $Fol: dAff^{op}\to Cat_\infty$ desribes all the possible foliations,
 while $dAff^{\mathcal{F}}$ only describes one of them, namely a foliation is an object $\mathcal{F} \in Fol(X)$.
+We call this $\mathcal{F}$ as derived foliation. \\
 
 
 \begin{definition}{Derived Foliation}{}
@@ -455,39 +456,41 @@ uses as a replacement of Grothendieck topology. \\
 
 
 \begin{definition}{Derived Stack}{}
-
+TBD
 \end{definition}
 
 
-\begin{definition}{Lie Algebroid}{}
+\noindent
+Introduce example of derived foliation.
 
 
+\begin{definition}{Lie Algebroid}{lie algebroid}
+For a smooth DM stack $X$, its tangent sheaf $\mathbb{T}_X$ is a sheaf of Lie algebras on the small \'etale site $X_{et}$,
+where the Lie bracket is the usual bracket of vector fields. Lie algebroid consits of a vector bundle $T\to X$ together with 
+\begin{itemize}
+\item A $\mathbb{C}$-linear Lie bracket $[-,-]$ on $T$.
+\item an $\mathcal{O}_X$ linear morphism $a:T\to \mathbb{T}_X$
+\item $[s,ft] = f[s,t] + a(s)(f) t$
+\end{itemize}
 \end{definition}
 
 
-\begin{definition}{Chevalley-Eilenberg Algebra}{}
-For a Lie algeboid $T$, CE algebra $CE^*(T)$ is. \\
-
-$C^*(T) = Sym_{\mathcal{O}_X}(T^\vee [-1])$ \\
-
-CE algebra $CE^*(T)$ is used to compute derived foliation.
-\end{definition}
-
-
-\begin{definition}{}{}
-\end{definition}
-
-
-\begin{definition}{Perfect Crystal}{}
-Crystal is a vector bundle with flat connection.
-Perfect crystal is a crystal whose underlying complex is perfect.
-\end{definition}
+\noindent
+One of the applications of Lie algebroid is that category of Lie algebroid over $X$ corresponds to $Fol(X)$
+\[ LieAlgbd/X \to  Fol(X) \]
+Consider Lie algebra associative correspondence $\wedge V[1] \cong Sym(V)[1]$, 
+Lie algebroid similarly has a correspondence $C^*(T) = Sym_{\mathcal{O}_X}(T^*[1])$
+By noticing that the bracket induces the derivation just a mapping $d: T^* \to T^* \wedge_{\mathcal{O}_X} T^*$,
+the complex $C^*(T)$ is idenfied as cdga. We called this $C^*(T)$ as Chevalley-Eilenberg complex.
 
 
 
 \begin{question}{}{}
-Is there any extension of foliation to Lagrangian foliation?
+\begin{itemize}
+\item Derived foliation of formal scheme is still formal? Yes.
+\item Is there any extension of foliation to Lagrangian foliation?
 To answer this question, all the previous foliation is complex dimension.
+\end{itemize}
 \end{question}
 
 
@@ -502,6 +505,14 @@ To answer this question, all the previous foliation is complex dimension.
 
 \begin{definition}{}{}
 \end{definition}
+
+
+\begin{definition}{Perfect Crystal}{}
+Crystal is a vector bundle with flat connection.
+Perfect crystal is a crystal whose underlying complex is perfect.
+\end{definition}
+
+
 
 
 
