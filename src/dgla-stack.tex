@@ -119,6 +119,7 @@ and now that the foliation is modernized geometrically, studying foliation is so
 \vspace{1cm}
 
 
+\noindent
 Several questions appear from this informal writing of foliation.
 First of all, to make the argument more precisely, can Lie algebroid be always integrated to the Lie groupoid? 
 Now true in general, but Crainic-Fernandes integrability criterion claims Lie algebroid used in foliation can be always integrated.
@@ -133,34 +134,53 @@ TBD
 \noindent\rule{\textwidth}{0.4pt}
 \vspace{0.5cm}
 
-\noindent
-Let's consider foliation algebraically. From To\"en, derived foliation is \\
 
-\begin{definition}{Affine Derived Foliation}{}
-TBD
+\noindent
+We can also discuss foliation using derived algebraic geometrically, so we can discuss resolving singularity problem of foliation
+and intersection, deformation, and any other algebraic geometric technique. \\
+
+\noindent
+For defining derived foliation, derived foliation from To\"en POV is graded mixed cdga, which means many cdga.
+The nuance is that set theoretically a foliation is a process of transforming a manifold into a disjoint union of submanifolds,
+and if a manifold is cdga, then submanifolds are also cdga. \\
+
+
+\begin{definition}{Derived Foliation}{}
+Affine derived foliation is graded mixed cdga mapping $Fol: dAff \to Cat_\infty$,
+and its generalization to any derived stack $X\in dSt$ is projective limit of affine derived foliation 
+$Fol(X) = \varprojlim_{Spec(A) \to \mathcal{F}} Fol(Spec(A))$. 
 \end{definition}
 
-\noindent
-The problem here is affine derived foliation works by complex dimension not in real, 
-and this might be inconvenient for Lagrangian foliation for instance. \\
-
-\begin{definition}{Affine Derived Foliation --Fixed}{}
-TBD
-\end{definition}
-
 
 \noindent
-and the general derived foliation $Fol(X)$ is projective limiti of affine derived foliation $Fol(X) = \varprojlim Fol(Spec(A))$. \\
+Similar to differential geometry, the consequence is the correspondence with Lie algebroid. \\
 
 
-\begin{question}{}{}
-Is there any connection of quotient stack by Lie groupoid and derived foliation, as geometry and algebra correspondence?
-\end{question}
+\begin{proposition} {Lie Algebroid Correspondence}{}
+There is a canonical mapping
+\[ LieAlgbd/X \to Fol(X) \]
+\end{proposition}
 
 
-\vspace{0.5cm}
-\noindent\rule{\textwidth}{0.4pt}
-\vspace{0.5cm}
+\noindent
+Though it's concise, it was simply an algebraic reformulation.
+
+\begin{itemize}
+\item singularity
+\item Lagrangian
+\item Realization as quotient stack
+\end{itemize}
+
+\begin{conjecture}{}{}
+\begin{itemize}
+\item This foliaton is complex dimensional, but can it be extended to Lagrangian foliation? Is there any connection to Fukaya category?
+
+\item What's the connection with Lie groupoid quotient stack formulated below?
+\[ LieAlgbd/X \cong [X/\mathcal{G}]\]
+
+\end{itemize}
+\end{conjecture}
+
 
 Consider the intersetion theory problem of quotient stack of the foliation.
 Intersection theory is to compare two different geometry on the same domain.
@@ -170,6 +190,7 @@ $p^*: \mathcal{O}_{X/\mathcal{F}} \to \mathcal{O}_X$ and $q^*: \mathcal{O}_{X/\m
 and it makes a pullback diagram below to make a fiber product $\mathcal{O}_{X/\mathcal{F} \times_X X/\mathcal{G}}$, 
 that's how we define as the derived intersection: \\
 
+\begin{conjecture}{}{}
 \vspace{1cm}
 \begin{tikzpicture}[auto]
     \node (a) at (  0,1.5) {$\mathcal{O}_{X/\mathcal{F} \times_X X/\mathcal{G}}$};
@@ -182,7 +203,7 @@ that's how we define as the derived intersection: \\
     \draw [->] (c) -- node[above]{$q^*$}(d);
 \end{tikzpicture}
 \vspace{1cm}
-
+\end{conjecture}
 
 
 \vspace{0.5cm}
@@ -191,52 +212,11 @@ that's how we define as the derived intersection: \\
 
 
 
-\noindent
-Now let's set some research questions. To understand its structure, I consider beginning with specific geometry.
-Subjectively, groupoid foliation is too broad, think of Lie group quotient in gauge theory as a comparison, 
-Lie groupoid quotient is much more dirty than that of Lie group, so making the shape $M$ as simple as possible, for instance, to make it clear,
-and possibly $M$ could be just projective space $\mathbb{P}^n$ or a plane $\mathbb{A}^n$ or a hyperk\"ahler manifold,
-I'd also study its computation using Chevalley-Eilenberg, Donaldson-Thomas/Gromov-Witten invariants or any other,
-while it's interesting tracking what's the missing data when we define quotient stack of Lie groupoid.
-On the other hand, we could also consider the categorification to make it more abstract.
-Typically, I noticed derived algebraic geometry might be useful to discuss these problems,
-and I'll consider geometrization of moduli stack of foliations where we can discuss intersection or any others: \\
-
-\begin{question}{}{}
-\begin{itemize}
-\item Making geometry $M$ as simple as possible?
-\item Computation of groupoid version of CE cohomology? DT/GW invariants?
-\item Does quotient stack contain all the necessary information?
-\item Is there either deformation or quantization or derived geometry?
-\item Categorification?
-\end{itemize}
-\end{question}
-
-
-Another view point is that geometry is useful in QFT, for example. 
-Especially, consider Lagrangian intersection theory of Calabi-Yau geometry, 
-whose quantum cohomology generates Gromov-Witten invariant, 
-and this helps to compute path integral in both 4d/10d gauge theory.
-For this time I'll introduce derived Lagrangian intersection theory to this foliation.
-Suppose there are two distinct Lagrangian folations $\mathcal{F}_1$ and $\mathcal{F}_2$ on the same geometry $M$,
-and if considered intersection of these foliations, this might be interesting and different. \\
-
-Furthermore, if the whole argument contains $dg L_\infty$ algebroid as generalization of Lie algebroid,
-I wonder if there is any comparison with $A_\infty$ side in particular Fukaya category,
-or if there's any connection to homological mirror symmetry? I'll simply summarize in the list: \\
-
-
-\begin{question}{}{}
-\begin{itemize}
-\item What happens if the foliation is Lagrangian?
-\item Is there any connection to Fukaya category?
-\end{itemize}
-\end{question}
 
 
 \noindent
-I'll skip the technical detail here, but to conjecturally answer these questions,
-I'll begin with Symplectic vector space and its generalization to derived algebraic geometry.
+I'll consider extending derived foliation to Lagrangian foliation,
+and I'll begin with Symplectic vector space and its generalization to derived algebraic geometry to build some intuition.
 Consider(informal) Lagrangian quotient in place of Lie groupoid quotient.
 Let Symplectic vector space be $V$ with its 2-form $\omega$ and some Lagrangian $L \subset V$ s.t. $\omega|_L=0$,
 the quotient $V/L$ as a vector space is the baby form of Lagrangian foliation problem,
@@ -484,6 +464,10 @@ By noticing that the bracket induces the derivation just a mapping $d: T^* \to T
 the complex $C^*(T)$ is idenfied as cdga. We called this $C^*(T)$ as Chevalley-Eilenberg complex.
 
 
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
 
 \begin{question}{}{}
 \begin{itemize}
@@ -495,16 +479,10 @@ To answer this question, all the previous foliation is complex dimension.
 
 
 
-\begin{definition}{}{}
-\end{definition}
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
 
-
-\begin{definition}{}{}
-\end{definition}
-
-
-\begin{definition}{}{}
-\end{definition}
 
 
 \begin{definition}{Perfect Crystal}{}
@@ -513,20 +491,38 @@ Perfect crystal is a crystal whose underlying complex is perfect.
 \end{definition}
 
 
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
 
 
 
-\section {Structure of Quotient Stack}
 
 
+\section {Quotient Stack}
 
-\begin{definition}{}{}
-Quotient stack?
+\noindent
+I'll first discuss the identification of Lie algebroid foliation and that of Lie groupoid quotient stack.
+
+
+\begin{definition}{Quotient Stack}{}
+TBA
 \end{definition}
 
 
+deformation
+why deform lie groupoid not stack?
 
-quotient?
+group action
+
+\begin{definition}{}{}
+
+\end{definition}
+
+
+\noindent 
+Intersection theory between quotient stacks.
+
 
 
 \noindent
@@ -561,35 +557,6 @@ Consider a mapping $X\to [X/G]$ where $G$ is a group.
 
 
 
-
-
-\begin{definition} {}{}
-\end{definition}
-
-
-
-
-
-
-
-
-\section {Groupoid Foliation}
-
-
-
-\begin{definition}{}{}
-
-\end{definition}
-
-
-\begin{definition}{}{}
-
-\end{definition}
-
-
-
-\section {Quotient Stack}
-GIT?
 
 
 \section {Lagrangian Intersection Theory}
