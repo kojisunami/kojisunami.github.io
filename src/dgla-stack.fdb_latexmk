@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber dgla-stack"] 1792375464.27856 "dgla-stack.bcf" "dgla-stack.bbl" "dgla-stack" 1792393867.07085 0
-  "dgla-stack.bcf" 1792393866.84264 108557 dfdab4794f7a8fadb7684c247da91f22 "pdflatex"
+["biber dgla-stack"] 1792375464.27856 "dgla-stack.bcf" "dgla-stack.bbl" "dgla-stack" 1792443572.04904 0
+  "dgla-stack.bcf" 1792443571.82676 108557 dfdab4794f7a8fadb7684c247da91f22 "pdflatex"
   "dgla-stack.bib" 1792375230.95461 7866 e9fff156a224b666c52caf42fb73050e ""
   (generated)
   "dgla-stack.bbl"
   "dgla-stack.blg"
   (rewritten before read)
-["pdflatex"] 1792393863.10109 "dgla-stack.tex" "dgla-stack.pdf" "dgla-stack" 1792393867.0714 0
+["pdflatex"] 1792443568.20494 "dgla-stack.tex" "dgla-stack.pdf" "dgla-stack" 1792443572.04959 0
   "/etc/texmf/web2c/texmf.cnf" 1769424892.38577 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/k/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/labx1000.tfm" 1769676979.81983 3300 6abb8e321227ead2a8e929e5abc72bd3 ""
   "/home/k/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1769676976.90783 3304 6a543c07045572737981351171e0505e ""
@@ -294,13 +294,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1741904018 41538 c016915c1d51223b6dbbfe27341748a8 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1769426689 5467255 9a64d1b40e0b893fc5588ecce9d8accf ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1769426896 3348445 41607985cb8127f67de1e4b742144da0 ""
-  "dgla-stack.aux" 1792393866.83864 3346 4a8bbee35ebbfdb190efad6cc13b29f8 "pdflatex"
+  "dgla-stack.aux" 1792443571.82276 3346 77f0c1e87b397561a9c4d788c004ff7a "pdflatex"
   "dgla-stack.bbl" 1792375464.96263 30533 6ce821d34c26b3e0866f499b5eed3fea "biber dgla-stack"
-  "dgla-stack.out" 1792393866.84264 513 5f02b99087ade6f58f48c3649de525ea "pdflatex"
-  "dgla-stack.run.xml" 1792393866.84264 2347 b6ed8e6c8a3faac62883bf49c88c51fe "pdflatex"
-  "dgla-stack.tex" 1792393547.75065 27891 437ef9b58aa22eff1b5b8fe60a78836a ""
-  "dgla-stack.toc" 1792393866.84264 321 e70ac80bfd77735d1af9d99bcc2be5d9 "pdflatex"
-  "math_header.tex" 1791279034.213 2708 365c4964cb6671601558e3c1456bb4fa ""
+  "dgla-stack.out" 1792443571.82276 513 5f02b99087ade6f58f48c3649de525ea "pdflatex"
+  "dgla-stack.run.xml" 1792443571.82676 2347 b6ed8e6c8a3faac62883bf49c88c51fe "pdflatex"
+  "dgla-stack.tex" 1792395682.42665 28229 3faf213744d79f0b210d7fae8db8ba64 ""
+  "dgla-stack.toc" 1792443571.82676 321 e70ac80bfd77735d1af9d99bcc2be5d9 "pdflatex"
+  "math_header.tex" 1792443560.14676 2740 c425f57dc8f2e9ee8f46b39ded351c57 ""
   (generated)
   "dgla-stack.aux"
   "dgla-stack.bcf"
