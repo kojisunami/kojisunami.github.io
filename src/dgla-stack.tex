@@ -167,17 +167,9 @@ There is a canonical mapping
 \vspace{0.5cm}
 
 \noindent
-I'll consider several generaliation of derived foliation.
-
-
-\begin{itemize}
-\item singularity
-\item Lagrangian
-\item Realization as quotient stack
-\item Derived intersection on foliation
-\item Degeneration on foliation
-\end{itemize}
-
+Once setting is done, moving onto the generalization of derived foliation on singularity, 
+I here list some brief conjectures on Lagrangian, quotient stack, intersection theory, degeneration, and Fukaya category,
+and these detail are given in each session. \\
 
 
 \begin{conjecture}{}{}
@@ -187,20 +179,11 @@ I'll consider several generaliation of derived foliation.
 \item What's the connection with Lie groupoid quotient stack formulated below?
 \[ LieAlgbd/X \cong [X/\mathcal{G}]\]
 
-\end{itemize}
-\end{conjecture}
-
-
-Consider the intersetion theory problem of quotient stack of the foliation.
-Intersection theory is to compare two different geometry on the same domain.
-Consider two quotient projection maps $p:X\to X/\mathcal{F}$ and $q:X\to X/\mathcal{G}$, which are foliations,
-and their algebra are contravariant
+\item Intersection \\
+Two quotient projection maps $p:X\to X/\mathcal{F}$ and $q:X\to X/\mathcal{G}$ of foliations, mapping contravariantly
 $p^*: \mathcal{O}_{X/\mathcal{F}} \to \mathcal{O}_X$ and $q^*: \mathcal{O}_{X/\mathcal{G}} \to \mathcal{O}_X$,
-and it makes a pullback diagram below to make a fiber product $\mathcal{O}_{X/\mathcal{F} \times_X X/\mathcal{G}}$, 
-that's how we define as the derived intersection: \\
-
-\begin{conjecture}{}{}
-\vspace{1cm}
+which makes a pullback diagram below to make a fiber product $\mathcal{O}_{X/\mathcal{F} \times_X X/\mathcal{G}}$, 
+andn this is the derived intersection: \\
 \begin{tikzpicture}[auto]
     \node (a) at (  0,1.5) {$\mathcal{O}_{X/\mathcal{F} \times_X X/\mathcal{G}}$};
     \node (b) at (2.5,1.5) {$\mathcal{O}_{X/\mathcal{F}}$};
@@ -211,76 +194,17 @@ that's how we define as the derived intersection: \\
     \draw [->] (b) -- node[right]{$p^*$}(d);
     \draw [->] (c) -- node[above]{$q^*$}(d);
 \end{tikzpicture}
-\vspace{1cm}
-\end{conjecture}
 
+\item Degeneration \\
+If Lagrangian derived foliation contains singularity, its picture might be the same as degeneration around the singular point,
+whose the parameter moves on quotient stack $[M/\mathcal{G}]$, where usual parameter on degeneration is $\mathbb{R}$ with $t\to 0$.
 
-\vspace{0.5cm}
-\noindent\rule{\textwidth}{0.4pt}
-\vspace{0.5cm}
+\item Fukaya Category \\
+Generalizing Nadle-Zaslow $Sh_c(M) \cong Fuk (T^*M)$ to the case of any symplectic geometry,
+assuming any symplectic geometry has a paraphrase to cotangent bundle or equivalent as $[X/\mathcal{G}] \cong [T^* Y]_{der}$ for some $Y$.
 
-\noindent
-Another thing is .
-
-
-
-\vspace{0.5cm}
-\noindent\rule{\textwidth}{0.4pt}
-\vspace{0.5cm}
-
-
-
-
-
-\noindent
-I'll consider extending derived foliation to Lagrangian foliation,
-and I'll begin with Symplectic vector space and its generalization to derived algebraic geometry to build some intuition.
-Consider(informal) Lagrangian quotient in place of Lie groupoid quotient.
-Let Symplectic vector space be $V$ with its 2-form $\omega$ and some Lagrangian $L \subset V$ s.t. $\omega|_L=0$,
-the quotient $V/L$ as a vector space is the baby form of Lagrangian foliation problem,
-where we have further generalization: \\
-
-
-\begin{definition} {}{}
-\begin{itemize}
-\item step 1 (vector space): \\
-The quotient $V/L$ is no longer a symplectic space, but it induces the pair $L\times V/L \to \mathbb{R}$
-in addition the duality $L\cong (V/L)^*$ make it $(V/L)^* \times V/L \to \mathbb{R}$. 
-
-\item step 2 (cotangent bundle): \\
-For a smooth manifold $X$, cotangent bundle $T^*X$ is a symplectic manifold.
-
-\item step 3 (symplectic manifold): \\
-For the underived case, let a symplectic manifold $X$ and its tangent bundle $TX$ and Lagrangian $L$, 
-the quotient $TX/L$ replaces $(V/L)$. 
-
-\item step 4 (derived method): \\
-Globally, we use $L_\infty$ groupoid quotient stack $[X/\mathcal{G}]$, and 
-derived tangent complex $\mathbb{T}_{[X/\mathcal{G}]} \cong [\mathfrak{g}f \to TX]$ 
-or noted by $\mathbb{T}_{\mathcal{F}}$ of derived foliation.
-the duality pairing will be $\mathbb{T}_{\mathcal{F}}^\vee \otimes \mathbb{T}_{\mathcal{F}} \to \mathcal{O}L_X$.
 \end{itemize}
-\end{definition}
-
-\noindent
-For the last part, consider the two distinct Lagrangian foliation $\mathcal{F}$ and $\mathcal{G}$ on symplectic space $M$, 
-and assuming each leaves of two foliation are transversal. Then the tangent bundle will be a direct sum
-$TM = T\mathcal{F} \oplus T\mathcal{G}$. If foliation creates quotient stack, is there any duality to $[M/G]$,
-namely, $T[M/G] \cong T\mathcal{G}^*$?
-
-
-\begin{conjecture}{}{}
-\[ T[M/G] \cong T\mathcal{G}^* \]
 \end{conjecture}
-
-
-\vspace{0.5cm}
-\noindent\rule{\textwidth}{0.4pt}
-\vspace{0.5cm}
-
-\begin{question}{}{}
-Is there any geometrc realization of $Perf(\mathcal{F})$?
-\end{question}
 
 
 
@@ -288,58 +212,11 @@ Is there any geometrc realization of $Perf(\mathcal{F})$?
 \noindent\rule{\textwidth}{0.4pt}
 \vspace{0.5cm}
 
-
-
-\noindent
-So far we defined Symplectic calculus using Lagrangian quotient, which works fine on vector space,
-but it doesn't work in general, since not all leaves on the Lagrangian foliation are the same.
-But is it still possible to trivialize Lagrangian foliation, 
-so each leaves of that foliation is isomorphic to one fixed foliation up to deformation or any other?
-Locally yes, but it doesn't work in general for obstruction of holonomy and topology.
-However, supposely we assume very na\"{\i}vely 
-an identification of the quotient stack of foliation and some derived cotangent analogue in this formula \footnote{prove it},
-cotangent bundle has particularly important of general symplectic manifold. Below is a conjecture: \\
-
-\begin{conjecture}{Symplectic Cotangent}{}
-\[
-[X/\mathcal{G}] \cong [T^* Y]_{der}
-\]
-\end{conjecture}
-
-
-\noindent
-Now to introduce Nadler-Zaslow as an application of cotangent bundle $T^*X$,
-which is an analogue of HMS for the case of $Fuk(T^*X)$ using microlocal analysis. \\
-
-\begin{proposition}{Nadler-Zaslow}{}
-There is an equivalence of category
-
-\[Fuk(T^*X) \cong Sh_c(X)\]
-
-where $c$ means constructible not compactness.
-\end{proposition}
-
-\noindent
-I'd also put generalization \footnote{prove it} to derived algebraic geometry.
-
-\begin{conjecture}{Nadler-Zaslow Enhanced}{}
-\[Fuk(\mathbb{T}_X) \cong Sh_c(X)\]
-\end{conjecture}
-
-
-\vspace{0.5cm}
-\noindent\rule{\textwidth}{0.4pt}
-\vspace{0.5cm}
-
-
-\vspace{1cm}
-For the organization of this paper, I begin with language of derived algebraic geometry and $\infty$ categories,
-then enhancing groupoid foliation in derived language as well as classically,
-and I add Lagrangian intersection theory.
 
 
 \tableofcontents
 \vspace{1cm}
+
 
 
 
@@ -544,7 +421,171 @@ Perfect crystal is a crystal whose underlying complex is perfect.
 
 
 
-\section {Quotient Stack}
+
+
+
+\section {Cotangentification}
+
+
+\noindent
+I'll consider extending derived foliation to Lagrangian foliation,
+and I'll begin with Symplectic vector space and its generalization to derived algebraic geometry to build some intuition.
+Consider(informal) Lagrangian quotient in place of Lie groupoid quotient.
+Let Symplectic vector space be $V$ with its 2-form $\omega$ and some Lagrangian $L \subset V$ s.t. $\omega|_L=0$,
+the quotient $V/L$ as a vector space is the baby form of Lagrangian foliation problem,
+where we have further generalization: \\
+
+
+\begin{definition} {}{}
+\begin{itemize}
+\item step 1 (vector space): \\
+The quotient $V/L$ is no longer a symplectic space, but it induces the pair $L\times V/L \to \mathbb{R}$
+in addition the duality $L\cong (V/L)^*$ make it $(V/L)^* \times V/L \to \mathbb{R}$. 
+
+\item step 2 (cotangent bundle): \\
+For a smooth manifold $X$, cotangent bundle $T^*X$ is a symplectic manifold.
+
+\item step 3 (symplectic manifold): \\
+For the underived case, let a symplectic manifold $X$ and its tangent bundle $TX$ and Lagrangian $L$, 
+the quotient $TX/L$ replaces $(V/L)$. 
+
+\item step 4 (derived method): \\
+Globally, we use $L_\infty$ groupoid quotient stack $[X/\mathcal{G}]$, and 
+derived tangent complex $\mathbb{T}_{[X/\mathcal{G}]} \cong [\mathfrak{g}f \to TX]$ 
+or noted by $\mathbb{T}_{\mathcal{F}}$ of derived foliation.
+the duality pairing will be $\mathbb{T}_{\mathcal{F}}^\vee \otimes \mathbb{T}_{\mathcal{F}} \to \mathcal{O}L_X$.
+\end{itemize}
+\end{definition}
+
+\noindent
+For the last part, consider the two distinct Lagrangian foliation $\mathcal{F}$ and $\mathcal{G}$ on symplectic space $M$, 
+and assuming each leaves of two foliation are transversal. Then the tangent bundle will be a direct sum
+$TM = T\mathcal{F} \oplus T\mathcal{G}$. If foliation creates quotient stack, is there any duality to $[M/G]$,
+namely, $T[M/G] \cong T\mathcal{G}^*$?
+
+
+\begin{conjecture}{}{}
+\[ T[M/G] \cong T\mathcal{G}^* \]
+\end{conjecture}
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+\begin{question}{}{}
+Is there any geometrc realization of $Perf(\mathcal{F})$?
+\end{question}
+
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+
+\noindent
+So far we defined Symplectic calculus using Lagrangian quotient, which works fine on vector space,
+but it doesn't work in general, since not all leaves on the Lagrangian foliation are the same.
+But is it still possible to trivialize Lagrangian foliation, 
+so each leaves of that foliation is isomorphic to one fixed foliation up to deformation or any other?
+Locally yes, but it doesn't work in general for obstruction of holonomy and topology.
+However, supposely we assume very na\"{\i}vely 
+an identification of the quotient stack of foliation and some derived cotangent analogue in this formula \footnote{prove it},
+cotangent bundle has particularly important of general symplectic manifold. Below is a conjecture: \\
+
+\begin{conjecture}{Symplectic Cotangent}{}
+\[
+[X/\mathcal{G}] \cong [T^* Y]_{der}
+\]
+\end{conjecture}
+
+
+\noindent
+Now to introduce Nadler-Zaslow as an application of cotangent bundle $T^*X$,
+which is an analogue of HMS for the case of $Fuk(T^*X)$ using microlocal analysis. \\
+
+\begin{proposition}{Nadler-Zaslow}{}
+There is an equivalence of category
+
+\[Fuk(T^*X) \cong Sh_c(X)\]
+
+where $c$ means constructible not compactness.
+\end{proposition}
+
+\noindent
+I'd also put generalization \footnote{prove it} to derived algebraic geometry.
+
+\begin{conjecture}{Nadler-Zaslow Enhanced}{}
+\[Fuk(\mathbb{T}_X) \cong Sh_c(X)\]
+\end{conjecture}
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+\vspace{1cm}
+For the organization of this paper, I begin with language of derived algebraic geometry and $\infty$ categories,
+then enhancing groupoid foliation in derived language as well as classically,
+and I add Lagrangian intersection theory.
+
+
+
+
+
+
+
+
+\section {Degeneration}
+
+\noindent
+Degeneration in algebraic geometry is and operation to take limit in geometric object. 
+The famous example is pinched torus is degeneration of torus family by taking limit, 
+which is in other words, adding neighborhood torus family on the pinched torus, to understand more structure on itself.
+Another important case is reducible degeneration, where the degenerated geometry can be decomposed to the multiple objects.
+An important example is moduli space of Rieman surface $M_{g_1+g_2, n_1+n_2-1}$
+is decomposed to the union of $M_{g_1, n_1}$ and $M_{g_2, n_2}$ sharing a point, which we call it nodal degeneration.
+Another example of higer dimensional case is Tyurin degeneration separating K3 suface $X$ to the union $X\leadsto X_1\cup_S X_2$,
+where the two objects intersect $X_1\cap X_2=S$, where $S$ is a torus. \\
+
+\begin{example}{Illustration}{}
+Put picture here.
+\end{example}
+
+
+\noindent
+This time, my goal here is to define degeneration of Lagrangian foliation $\mathcal{F}$, 
+assuming existence of singularity both in its moduli space and itself,
+and how to parametrize degeneration on the quotient stack $[M/\mathcal{G}]$. \\
+
+
+\noindent
+Tyurin degeneration and matrix factorization.
+
+
+\begin{remark}{}{}
+As an assumption, Fano manifold argument can be generalized to any K\"ahler manifold.
+At least, Fano manifold can be transformed to log Calabi-Yau by deformation theory.
+\end{remark}
+
+
+
+
+\begin{definition}{}{}
+
+\end{definition}
+
+
+
+
+
+
+
+
+\section {Derived Intersection}
 
 \noindent
 I'll first discuss the identification of Lie algebroid foliation and that of Lie groupoid quotient stack.
@@ -553,6 +594,27 @@ I'll first discuss the identification of Lie algebroid foliation and that of Lie
 \begin{definition}{Quotient Stack}{}
 TBA
 \end{definition}
+
+
+Two quotient projection maps $p:X\to X/\mathcal{F}$ and $q:X\to X/\mathcal{G}$ of foliations, mapping contravariantly
+$p^*: \mathcal{O}_{X/\mathcal{F}} \to \mathcal{O}_X$ and $q^*: \mathcal{O}_{X/\mathcal{G}} \to \mathcal{O}_X$,
+which makes a pullback diagram below to make a fiber product $\mathcal{O}_{X/\mathcal{F} \times_X X/\mathcal{G}}$, 
+andn this is the derived intersection: \\
+\begin{tikzpicture}[auto]
+    \node (a) at (  0,1.5) {$\mathcal{O}_{X/\mathcal{F} \times_X X/\mathcal{G}}$};
+    \node (b) at (2.5,1.5) {$\mathcal{O}_{X/\mathcal{F}}$};
+    \node (c) at (  0,  0) {$\mathcal{O}_{X/\mathcal{F}}$};
+    \node (d) at (2.5,  0) {$\mathcal{O}_X$};
+    \draw [->] (a) -- (b);
+    \draw [->] (a) -- (c);
+    \draw [->] (b) -- node[right]{$p^*$}(d);
+    \draw [->] (c) -- node[above]{$q^*$}(d);
+\end{tikzpicture}
+
+\item Degeneration \\
+
+
+
 
 
 deformation
@@ -601,16 +663,6 @@ Consider a mapping $X\to [X/G]$ where $G$ is a group.
 
 
 
-
-
-
-\section {Lagrangian Intersection Theory}
-
-The question is if there is any intersection theory of two foliations of Lagrangians.
-
-\begin{definition}{Lagrangian}{}
-
-\end{definition}
 
 
 
