@@ -19,6 +19,12 @@ clean:
 	make -C src clean
 
 debug:
+	@if [ -n "$$SSH_AUTH_SOCK" ] && ssh-add -l >/dev/null 2>&1; then \
+		echo "ssh-agent is already running"; \
+	else \
+		echo "Starting ssh-agent..."; \
+		eval "$$(ssh-agent -s)"; \
+	fi
 	git add .
 	git status
 	git commit -a -m "uploading"
