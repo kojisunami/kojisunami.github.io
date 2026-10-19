@@ -1,4 +1,4 @@
-PROJECTS = ainfty-geometry dgla-stack what-math
+PROJECTS = ainfty-geometry dgla-stack what-math pde
 .PHONY: all
 all: $(PROJECTS:%=%.pdf)
 
