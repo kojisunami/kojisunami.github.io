@@ -564,9 +564,12 @@ $p:T^*[n]\mathcal{M} \twoheadrightarrow X$, but the problem is $Fuk$ cannot be a
 $Fuk(p):Fuk(T^*[n]\mathcal{M}) \twoheadrightarrow Fuk(X)$. \\
 
 
-\begin{conjecture}{}{}
-Discuss functoriality of $Fuk$.
-\end{conjecture}
+\begin{question}{Functoriality of $Fuk$}{}
+The mapping $Fuk: X\mapsto Fuk(X)$ doesn't satisfy the functoriality, so it's not an $\infty$-functor. 
+Is there any analogue of Fukaya categoory wrapped, partially wrappped, or Fukaya-Seidel,
+Rabinowitz, equivariant, family Fukaya, Fukaya category of Lagrangian skeleton etc so the mapping becomes an $\infty$-functor?
+\end{question}
+
 
 
 \vspace{0.5cm}
@@ -574,7 +577,7 @@ Discuss functoriality of $Fuk$.
 \vspace{0.5cm}
 
 \noindent
-Consider Tamarkin category and sheaf quantization. \\
+TBD Consider Tamarkin category and sheaf quantization. \\
 
 
 
@@ -653,6 +656,10 @@ At least, Fano manifold can be transformed to log Calabi-Yau by deformation theo
 \vspace{0.5cm}
 
 
+\noindent
+I'll introduce the minimal step of definining the periodic cyclic homology of category of matrix factorization.
+
+
 \begin{definition}{Category of Matrix Factorization}{}
 Let $(R,\mathfrak{m})$ be a regular local ring of finite Krull dimension.
 For category of matrix factorization $MF(R,w)$, where objects are a pair $(X,d)$ 
@@ -665,22 +672,56 @@ Its homotopy category of category of matrix factorization $MF(R,w)$ is denoted b
 
 
 \begin{definition}{Category of Maximum Cohen Macaulay Modules}{}
-Category of maximum Cohen Macaulay $S$-modules $\underline{MCM}(S)$ is defined by
+Category of maximum Cohen Macaulay $S$-modules $\underline{MCM}(S)$ is defined to be a category,
+whose objects are maximal Cohen macaulay modules, and morphisms are defined by 
 \[ \underline{Hom_S}(M,M')_{} = Hom_S(M,M')/P \]
-Category of maximum Cohen Macaulay modules $MCM(S)$.
+where $P$ is the set of $S$-linear homomorphisms factoring through some free $S$-module.
+Category of maximum Cohen Macaulay modules $\underline{MCM}(S)$.
 \end{definition}
 
 
+\begin{definition}{Periodic Cyclic Homology}{}
+The definition of Hochschild homology $HH_\cdot (A)$ is $HH_\cdot(A) := Tor_\cdot^{A^e}(A,A)$
+where $A^e = A\otimes_k A^{op}$. Its categorical version is 
+$HH_\cdot(\mathcal{C}) := RHom_\cdot^{\mathcal{C}^e}(\Delta_\mathcal{C}, \Delta_\mathcal{C})$
+where $\Delta_\mathcal{C}$ is a diagonal bimodule. Diagonal bimodule is a functor 
+$\Delta_\mathcal{C}: (X,Y) \in \mathcal{C}\times \mathcal{C} \mapsto Hom_{\mathcal{C}}(X,Y)$. 
+Now the definition of periodic cyclic homology $HP_\cdot (A)$ is
+$HP_\cdot (A) : = H_\cdot (CC_\cdot^{per} (A))$ where $CC_\cdot^{per} (A) = (C_\cdot(A)((u)), b+uB)$.
+\end{definition}
+
+
+\begin{definition}{Gauss-Manin Connection}{}
+A smoooth family $f:X\to S$ and fiber $X_s = f^{-1}(s)$ induces the family of de Rham cohomology $H_{dR}^k (X_s)$,
+which makes a vector bundle over $S$. 
+The global property is induced from Ehresmann theorem, which claims $H_{dR}^k (X_t) \cong H_{dR}^k (X_s)$ for all $t\in U$
+for local trivialization $f^{-1}(U)\cong U\times X_s$ if $f$ is a smooth proper submersion. 
+The vector bundle over $S$ is given by $H_{dR}^k (X/S) := \mathcal{H}^k (Rf_\cdot \Omega_{X/S}^\cdot)$,
+and fiber can be taken by $H_{dR}^k (X/S) \otimes_{\mathcal{O}_s} k(s) \cong H_{dR}^k (X_s)$.
+Now finally, the Gauss-Manin connection is a connection 
+$\nabla^{GM} : \mathcal{H}_{dR}^k (X/S) \to \Omega_S^1 \otimes_{\mathcal{O}_S} \mathcal{H}_{dR}^k (X/S)$.
+\end{definition}
+
+
+
+
+\noindent
+and below is some of the consequences of the definitions. \\
+
 \begin{proposition} {}{}
 \begin{itemize}
-\item $\underline{MCM}(S)$ is triangulated category.
-\item there exists a map $coker: [MF(R,w)] \to \underline{MCM}(S)$.
+\item $\underline{MCM}(S)$ is a triangulated category.
+\item there exists an equivalence functor $coker: [MF(R,w)] \to \underline{MCM}(S)$.
+\item there exists an equivalence functor $\underline{MCM}(S) \to \underline{D^b}(S) := D^b(S)/D^b_{perf}(S)$.
+\item Hodge-to-de-Rham spectral sequence proves connection to periodic cyclic homology
+$HP_\cdot (MF(R,w)) \cong HH_\cdot (MF(R,w))$
+\item The degeneraiton mapping $f: \mathcal{X} \to \mathbb{A}^1$ can induces Gauss-Manin connection
+$\nabla_{GM}: H(\mathcal{X}/\mathbb{A}^1)\to \Omega_{\mathbb{A}^1} \otimes_{\mathcal{O}_{\mathcal{A}^1}} H(\mathcal{X}/\mathbb{A}^1)$.
+
 \end{itemize}
 \end{proposition}
 
 
-\begin{definition}{}{}
-\end{definition}
 
 \vspace{0.5cm}
 \noindent\rule{\textwidth}{0.4pt}
