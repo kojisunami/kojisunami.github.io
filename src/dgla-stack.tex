@@ -609,9 +609,13 @@ and how to parametrize degeneration on PTVV moduli space of Fano manifold $X$ or
 
 \begin{definition}{Degeneration}{}
 A degeneration is a mapping 
-\[ f: \mathbb{A}^1 \to \mathcal{M} \]
+\[ f: \mathcal{M} \to \mathbb{A}^1 \]
 where $\mathbb{A}^1$ is an affine plane and fibers $\pi^{-1}(t)$ form a family of varieties over $\mathbb{A}^1$.
-$\pi^{-1}(0)$ can be thought as the limit. More generally, the affine plane $\mathbb{A}^1$ can be replaced to other algebraic varieties.
+$\pi^{-1}(0)$ can be thought as the limit. More generally, the affine plane $\mathbb{A}^1$ can be replaced to other algebraic varieties. 
+$\mathcal{M}$ is typically called total space. \\
+
+In particular, Tyurin's degeneration $X\leadsto X_1 \cup_S X_2$ lets $\mathcal{M}_t = X$ and $\mathcal{M}_0 = X_1 \cup_S X_2$,
+which makes a degeneration.
 \end{definition}
 
 
@@ -717,9 +721,16 @@ and below is some of the consequences of the definitions. \\
 $HP_\cdot (MF(R,w)) \cong HH_\cdot (MF(R,w))$
 \item The degeneraiton mapping $f: \mathcal{X} \to \mathbb{A}^1$ can induces Gauss-Manin connection
 $\nabla_{GM}: H(\mathcal{X}/\mathbb{A}^1)\to \Omega_{\mathbb{A}^1} \otimes_{\mathcal{O}_{\mathcal{A}^1}} H(\mathcal{X}/\mathbb{A}^1)$.
-
 \end{itemize}
 \end{proposition}
+
+
+\begin{example}{}{}
+Consider periodic cyclic homology of matrix factorization $HP_\cdot (MF(W_t))$ is identified as a twisted de Rham cochain complex
+$HP_\cdot (MF(W_t)) \cong H(\Omega_X^\cdot ((u)), ud + dW_t \wedge)$, 
+where parametrization $t\in \mathbb{A}^1$ makes degeneration $MF(W)\to \mathbb{A}^1$, 
+whence the twisted de Rham class defines a vector bundle.
+\end{example}
 
 
 
