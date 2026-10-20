@@ -648,14 +648,43 @@ At least, Fano manifold can be transformed to log Calabi-Yau by deformation theo
 \end{remark}
 
 
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
 
 
-\begin{definition}{}{}
-
+\begin{definition}{Category of Matrix Factorization}{}
+Let $(R,\mathfrak{m})$ be a regular local ring of finite Krull dimension.
+For category of matrix factorization $MF(R,w)$, where objects are a pair $(X,d)$ 
+where $X=X^0 \oplus X^1$ is a free $\mathbb{Z}_2$-graded $R$-module of finite rank
+equipped with an $R$-linear map $d$ of odd degree satisfying $d^2 = w id_X$,
+and its morphism $MF(X,X')$ is given by $\mathbb{Z}_2$-graded $R$-linear maps from $X$ to $X'$ with differential $d$ given by
+\[ d (f) = d_{X'}\circ f - (-1)^{|f|} f\circ d_X \]
+Its homotopy category of category of matrix factorization $MF(R,w)$ is denoted by $[MF(R,w)]$ by applying $H^0(-)$.
 \end{definition}
 
 
+\begin{definition}{Category of Maximum Cohen Macaulay Modules}{}
+Category of maximum Cohen Macaulay $S$-modules $\underline{MCM}(S)$ is defined by
+\[ \underline{Hom_S}(M,M')_{} = Hom_S(M,M')/P \]
+Category of maximum Cohen Macaulay modules $MCM(S)$.
+\end{definition}
 
+
+\begin{proposition} {}{}
+\begin{itemize}
+\item $\underline{MCM}(S)$ is triangulated category.
+\item there exists a map $coker: [MF(R,w)] \to \underline{MCM}(S)$.
+\end{itemize}
+\end{proposition}
+
+
+\begin{definition}{}{}
+\end{definition}
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
 
 
 
