@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+pass="hogeinterfaceG1!"
+killall ssh-agent
+eval $(ssh-agent -s)
+expect <<'EOF'
+	set timeout 5
+	spawn ssh-add /home/k/.ssh/id_ed25519
+	expect {
+		-re "Enter passphrase for /home/k/.ssh/id_ed25519:" {
+		send -- "$pass\r"
+		exp_continue
+	}
+}
+EOF
+ssh-add -l
