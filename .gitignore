@@ -15,6 +15,6 @@
 *.blg
 *.xml
 *.fdb_latexmk
-*.flsK
+*.fls
 *SAVE-ERROR
-
+LaTeXML.cache
