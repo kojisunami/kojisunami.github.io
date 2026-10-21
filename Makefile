@@ -1,3 +1,4 @@
+SHELL := /usr/bin/bash
 HTML_PROJECTS = index art misc
 PDF_PROJECTS = cv-koji
 
@@ -25,7 +26,7 @@ clean:
 	make -C png clean
 
 debug:
-	. ./a
+	source ./a
 	git add .
 	git status
 	git commit -a -m "uploading"
