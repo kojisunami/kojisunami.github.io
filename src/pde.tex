@@ -13,6 +13,35 @@
 \vspace{1cm}
 
 
+strategy 0:
+VOA 
+
+strategy 1:
+CFT on moduli  riemann surface
+
+strategy 2:
+
+Navier Stokes
+CFT
+Algebraic Geometry
+
+Geometric Langlands
+
+\vspace{1cm}
+\tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=6em]
+\begin{tikzpicture}[auto]
+    \node [block] (a) {Lie Algebra};
+    \node [block, right of=a, node distance=4cm] (b) {Lie Algebroid};
+    \node [block, right of=b, node distance=4cm] (c) {Lie Gropoid};
+    \node [block, right of=c, node distance=4cm] (d) {Quotient Stack};
+    \draw [->] (a) -- node[name=u, above=5mm] {$Globalization$} (b);
+    \draw [->] (b) -- node[name=v, above=5mm] {$Integration$} (c);
+    \draw [->] (c) -- node[name=w, above=5mm] {$Quotient$} (d);
+    \node[ block, fit=(a) (b) (c) (d) (u) (v) (w), inner sep=10pt ] {};
+\end{tikzpicture}
+\vspace{1cm}
+
+
 
 \nocite{*}
 \printbibliography

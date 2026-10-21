@@ -1,22 +1,28 @@
-HTML_PROJECTS = index random-thoughts misc
+HTML_PROJECTS = index art misc
 PDF_PROJECTS = cv-koji
 
-.PHONY: all src
+.PHONY: all src png
 
-all: $(HTML_PROJECTS:%=%.html) $(PDF_PROJECTS:%=%.pdf) src
+all: $(HTML_PROJECTS:%=%.html) $(PDF_PROJECTS:%=%.pdf) src png
 
 %.html : %.tex 
-	latexmlc $< --dest=$@ --css=style.css
+	latexmlc "$<" --dest="$@" --css=style.css
 
 %.pdf: %.tex
-	pdflatex $<
+	pdflatex "$<"
 
 src:
 	make -C src
 
+png:
+	make -C png
+
 clean:
-	rm *aux *log *out *pdf
+	rm -f $(HTML_PROJECTS:%=%.html) $(HTML_PROJECTS:%=%.log) $(HTML_PROJECTS:%=%.aux) $(HTML_PROJECTS:%=%.out) $(HTML_PROJECTS:%=%.latexml.log)
+	rm -f $(PDF_PROJECTS:%=%.pdf) $(PDF_PROJECTS:%=%.aux) $(PDF_PROJECTS:%=%.log) $(PDF_PROJECTS:%=%.out) $(PDF_PROJECTS:%=%.pdfsync)
+	rm -f LaTeXML.cache LaTeXML.css ltx-article.css
 	make -C src clean
+	make -C png clean
 
 debug:
 	@if [ -n "$$SSH_AUTH_SOCK" ] && ssh-add -l >/dev/null 2>&1; then \

@@ -5,12 +5,9 @@
 \usepackage{hyperref}
 \usepackage{wrapfig}
 \usepackage{graphicx}
-\usepackage{tikz}
-\usepackage{tikz-cd}
 \usepackage{enumitem}
 
-\usetikzlibrary{shapes,arrows, positioning,fit}
-
+\setlength{\fboxsep}{0pt}
 \setlength{\textwidth}{19cm}
 
 \title{Top}
@@ -35,27 +32,19 @@ as its writing is still half-way, but it's still many ideas. \\
 \hfill
 \begin{minipage}{0.15\textwidth}
 \centering
-\includegraphics[width=0.15\textwidth]{alice1.png}
+\fbox{\includegraphics[width=0.15\textwidth]{png/alice1.png}}
 \end{minipage}
 
 
 
 \begin{minipage}{\textwidth}
 \begin{itemize}[label=$\spadesuit$]
-\item \textbf{On Homological Mirror Symmetry} \\
-
-\begin{wrapfigure}{r}{0.4\textwidth}
-\begin{tikzpicture}[auto, every node/.style={font={\tiny\bfseries}}]
-  \node (a)  at (2.5,2) {Fukaya\\ Category};
-  \node (b1) at (  0,0) {Tannakian\\ Duality};
-  \node (b2) at (2.5,0) {Equivariant\\ Intersection};
-  \node (b3) at (  5,0) {Derived Formal\\ Moduli};
-  \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (b1);
-  \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (b2);
-  \draw[-, shorten <= 15pt, shorten >= 3pt] (a)  -- (b3);
-  \node[draw, rectangle, fit=(a) (b1) (b2) (b3), inner xsep=10pt, inner ysep=10pt, xshift=10pt] {};
-\end{tikzpicture}
+\begin{wrapfigure}{r}{0.6\textwidth}
+\centering
+\fbox{\includegraphics{png/fig1.svg}}
 \end{wrapfigure}
+
+\item \textbf{On Homological Mirror Symmetry} \\
 
 For Proving HMS 1: Hochschild deformation of Fukaya category or Stable $\infty$, which induces derived formal geometry,
 2: analogy of HMS is Fukaya category corresponds to $Perf(Y)$, whose Tannakian duality is $Y$.
@@ -87,7 +76,7 @@ This is a list of expositions previously shown to other people or intended to be
 \hfill
 \begin{minipage}{0.15\textwidth}
 \centering
-\includegraphics[width=0.15\textwidth]{alice2.png}
+\includegraphics[width=0.15\textwidth]{png/alice2.png}
 \end{minipage}
 
 
@@ -135,7 +124,7 @@ but still eagar to gain research level expertise in case needed.
 \hfill
 \begin{minipage}{0.15\textwidth}
 \centering
-\includegraphics[width=0.15\textwidth]{alice3.png}
+\includegraphics[width=0.15\textwidth]{png/alice3.png}
 \end{minipage}
 
 
@@ -183,7 +172,7 @@ Two junk pdf of totally 200 pages based on rabbit holing ChatGPT or wikipedia fo
 \hfill
 \begin{minipage}[t]{0.15\textwidth}
 \raggedleft
-\includegraphics[width=0.15\textwidth]{alice4.png}
+\includegraphics[width=0.15\textwidth]{png/alice4.png}
 \end{minipage}
 
 \begin{minipage}{\textwidth}
