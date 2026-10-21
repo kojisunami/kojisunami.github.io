@@ -13,33 +13,146 @@
 \vspace{1cm}
 
 
-strategy 0:
-VOA 
 
-strategy 1:
-CFT on moduli  riemann surface
 
-strategy 2:
+\noindent
+I'm interested in the re-interpretation of non-linear PDE from algebraic geometry and QFT perspective.
+It's typically Navier-Stokes, Apery, period integral of Landau Ginzburg, Monge-Ampere below,
+and I consider possible strategies are 1: I consider non-linear PDE differential geometrically, 
+by making some connection form diffyq $\nabla f=0$ on a real smooth manifold $X$,
+possibly symplectification $(X',\omega)$ if necessary, where I further put geometric quantiztion,
+and 2: Derived moduli space of solutions spaces of non-linear PDE, whose alegbraic geometric realization,
+and 3: Transform non-linear PDE to CFT, corresponding to algebraic geometry. \\
 
-Navier Stokes
-CFT
-Algebraic Geometry
 
-Geometric Langlands
+\vspace{1cm}
+\begin{itemize}
+\item Navier Stokes \\
+\[ \frac{\partial \mathbf{u}}{\partial t} +(\mathbf{u}\cdot\nabla)\mathbf{u} =-\frac{1}{\rho}\nabla p +\nu\nabla^2\mathbf{u} +\mathbf{f} \]
+Or
+\[ \partila_\mu T^{\mu\nu} = 0 \]
+\item Apery (Quantum Satake)
+\[ \mathcal L_{\mathrm{Ap}} =\theta^3 -z(2\theta+1)(17\theta^2+17\theta+5) +z^2(\theta+1)^3, \qquad \theta=z\frac{d}{dz}.  \]
+\item Landau-Ginzburg (Period Integral, SCFT)
+\[ \int e^{-f(x)} \qquad f(x) = \text{polynomial} \]
+\item Monge-Ampere (SYZ)
+\[ \det\left(\frac{\partial^2\phi} {\partial x_i\partial x_j}\right)=f(x) \]
+\item SUGRA (String Theory)
+\[ R_{\mu\nu}-\frac{1}{2}R\,g_{\mu\nu}+\Lambda g_{\mu\nu}=\frac{8\pi G}{c^4}T_{\mu\nu} \]
+\end{itemize}
+\vspace{1cm}
+
+
+
+\begin{remark}{}{}
+I also noticed several different approaches, Kcryzka introduces derived algebraic geometry realization of jet spaces,
+Ladychenskaya formula for solving 2d NSE. These are quite interesting but quite different from my study.
+\end{remark}
+
+
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+
+
+\tableofcontents
+\vspace{1cm}
+
+
+
+
+\section {Navier-Stokes}
+
+
 
 \vspace{1cm}
 \tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=6em]
 \begin{tikzpicture}[auto]
-    \node [block] (a) {Lie Algebra};
-    \node [block, right of=a, node distance=4cm] (b) {Lie Algebroid};
-    \node [block, right of=b, node distance=4cm] (c) {Lie Gropoid};
-    \node [block, right of=c, node distance=4cm] (d) {Quotient Stack};
-    \draw [->] (a) -- node[name=u, above=5mm] {$Globalization$} (b);
-    \draw [->] (b) -- node[name=v, above=5mm] {$Integration$} (c);
-    \draw [->] (c) -- node[name=w, above=5mm] {$Quotient$} (d);
-    \node[ block, fit=(a) (b) (c) (d) (u) (v) (w), inner sep=10pt ] {};
+    \node [block] (a) {Non-Linear PDE};
+    \node [block, right of=a, node distance=4cm] (b) {CFT};
+    \node [block, right of=b, node distance=4cm] (c) {Algebraic Geometry};
+    \draw [->] (a) -- node[name=u, below=5mm] {} (b);
+    \draw [->] (b) -- node[name=v, below=5mm] {Geometric Langlands} (c);
+    \node[ block, fit=(a) (b) (c) (u) (v), inner sep=10pt ] {};
 \end{tikzpicture}
 \vspace{1cm}
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5cm}
+
+
+
+
+
+
+
+
+
+
+\begin{proposition}{NSE-CFT Conversion}{}
+TBA
+\end{proposition}
+
+
+\begin{definition}{Quantization of NSE}{}
+\end{definition}
+
+
+
+
+\section {Apery}
+
+\begin{definition}{Geometric Satake}{}
+\[
+\operatorname{Perv}(\mathrm{Gr}_G)
+\simeq \operatorname{Rep}(G^\vee).
+\]
+\end{definition}
+
+
+\begin{definition}{Quantum Satake}{}
+\end{definition}
+
+
+\begin{definition}{4D/2D CFT Correspondence}{}
+\end{definition}
+
+
+\begin{definition}{}{}
+\end{definition}
+
+
+\begin{definition}{}{}
+\end{definition}
+
+
+\begin{definition}{}{}
+\end{definition}
+
+
+
+
+\section {Quantization}
+
+
+\begin{definition}{Prequantization}{}
+Prequantization is a process of making an operator $Q(f)$ from a smooth function $f$, $Q: C^\infty(X) \to End(\mathcal{H})$
+on a symplectic manifold $(X,\omega)$.
+More precisely, $\mathcal{H} = \Gamma^\infty(L)$ where $L$ is a prequantum line bundle with a connection $\nabla_{X_f}$,
+and an operator given by $Q(f) := -i\hbar \nabla_{X_f} + f$, so that bracket satisfies $[Q(f),Q(g)] = i\hbar Q(\{f,g\})$. \\
+\end{definition}
+
+\noindent
+Typically, the operator is Kostant–Souriau operator $Q(f) := -i\hbar (X_f + \frac{1}{i\hbar}\theta(X_f)) + f$. \\
+
+\begin{definition}{}{}
+\end{definition}
+\begin{definition}{}{}
+\end{definition}
 
 
 
