@@ -25,7 +25,7 @@ clean:
 	make -C png clean
 
 debug:
-	./a
+	. ./a
 	git add .
 	git status
 	git commit -a -m "uploading"
