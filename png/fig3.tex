@@ -1,0 +1,18 @@
+\documentclass[dvisvgm]{standalone}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usetikzlibrary{shapes,arrows, positioning,fit}
+
+\begin{document}
+\begin{tikzpicture}[auto, every node/.style={align=center}]
+  \node (a) at ( 0, 0) {$\mathbb{R}$};
+  \node (b) at ( 2, 0) {$\mathbb{C}$};
+  \node (c) at ( 4, 0) {$\mathbb{H}$};
+  \node (d) at ( 6, 0) {$\mathbb{O}$};
+  \node (e) at ( 4, 1) {$Higgs$};
+  \draw[-, shorten <= 15pt, shorten >= 3pt, thick] (a)  -- (b);
+  \draw[-, shorten <= 15pt, shorten >= 3pt, thick] (b)  -- (c);
+  \draw[-, shorten <= 15pt, shorten >= 3pt, thick] (c)  -- (d);
+  \draw[-, shorten <= 15pt, shorten >= 3pt, thick] (b)  -- (e);
+\end{tikzpicture}
+\end{document}
