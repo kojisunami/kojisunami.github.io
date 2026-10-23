@@ -20,8 +20,8 @@ I'm interested in the re-interpretation of non-linear PDE from algebraic geometr
 It's typically Navier-Stokes, Apery, period integral of Landau Ginzburg, Monge-Ampere below,
 and I consider possible strategies are 1: I consider non-linear PDE differential geometrically, 
 by making some connection form diffyq $\nabla f=0$ on a real smooth manifold $X$,
-possibly symplectification $(X',\omega)$ if necessary, where I further put geometric quantiztion,
-and 2: Derived moduli space of solutions spaces of non-linear PDE, whose alegbraic geometric realization,
+possibly symplectification $(X',\omega)$ if necessary, where I further put geometric quantization,
+and 2: Derived moduli space of solutions spaces of non-linear PDE, whose algebraic geometric realization,
 and 3: Transform non-linear PDE to CFT, corresponding to algebraic geometry. \\
 
 
@@ -49,6 +49,10 @@ I also noticed several different approaches, Kcryzka introduces derived algebrai
 Ladychenskaya formula for solving 2d NSE. These are quite interesting but quite different from my study.
 \end{remark}
 
+
+
+keywords:\\
+picard-fuch, quantum connection.
 
 
 \vspace{0.5cm}
@@ -86,10 +90,10 @@ Ladychenskaya formula for solving 2d NSE. These are quite interesting but quite 
 
 
 
-
-
 \begin{proposition}{NSE-CFT Conversion}{}
-TBA
+\[ \frac{\partial \mathbf{u}}{\partial t} +(\mathbf{u}\cdot\nabla)\mathbf{u} =-\frac{1}{\rho}\nabla p +\nu\nabla^2\mathbf{u} +\mathbf{f} \]
+transformed into 
+\[ \partial_\mu T^{\mu\nu} = 0 \]
 \end{proposition}
 
 
@@ -103,6 +107,7 @@ The question. \\
 \item Quantization
 \end{itemize}
 \end{question}
+
 
 
 
@@ -120,7 +125,12 @@ M &\hookrightarrow T^*M \\
 \end{aligned}
 \end{equation}
 
+\noindent
+I define quantization of non-linear PDE by quantization of connection form $\nabla$ in symplectic geometry.
+
+
 \begin{definition}{}{}
+
 \end{definition}
 
 
@@ -168,7 +178,15 @@ M &\hookrightarrow T^*M \\
 \section {Quantization}
 
 
-\begin{definition}{Prequantization}{}
+\noindent
+One of my interests in non-linear PDE is to build framework of quantization,
+which is first of all embedding of connection form $\nabla f=0$ to symplectic geometry, and secondly to do quantization,
+possibly Fedosov's method of geometric construction by deformation quantization, or geometric prequantization: 
+these two are different, and I don't know which suits better.
+In any case, quantization of Navier-Stokes equation is consider to be difficult according to ChatGPT. \\
+
+
+\begin{definition}{Geometric Prequantization}{}
 Prequantization is a process of making an operator $Q(f)$ from a smooth function $f$, $Q: C^\infty(X) \to End(\mathcal{H})$
 on a symplectic manifold $(X,\omega)$.
 More precisely, $\mathcal{H} = \Gamma^\infty(L)$ where $L$ is a prequantum line bundle with a connection $\nabla_{X_f}$,
@@ -178,8 +196,23 @@ and an operator given by $Q(f) := -i\hbar \nabla_{X_f} + f$, so that bracket sat
 \noindent
 Typically, the operator is Kostant–Souriau operator $Q(f) := -i\hbar (X_f + \frac{1}{i\hbar}\theta(X_f)) + f$. \\
 
-\begin{definition}{}{}
+
+
+\begin{definition}{Deformation Quantization}{}
+Deformation quantization transforms ordinary product to star product $fg\mapsto f\star g$ where the star product is defined by
+\[f\star g = \Sigma_{n\geqq 0} \frac{1}{n!} (\frac{i\hbar}{2})^n \Pi^n (f,g)\]
+where $\Pi$ is Poisson bivector, and $\Pi^1(f,g) = \{f,g\}$ is ordinary bracket. Naturally, the Poisson bracket is defined by
+\[\frac{f\star g - g\star f}{i\hbar} = \{f,g\} + O(\hbar) \]
 \end{definition}
+
+\noindent
+Fedosov's method of deformation quantization in symplectic geometry.
+
+\begin{definition}{Fedosov's Deformation Quantization}{}
+TBA
+\end{definition}
+
+
 \begin{definition}{}{}
 \end{definition}
 
