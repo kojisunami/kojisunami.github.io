@@ -4,12 +4,12 @@
 
 \begin{document}
 \begin{tikzpicture}[auto, every node/.style={align=center}]
-  \node (a)  at ( 0,4) {Fukaya\\ Category};
-  \node (b) at ( 6,4) {Tannakian\\ Duality};
-  \node (c) at ( 0,0) {Equivariant\\ Intersection};
-  \node (d) at ( 6,0) {Derived Formal\\ Moduli};
+  \node (a) at ( 0,0) {Deformation\\(liquid)};
+  \node (b) at ( 6,0) {Quantization\\(solid)};
+  \node (c) at ( 3,3) {Wall-Crossing\\(gas)};
+  \node (d) at ( 3,1.5) {Dubrovin\\(atom)};
   \draw[->, shorten <= 15pt, shorten >= 3pt, thick] (a)  -- (b);
   \draw[->, shorten <= 15pt, shorten >= 3pt, thick] (a)  -- (c);
-  \draw[->, shorten <= 15pt, shorten >= 3pt, thick] (a)  -- (d);
+  \draw[->, shorten <= 15pt, shorten >= 3pt, thick] (b)  -- (c);
 \end{tikzpicture}
 \end{document}

@@ -1,18 +1,20 @@
 \documentclass[dvisvgm]{standalone}
 \usepackage{tikz}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{mathrsfs, mathtools, mathbbol}
 \usetikzlibrary{shapes,arrows, positioning,fit}
 
 \begin{document}
 \begin{tikzpicture}[auto, every node/.style={align=center}]
-  \node (a) at ( 3, 6) {Apery\\(Fire)};
-  \node (b) at ( 0, 3) {Monge-Ampere\\(Air)};
-  \node (c) at ( 6, 3) {General Relativity\\(Soil)};
-  \node (d) at ( 3, 0) {Navier-Stokes\\(Water)};
-  \draw[-, shorten <= 15pt, shorten >= 3pt, thick] (a)  -- (b);
-  \draw[-, shorten <= 15pt, shorten >= 3pt, thick] (a)  -- (c);
-  \draw[-, shorten <= 15pt, shorten >= 3pt, thick] (a)  -- (d);
-  \draw[-, shorten <= 15pt, shorten >= 3pt, thick] (b)  -- (c);
-  \draw[-, shorten <= 15pt, shorten >= 3pt, thick] (b)  -- (d);
-  \draw[-, shorten <= 15pt, shorten >= 3pt, thick] (c)  -- (d);
+\draw (2.7,1.8) node[draw=none] {O}; \node (a) at ( 0, 3) {Joyce\\(Rogue)};
+\draw (3.3,1.8) node[draw=none] {C}; \node (b) at ( 6, 3) {Pantev\\(Fighter)};
+\draw (2.7,1.2) node[draw=none] {H}; \node (c) at ( 0, 0) {Fukaya\\(Wizard)};
+\draw (3.3,1.2) node[draw=none] {R}; \node (d) at ( 6, 0) {Tamarkin\\(Priest)};
+\draw[-, shorten <= 15pt, shorten >= 3pt, thick] (a)  -- (b);
+\draw[-, shorten <= 15pt, shorten >= 3pt, thick] (a)  -- (c);
+\draw[-, shorten <= 15pt, shorten >= 3pt, thick] (c)  -- (d);
+\draw[-, shorten <= 15pt, shorten >= 3pt, thick] (b)  -- (d);
+\draw (0.5,1.5) -- (5.5,1.5);
+\draw (3,0.25) -- (3,2.75);
 \end{tikzpicture}
 \end{document}
