@@ -76,46 +76,13 @@
 </g>
 </g>
 <g stroke-width='0.8'>
-<path d='M45.8386 0H135.00119' fill='none'/>
-<g transform='translate(135.00119,0.0)'>
-<g stroke-width='0.64'>
- <g stroke-dasharray='none' stroke-dashoffset='0.0'>
- <g stroke-linecap='round'>
- <g stroke-linejoin='round'>
- <path d='M-1.55997 2.07996C-1.42996 1.29997 0 .12999 .38998 0C0-.12999-1.42996-1.29997-1.55997-2.07996' fill='none'/>
- </g>
- </g>
- </g>
- </g>
-</g>
+<path d='M45.8386 0H135.7112' fill='none'/>
 </g>
 <g stroke-width='0.8'>
-<path d='M24.85558 24.85951L68.4938 68.48024' fill='none'/>
-<g transform='matrix(0.70723,0.70695,-0.70695,0.70723,68.4938,68.48022)'>
-<g stroke-width='0.64'>
- <g stroke-dasharray='none' stroke-dashoffset='0.0'>
- <g stroke-linecap='round'>
- <g stroke-linejoin='round'>
- <path d='M-1.55997 2.07996C-1.42996 1.29997 0 .12999 .38998 0C0-.12999-1.42996-1.29997-1.55997-2.07996' fill='none'/>
- </g>
- </g>
- </g>
- </g>
-</g>
+<path d='M24.85558 24.85951L68.99594 68.98218' fill='none'/>
 </g>
 <g stroke-width='0.8'>
-<path d='M145.91641 24.80396L102.22266 68.48024' fill='none'/>
-<g transform='matrix(-0.70723,0.70695,-0.70695,-0.70723,102.22266,68.48022)'>
-<g stroke-width='0.64'>
- <g stroke-dasharray='none' stroke-dashoffset='0.0'>
- <g stroke-linecap='round'>
- <g stroke-linejoin='round'>
- <path d='M-1.55997 2.07996C-1.42996 1.29997 0 .12999 .38998 0C0-.12999-1.42996-1.29997-1.55997-2.07996' fill='none'/>
- </g>
- </g>
- </g>
- </g>
-</g>
+<path d='M145.91641 24.80396L101.72052 68.98218' fill='none'/>
 </g>
 </g>
 </g>
