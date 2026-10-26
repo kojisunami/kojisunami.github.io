@@ -1,5 +1,5 @@
 
-PROJECTS=fig1 fig2 fig3
+PROJECTS=fig1 fig2 fig3 fig4 fig5
 
 .PHONY: all clean
 

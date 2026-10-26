@@ -1,0 +1,18 @@
+\documentclass[dvisvgm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows, positioning,fit}
+
+\begin{document}
+\begin{tikzpicture}[auto, every node/.style={align=center}]
+\draw (0,0) ellipse [x radius=3cm, y radius=2cm];
+\filldraw[fill=white!20, draw=white, thick] ( 3, 0) circle (0.5cm);
+\filldraw[fill=white!20, draw=white, thick] ( 0,-2) circle (1cm);
+\filldraw[fill=white!20, draw=white, thick] (-3, 0) circle (0.5cm);
+\filldraw[fill=white!20, draw=white, thick] ( 0, 2) circle (1.5cm);
+  \node (a) at ( 3, 0) {Empty};
+  \node (b) at ( 0,-2) {Discrete};
+  \node (c) at (-3, 0) {Continuous};
+  \node (d) at ( 0, 2) {Russel Paradox};
+\draw ( 2.5,-2.5) node {Set Ouroboros};
+\end{tikzpicture}
+\end{document}
