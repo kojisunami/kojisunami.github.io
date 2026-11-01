@@ -1,0 +1,127 @@
+\documentclass{article}
+
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+
+
+\setlength{\textwidth}{19cm}
+
+\title{Misc}
+
+\begin{document}
+
+\input{header}
+
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\noindent
+\textbf{Biography} \\
+
+\noindent
+My freshman/sophomore was community college, no math classes beyond linear algebra,
+but I was deciphering Clay math millenium problems, and no outstanding record on Putnam.
+My undergraduate junior/senior is all about studying abstract algebra(Girillet) preparing Hartshorne or Alan Hatcher, 
+and I obtained a strong recommendation, while I didn't take much class of analysis/physics.
+My first PhD is top 50-100 in US news math ranking, where there is a solid research group of mirror symmetry, and I got Masters' degree.
+Master means literally mastering something with knowing I know nothing Socrates was, and PhD means something beyond.
+My current research (2027) involves any topics where I can add my original work regardless of level of difficulty or popularity 
+or amount of work.
+
+
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\noindent
+\textbf{Philosophy} \\
+
+\noindent
+What I'd value in philosophy is the clarity of problem setting, accessibility to the audience, and extendability by endless curiousity, 
+and furthermore the ability to judge what is said and to correct it in case the author is lying or mistaking,
+and Darwin, UNIX, and Newton: where goodness doesn't mean impeccability but the ability of customization whenever necessary,
+and what we are aiming in math is its clarity with unlimited use of dictionary, 
+typically Bourbaki style (Bourbaki is enough but Russel is more precise),
+accessibility to general audience's intuition, and to stir unlimited research mind to avoid boredom.
+Math is like climbing a mountain, and skilled climber says climb up to the notch rather than climb down if we're lost, 
+and abstract nonsense is the apex of the mountain -- From Grothendieck To Einstein. \\
+
+
+\noindent
+Another important part of philosophy is how to deal with people to accomplish a project.
+Tip of success is what to do if privileged not how to be privileged, and I do political activity for my thoughts of research 
+so to gather smart people willing to improve my project, both advisors and collaborators,
+and I also welcome the further evolution of AI to minimize our labor.
+
+
+
+
+
+
+\noindent\rule{\textwidth}{0.4pt}
+
+
+\noindent
+\textbf{Diversity}\\
+
+\noindent
+I'll consider several religion/ideology and international relation and history to find the possible speculation if that doesn't sound rude.
+We cannot typically judge underrepresented people from their appearance,
+while loud people might be typically unhappy because they are not saying their own actual opinion,
+but I'll try to value the individual/group as equal as possible. 
+
+\noindent
+The question is how to define equality.
+My favorite abstract nonsense is capitalism and democracy. The simple claims is \$1 is equally worth \$1 whoever owns it,
+but the core value of capitalism is "ism" in itself. 
+Food, health, real estate, knowledge, innovation, labor force, love or anything, equivalent to money, we call capital in general,
+while Marxism isn't denial of capitalism but hypothesising the sociological consequence.
+
+\noindent
+The basic of democracy is a majority's rule, and clarification of the affiliation is generally welcomed.
+I personally prefer Thomas Hobbs to Jacque Rousseau by respecting both parties for division and rule same as in Roman Empire.
+Of course more fundamentally, US system might be wrong for some people, but I try to respect every different opinion as possible.
+Carefully seeing, as my personal opinion, it's whether enlightenment appeared earlier than capitalism, 
+or copper, iron, agriculture, religion or many other criteria which forms civilization,
+as Arnold Toynbee says evolution of civilization is how to overcome the domestic/external problems.
+
+
+
+
+
+
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\noindent
+\textbf{External Link}
+
+\noindent
+General system of grad school of qualifying exams and thesis defense, PhD admission and postgraduation career path.
+
+\begin{itemize}[label=$\star$]
+\item A Mathematician’s Survial Guide
+\href{https://www.amazon.com/Mathematicians-Survival-Guide-Graduate-Development/dp/082183455X}{[link]}
+\item Postdoc Career Advice
+\href{https://math.ou.edu/~kmartin/career-ad.html}{[link]}
+\end{itemize}
+
+
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\noindent
+\textbf{Skills} \\
+
+\noindent
+Excel/Python/Assembly/C/C++, and ArchLinux/Vim/LaTex/Git, Blender/Gimp/3dPrint/LLM, not specifically.
+My CS isn't degree level, but new technology rapidly replacing, and I'm more concerned about how to use it.
+I'm satisified with the default setting of ArchLinux.
+
+\end{document}
+ 
+
+
+
+
+
