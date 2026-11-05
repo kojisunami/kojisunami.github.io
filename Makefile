@@ -1,5 +1,5 @@
 SHELL := /usr/bin/bash
-HTML_PROJECTS = index art misc
+HTML_PROJECTS = index art misc essay
 PDF_PROJECTS = cv-koji
 
 .PHONY: all src png
